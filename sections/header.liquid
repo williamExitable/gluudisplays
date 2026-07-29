@@ -136,9 +136,18 @@
       align-self: center;
       width: 100%;
       max-width: 50rem;
+      position: relative;
     }
 
     .header.header--two-row .header__search-bar .field {
+      width: 100%;
+    }
+
+    .header.header--two-row .header__search-bar main-search {
+      display: contents;
+    }
+
+    .header.header--two-row .header__search-bar .search {
       width: 100%;
     }
 
@@ -193,6 +202,7 @@
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
 {%- if settings.cart_type == "drawer" -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
@@ -343,25 +353,66 @@
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
-      <form action="{{ routes.search_url }}" method="get" role="search" class="header__search-bar small-hide medium-hide">
-        <div class="field">
-          <input
-            class="search__input field__input"
-            id="Search-In-Header"
-            type="search"
-            name="q"
-            value="{{ search.terms | escape }}"
-            placeholder="{{ 'general.search.search' | t }}"
-          >
-          <label class="field__label" for="Search-In-Header">{{ 'general.search.search' | t }}</label>
-          <input type="hidden" name="options[prefix]" value="last">
-          <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-            <svg class="icon icon-search" aria-hidden="true" focusable="false">
-              <use href="#icon-search">
-            </svg>
-          </button>
-        </div>
-      </form>
+      {%- if settings.predictive_search_enabled -%}
+        <predictive-search class="header__search-bar small-hide medium-hide" data-loading-text="{{ 'accessibility.loading' | t }}">
+          <main-search>
+      {%- else -%}
+        <search-form class="header__search-bar small-hide medium-hide">
+      {%- endif -%}
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+              <div class="field">
+                <input
+                  class="search__input field__input"
+                  id="Search-In-Header"
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  placeholder="{{ 'general.search.search' | t }}"
+                  {%- if settings.predictive_search_enabled -%}
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-owns="predictive-search-results"
+                    aria-controls="predictive-search-results"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="list"
+                    autocorrect="off"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  {%- endif -%}
+                >
+                <label class="field__label" for="Search-In-Header">{{ 'general.search.search' | t }}</label>
+                <input type="hidden" name="options[prefix]" value="last">
+                <button
+                  type="reset"
+                  class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+                  aria-label="{{ 'general.search.reset' | t }}"
+                >
+                  <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                    <use xlink:href="#icon-reset">
+                  </svg>
+                </button>
+                <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                  <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                    <use xlink:href="#icon-search">
+                  </svg>
+                </button>
+              </div>
+
+              {%- if settings.predictive_search_enabled -%}
+                <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                  {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+                </div>
+
+                <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+              {%- endif -%}
+            </form>
+      {%- if settings.predictive_search_enabled -%}
+          </main-search>
+        </predictive-search>
+      {%- else -%}
+        </search-form>
+      {%- endif -%}
 
       <div class="header__utility-icons">
         <div class="desktop-localization-wrapper">
@@ -423,7 +474,7 @@
         </div>
 
         {%- if shop.customer_accounts_enabled -%}
-          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" target="_blank" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
             {% render 'icon-account' %}
             <span class="visually-hidden">
               {%- liquid

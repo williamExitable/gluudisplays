@@ -3804,3 +3804,21 @@ body.page-challenge .newsletter {
   margin-top: 2rem;
   font-weight: 600;
 }
+
+
+.predictive-search__loading-state {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  display: none;
+}
+
+predictive-search[loading] .predictive-search__loading-state {
+  display: flex !important
+}
