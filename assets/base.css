@@ -2850,6 +2850,11 @@ li.list-menu-item-contact .header__menu-item {
   .header--middle-left .header__inline-menu {
       margin-left: -1.5rem;
   }
+
+  .header--middle-left .header__secondary-menu {
+    margin-right: -1.5rem;
+  }
+
 }
 
 .header__menu {
@@ -3792,5 +3797,10 @@ body.page-challenge .newsletter {
   .webwinkelkeur img {
     max-width: 75%;
   }
-  
+
+}
+
+.menu-drawer__secondary-menu.list-menu {
+  margin-top: 2rem;
+  font-weight: 600;
 }
