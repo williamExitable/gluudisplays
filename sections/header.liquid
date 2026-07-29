@@ -98,7 +98,7 @@
     .header.header--two-row {
       grid-template-areas:
         'heading search search icons'
-        'main main secondary secondary';
+        'menu-row menu-row menu-row menu-row';
       grid-template-columns: 1fr 1fr 1fr 1fr;
       row-gap: 1rem;
       align-items: center;
@@ -143,14 +143,18 @@
       align-self: center;
     }
 
-    .header.header--two-row .header__inline-menu {
-      grid-area: main;
-      justify-self: start;
+    .header.header--two-row .header__menu-row {
+      display: flex;
+      grid-area: menu-row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
     }
 
-    .header.header--two-row .header__secondary-menu {
-      grid-area: secondary;
-      justify-self: end;
+    .header.header--two-row .header__menu-row .list-menu--inline {
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
   }
 </style>
@@ -265,38 +269,40 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+    <div class="header__menu-row small-hide medium-hide">
+      {%- liquid
+        if section.settings.menu != blank
+          if section.settings.menu_type_desktop == 'dropdown'
+            render 'header-dropdown-menu'
+          elsif section.settings.menu_type_desktop != 'drawer'
+            render 'header-mega-menu'
+          endif
         endif
-      endif
-    %}
+      %}
 
-    {%- if section.settings.secondary_menu != blank -%}
-      {%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
-      {%- if secondary_menu != blank -%}
-        <nav class="header__secondary-menu small-hide medium-hide" aria-label="Secundair menu">
-          <ul class="list-menu list-menu--inline" role="list">
-            {%- for link in secondary_menu.links -%}
-              <li>
-                <a
-                  href="{{ link.url }}"
-                  class="header__menu-item list-menu__item link link--text focus-inset"
-                  {%- if link.current -%} aria-current="page" {%- endif -%}
-                >
-                  <span {%- if link.current %} class="header__active-menu-item"{% endif %}>
-                    {{- link.title | escape -}}
-                  </span>
-                </a>
-              </li>
-            {%- endfor -%}
-          </ul>
-        </nav>
+      {%- if section.settings.secondary_menu != blank -%}
+        {%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
+        {%- if secondary_menu != blank -%}
+          <nav class="header__secondary-menu" aria-label="Secundair menu">
+            <ul class="list-menu list-menu--inline" role="list">
+              {%- for link in secondary_menu.links -%}
+                <li>
+                  <a
+                    href="{{ link.url }}"
+                    class="header__menu-item list-menu__item link link--text focus-inset"
+                    {%- if link.current -%} aria-current="page" {%- endif -%}
+                  >
+                    <span {%- if link.current %} class="header__active-menu-item"{% endif %}>
+                      {{- link.title | escape -}}
+                    </span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+        {%- endif -%}
       {%- endif -%}
-    {%- endif -%}
+    </div>
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
