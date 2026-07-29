@@ -368,6 +368,9 @@
                   name="q"
                   value="{{ search.terms | escape }}"
                   placeholder="{{ 'general.search.search' | t }}"
+                  data-placeholder-one="Vind een product"
+                  data-placeholder-two="Zoek op categorie"
+                  data-placeholder-focus="Zoeken"
                   {%- if settings.predictive_search_enabled -%}
                     role="combobox"
                     aria-expanded="false"
