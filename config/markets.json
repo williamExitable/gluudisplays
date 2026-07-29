@@ -8,8 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "page.over-ons.json",
-  "context": {
-    "market": "duitsland"
+  "markets": {
+    "duitsland": {
+      "parent": "@default"
+    }
   }
 }
