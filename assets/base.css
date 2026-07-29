@@ -3162,7 +3162,7 @@ details-disclosure > details {
 }
 
 
-body, h1, h2, h3, h4, h5, h6, p, a, li, *:not(.fa):not([class*="pe-"]):not(.lni):not(i[class*="iccl-"]):not(i[class*="la"]):not(i[class*="fa"]):not(.jdgm-star):not(.wwk-stars__star) {
+body, h1, h2, h3, h4, h5, h6, p, a, li, *:not(.fa):not([class*="pe-"]):not(.lni):not(i[class*="iccl-"]):not(i[class*="la"]):not(i[class*="fa"]):not(.jdgm-star):not(.wwk-stars__star):not([class*="ph-"]) {
     font-family: var(--font-body-family) !important;
 }
 
@@ -3669,20 +3669,15 @@ body.page-challenge .newsletter {
   
 .usp-bar .ui-icon {
   margin-right: 10px;
-  display: inline-block;
+  font-size: 2rem;
 }
 
 .usp-bar .usp {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
-  .ui-icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 14px;
-    height: 14px;
-  }
+  align-items: center;
+  line-height: 1;
 }
 
 .usp-bar .usp .ui-icon {
@@ -3695,17 +3690,19 @@ body.page-challenge .newsletter {
   flex-shrink: 0;
 }
 
-@media screen and (min-width: 440px) {
-
-  .usp-bar .usp {
-    padding-left: 25px;
-  }
-    
-  .usp-bar .usp .ui-icon {
-    display: inline-block;
-  }
+.usp-bar .usp a {
+  text-decoration: underline;
+  color: currentColor;
+  font-weight: 600;
 }
 
+.usp-bar .usp a:hover {
+  text-decoration: none;
+}
+
+.usp-bar .usp .ui-icon {
+  display: inline-block;
+}
 
 
 @media screen and (min-width: 1340px) {

@@ -1,10 +1,10 @@
 <div class="usp-bar">
   <div class="page-width">
       <ul>
-        <li><span class="usp">{%- render 'icon-check' -%} {{ 'usps.eyecatcher' | t }}</span></li>
-        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check' -%} {{ 'usps.profi' | t }}</span></li>
-        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check' -%} {{ 'usps.warranty' | t }}</span></li>
-        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check' -%} {{ 'usps.free_shipment_cost' | t }}</span></li>
+        <li><span class="usp">{%- render 'icon-check', icon: 'hand-waving' -%} {{ 'usps.eyecatcher' | t }}</span></li>
+        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'building' -%} <span>Bezoek onze <a href="{{ pages['contact'].url }}#showroom">showroom</a></span></span></li>
+        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'shield-check' -%} {{ 'usps.warranty' | t }}</span></li>
+        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'van' -%} {{ 'usps.free_shipment_cost' | t }}</span></li>
         <li class="usp-review">
           <valued-widget layout="menu" size="small" theme="dark"></valued-widget>
         </li>
