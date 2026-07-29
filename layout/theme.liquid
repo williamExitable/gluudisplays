@@ -312,6 +312,7 @@
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} template-{{ request.page_type | handle }} page-{{ body_id }}">
 
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQK4FGTN"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -390,5 +391,8 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <p>Test</p>
+
   </body>
 </html>
