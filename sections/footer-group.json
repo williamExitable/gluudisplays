@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_cinPmD": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_DaAifV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meld je aan voor onze nieuwsbrief!",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_9z9nX3": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Blijf op de hoogte van het laatste nieuws en aanbiedingen</p>"
+          }
+        },
+        "email_form_rmfkzT": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_DaAifV",
+        "paragraph_9z9nX3",
+        "email_form_rmfkzT"
+      ],
+      "settings": {
+        "color_scheme": "scheme-547bb3c7-4f7a-4e29-8579-5b7f293d9ad8",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_rfxC9a": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_XJYW3M": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Collecties",
+            "menu": "collecties"
+          }
+        },
+        "link_list_iLVHAe": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Klantenservice",
+            "menu": "klantenservice"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_rfxC9a",
+        "link_list_XJYW3M",
+        "link_list_iLVHAe"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Schrijf je in voor onze nieuwsbrief",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "newsletter_cinPmD",
+    "footer"
+  ]
+}

@@ -1,0 +1,75 @@
+
+<div class="page-width section-{{ section.id }}-padding page-downloads">
+
+{% for product in collections['all'].products %}
+
+  <div class="downloads-group">
+    <h2>{{ product.title }}</h2>
+  
+    {% if product.variants.size > 1 %}
+
+      {% for variant in product.variants %}
+        {% assign file_product_sheet = variant.metafields.custom.file_productsheet %}    
+        {% assign file_screen_sheet = variant.metafields.custom.file_screen_sheet %}          
+        {% assign file_user_manual = variant.metafields.custom.file_user_manual %}
+        {% assign hasDownloads = false %}
+
+        {% if file_product_sheet or file_screen_sheet or file_user_manual > 1 %}
+          {% assign hasDownloads = true %}
+        {% endif %}     
+        
+      {% endfor %}   
+
+      {% if hasDownloads %}
+        <div class="row">
+          {% for variant in product.variants %}
+            <div class="col-12 col-lg-6">
+              <h3>{{ variant.title }}</h3>
+            
+              {% assign file_product_sheet = variant.metafields.custom.file_productsheet %}    
+              {% assign file_screen_sheet = variant.metafields.custom.file_screen_sheet %}          
+              {% assign file_user_manual = variant.metafields.custom.file_user_manual %}          
+    
+              {% render 'product-downloads', 
+                product_sheet: file_product_sheet,
+                screen_sheet: file_screen_sheet,
+                user_manual: file_user_manual,
+                hasTitle: false,
+              %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>Er zijn voor dit product nog geen downloads</p>
+      {% endif %}
+
+    {% else %} 
+      <!-- no variants -->
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          {% assign file_product_sheet = product.metafields.custom.file_productsheet %}    
+          {% assign file_screen_sheet = product.metafields.custom.file_screen_sheet %}          
+          {% assign file_user_manual = product.metafields.custom.file_user_manual %}          
+
+          {% render 'product-downloads', 
+            product_sheet: file_product_sheet,
+            screen_sheet: file_screen_sheet,
+            user_manual: file_user_manual,
+            hasTitle: false,
+          %}
+        </div>
+        </div>
+    {% endif %}
+  </div>
+  
+{% endfor %}
+  
+</div>
+
+
+{% schema %}
+  {
+    "name": "Downloads page",
+    "settings": []
+  }
+{% endschema %}

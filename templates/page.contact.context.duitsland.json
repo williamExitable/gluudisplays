@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.contact.json",
+  "context": {
+    "market": "duitsland"
+  },
+  "sections": {
+    "rich_text_iP6qnr": {
+      "settings": {},
+      "blocks": {
+        "heading_QahPdt": {
+          "settings": {
+            "heading": "Nützliche Links"
+          }
+        },
+        "text_CHfxx7": {
+          "settings": {
+            "text": "<ul><li><a href=\"/pages/veelgestelde-vragen\" title=\"Veelgestelde vragen\">Häufig gestellte Fragen</a></li><li><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Datenschutzbestimmungen</a></li><li><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Rückerstattungsbedingungen</a></li><li><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Allgemeine Geschäftsbedingungen</a></li></ul>"
+          }
+        }
+      }
+    },
+    "rich_text_BGBxwk": {
+      "settings": {},
+      "blocks": {
+        "heading_riNjNL": {
+          "settings": {
+            "heading": "Häufig gestellte Fragen"
+          }
+        }
+      }
+    },
+    "multirow_idP9ki": {
+      "settings": {},
+      "blocks": {
+        "row_HQUtqF": {
+          "settings": {
+            "text": "<p>GLUU Displays <br/>Schoutlaan 30a<br/>6002EA Weert</p><p><a href=\"mailto:info@gluudisplays.de\" title=\"mailto:info@gluudisplays.de\">info@gluudisplays.de</a><br/><a href=\"tel:+31611726945\" title=\"tel:+31611726945\">+31 6 11726945</a><br/></p><p><br/>KvK 74597280<br/>BTW NL818808640B01</p>"
+          }
+        }
+      }
+    }
+  }
+}

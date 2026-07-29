@@ -1,0 +1,430 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "> div {text-align: center;}"
+      ],
+      "settings": {
+        "padding_top": 68,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_C7gkL8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_th84fC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ontdek onze Digitale Displays",
+            "heading_size": "h2"
+          }
+        },
+        "text_f6wxJk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Bij <strong>GLUU Displays</strong> bieden we een uitgebreid assortiment aan digitale display-oplossingen, perfect voor elk bedrijf of evenement. Van innovatieve digitale totems en veelzijdige beurscounters tot digitale borden en interactieve receptieoplossingen – onze producten combineren modern design met geavanceerde technologie.</p>",
+            "source_code": ""
+          }
+        },
+        "button_qBna9J": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Neem contact op",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_th84fC",
+        "text_f6wxJk",
+        "button_qBna9J"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_9NT6iz": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"text-align:center;\" class=\"webwinkelkeur\">\n<a href=\"https://www.webwinkelkeur.nl/webshop/GLUU-Displays_1222655\" class=\"webwinkelkeurPopup\" title=\"Trustmark webshop\" target=\"_blank\"><img src=\"https://dashboard.webwinkelkeur.nl/banners/122/1222655/1746519647000.svg\" width=\"161\" height=\"161\" alt=\"Trustmark webshop\"></a>\n</div>\n\n<!--<valued-widget layout=\"menu\" size=\"big\" theme=\"dark\"></valued-widget>-->",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection_JWHpQ3": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "A-Bords",
+        "heading_size": "h1",
+        "description": "<p>Traditionele stoepborden en uithangborden zie je overal, maar onze <strong>digitale A-borden</strong> brengen iets extra’s. Met hun opvallende design en dynamische presentatie trekken ze direct de aandacht en zorgen ze voor een <strong>unieke klantbeleving</strong>. </p><p>Een <strong>echte eyecatcher</strong> die jouw boodschap tot leven brengt!</p>",
+        "description_footer": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bords",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "rich_text_T9NGqP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3GVraF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Digitale A-Borden: dynamische blikvangers",
+            "heading_size": "h2"
+          }
+        },
+        "text_w4NH4D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Trek direct de aandacht met onze <strong>Smart Line Digitale A-borden</strong>. Deze moderne variant van het klassieke stoepbord combineert stijlvol design met dynamische contentweergave. Perfect voor promoties, aanbiedingen of informatie die op moet vallen. Ideaal voor retail, horeca en evenementen, en eenvoudig in gebruik dankzij Plug & Play-functionaliteit.</p><p><strong>Belangrijkste kenmerken:</strong></p><ul><li>Mobiliteit: lichtgewicht en eenvoudig te verplaatsen, flexibel inzetbaar.</li><li>Opvallend en stijlvol: ontworpen om direct de aandacht te trekken in drukke omgevingen.</li><li>Dynamische content: scherpe beeldkwaliteit en bewegende visuals met meer impact dan traditionele stoepborden.</li></ul>",
+            "source_code": ""
+          }
+        },
+        "button_6JUE6E": {
+          "type": "button",
+          "settings": {
+            "button_label": "Bekijk de 'Smart Line Bords' bestseller",
+            "button_link": "https://gluudisplays.nl/products/smart-line-digitaal-a-bord?variant=47705091473756",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3GVraF",
+        "text_w4NH4D",
+        "button_6JUE6E"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 990px) {.rich-text__blocks {max-width: 73.4rem; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "featured_collection_6af99Y": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Panels",
+        "heading_size": "h1",
+        "description": "<p>Maak reclame of informeer bezoekers en klanten met onze Smart Line Digital Panels. Met een <strong>minimalistische</strong> en <strong>moderne</strong> uitstraling perfect om jouw boodschap weer te geven. </p>",
+        "description_footer": "<p>De Panels zijn perfect voor <strong>wandmontage</strong> of ophanging via het <strong>plafond</strong>, bijvoorbeeld in een etalage. Ze zijn ideaal voor retailers, hotels, restaurants, scholen en musea.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "panel",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "rich_text_MmCKkp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hmBWjQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Digitale Panelen: stijlvol en functioneel",
+            "heading_size": "h2"
+          }
+        },
+        "text_cffwTe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Onze Smart Line Digitale Panelen bieden stijlvolle en functionele oplossingen voor moderne visuele communicatie. Met een strak ontwerp en een 43” scherm trekt dit display direct de aandacht. Perfect om jouw boodschap professioneel en krachtig over te brengen.<br/><br/><strong>Belangrijkste kenmerken:</strong></p><ul><li>Kristalheldere weergave: scherp en levendig beeld voor elke omgeving.</li><li>Eenvoudig beheer: dankzij plug & play-functionaliteit snel en flexibel in gebruik.</li><li>Veelzijdige toepassing: ideaal voor promoties, informatie of branding.</li></ul>",
+            "source_code": ""
+          }
+        },
+        "button_yQVyGx": {
+          "type": "button",
+          "settings": {
+            "button_label": "Bekijk de 'Smart Line Panels' bestseller",
+            "button_link": "https://gluudisplays.nl/products/smart-line-digital-panel-black-with-43-samsung-screen?variant=47705173295452",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hmBWjQ",
+        "text_cffwTe",
+        "button_yQVyGx"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "featured_collection_LGJtUp": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Totems",
+        "heading_size": "h1",
+        "description": "<p>Staande schermen, ook wel totems genoemd, zijn dé blikvangers voor jouw boodschap. Dankzij hun stevige voet en opvallende ontwerp zijn ze perfect om direct de juiste aandacht te trekken.</p>",
+        "description_footer": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "totems",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "rich_text_UFqzDy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KjH9fC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Digitale Totems: krachtige visuele impact",
+            "heading_size": "h2"
+          }
+        },
+        "text_M6XK87": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Onze Digitale Slim Totems combineren een modern, slank ontwerp met krachtige visuele impact. Uitgerust met een 50” Samsung-scherm, trekken deze totems moeiteloos de aandacht en geven jouw boodschap een premium uitstraling. Perfect voor reclamecampagnes, promoties of informatieve content in winkels, beurzen of ontvangstruimtes.</p><p><strong>Belangrijkste kenmerken:</strong></p><ul><li>Modern design: slank en stijlvol, ideaal voor professionele omgevingen.</li><li>50” Samsung scherm: kristalheldere beeldkwaliteit voor opvallende content.</li><li>Plug & Play: snel en eenvoudig content beheren en aanpassen.</li></ul>",
+            "source_code": ""
+          }
+        },
+        "button_8mWPij": {
+          "type": "button",
+          "settings": {
+            "button_label": "Bekijk de 'Totems' bestseller",
+            "button_link": "https://gluudisplays.nl/products/digitale-smart-line-totem-met-43-samsung-scherm-zwart?variant=47480805523804",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KjH9fC",
+        "text_M6XK87",
+        "button_8mWPij"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_hwJqFp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_crYHFb": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_9zpDqE": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Staat je vraag er niet tussen? </strong></h3><p>We beantwoorden graag al je vragen over onze producten. Neem contact met ons op.</p>",
+            "source_code": ""
+          }
+        },
+        "button_gNaaXq": {
+          "type": "button",
+          "settings": {
+            "button_label": "Neem contact op",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_crYHFb",
+        "text_9zpDqE",
+        "button_gNaaXq"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 990px) {.rich-text__blocks {max-width: 73.4rem; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection_JJBeiM": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Futuro",
+        "heading_size": "h1",
+        "description": "<p>Maak indruk met onze Futuro beurscounters, ontworpen om jouw merkidentiteit krachtig en professioneel te presenteren. Compact, draagbaar en in een handomdraai opgezet, zijn ze de ideale keuze voor evenementen, beurzen of recepties. Stijl en functionaliteit komen samen voor maximale impact!</p>",
+        "description_footer": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "futuro",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "rich_text_cBAyVn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gQHbWV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Digitale Balie: stijlvol en veelzijdig",
+            "heading_size": "h2"
+          }
+        },
+        "text_Jt834C": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ontvang bezoekers in stijl met de Futuro digitale counters. Met een hoogwaardig Samsung-scherm en strak design zijn ze ideaal voor beurzen, evenementen of recepties. Toon dynamische content, promoot je merk en maak een blijvende indruk – allemaal met één gebruiksvriendelijke oplossing.</p><p><strong>Belangrijkste kenmerken:</strong></p><ul><li>Opbergruimte: de geïntegreerde plank houdt je stand netjes en georganiseerd.</li><li>Veelzijdig gebruik: ideaal voor promotie, informatie en branding op diverse locaties.</li><li>Professionele uitstraling: dynamische content met een modern design versterkt je merkbeleving.</li></ul>",
+            "source_code": ""
+          }
+        },
+        "button_HKznWp": {
+          "type": "button",
+          "settings": {
+            "button_label": "Bekijk de 'Futuro' bestseller",
+            "button_link": "shopify://products/digital-counter-futuro-with-55-samsung-screen-horizontal",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gQHbWV",
+        "text_Jt834C",
+        "button_HKznWp"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_C7gkL8",
+    "custom_liquid_9NT6iz",
+    "featured_collection_JWHpQ3",
+    "rich_text_T9NGqP",
+    "featured_collection_6af99Y",
+    "rich_text_MmCKkp",
+    "featured_collection_LGJtUp",
+    "rich_text_UFqzDy",
+    "rich_text_hwJqFp",
+    "featured_collection_JJBeiM",
+    "rich_text_cBAyVn"
+  ]
+}

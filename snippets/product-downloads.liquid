@@ -1,0 +1,37 @@
+{% assign defaultTitle = 'tabs.downloads' | t %}
+{% assign sectionTitle = title | default: defaultTitle %}    
+
+{% if hasTitle == nil %}
+  {% assign hasTitle = true %}    
+{% endif %}
+  
+{% if short_version %}
+  {% assign titleAttribute = 'h3' %}    
+{% else %}
+   {% assign titleAttribute = 'h2' %}    
+{% endif %}
+
+{%- if product_sheet or screen_sheet or user_manual  -%}
+  <div class="product__downloads dynamic-metafields">
+
+    {% if hasTitle and sectionTitle %}
+      <{{ titleAttribute }} id="downloads" class="h2">{{ sectionTitle }}</{{ titleAttribute }}>
+    {% endif %}
+      
+    <ul class="list-downloads">
+      {%- if product_sheet -%}
+        <li><a href="{{ product_sheet | file_url }}" class="file download" download><i data-feather="download"></i> {{ 'other.product_sheet' | t  }}</a></li>
+      {%- endif -%}
+  
+      {%- if screen_sheet -%}
+        <li><a href="{{ screen_sheet | file_url }}" class="file download" download><i data-feather="download"></i> {{ 'other.screen_sheet' | t  }}</a></li>
+      {%- endif -%}
+      
+      {%- if user_manual -%}  
+        <li><a href="{{ user_manual | file_url }}" class="file download" download><i data-feather="download"></i> {{ 'other.user_manual' | t  }}</a></li>
+      {%- endif -%}
+    </ul>
+    
+  </div>
+{%- endif -%}
+

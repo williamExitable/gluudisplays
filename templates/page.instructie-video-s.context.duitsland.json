@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.instructie-video-s.json",
+  "context": {
+    "market": "duitsland"
+  },
+  "sections": {
+    "multicolumn_BJRex8": {
+      "settings": {},
+      "blocks": {
+        "column_8VVHKW": {
+          "settings": {
+            "text": "<p>Installationsvideo</p>"
+          }
+        },
+        "column_KqdXKp": {
+          "settings": {
+            "text": "<p>Installationsvideo</p>"
+          }
+        },
+        "column_Gm9mB6": {
+          "settings": {
+            "text": "<p>Installationsvideo</p>"
+          }
+        }
+      }
+    },
+    "rich_text_VrTHEa": {
+      "settings": {},
+      "blocks": {
+        "text_h6inQP": {
+          "settings": {
+            "text": "<p>Wir werden in Kürze neue Anleitungsvideos zu all unseren anderen Produkten hinzufügen! Behalten Sie unsere Website und sozialen Kanäle im Auge, um über die Veröffentlichung dieser neuen Inhalte auf dem Laufenden zu bleiben.</p>"
+          }
+        },
+        "heading_kcPCJL": {
+          "settings": {
+            "heading": "Bald mehr..."
+          }
+        }
+      }
+    }
+  }
+}

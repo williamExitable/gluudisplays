@@ -1,0 +1,655 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "landingspage",
+      "custom_css": [],
+      "settings": {
+        "padding_top": 68,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_C7gkL8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_th84fC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bij GLUU Displays staat het Smart A-bord centraal in ons assortiment digitale display-oplossingen.",
+            "heading_size": "h2"
+          }
+        },
+        "text_f6wxJk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dit innovatieve bord biedt de perfecte mix van modern design en geavanceerde technologie, ideaal voor bedrijven en evenementen. Naast het Smart A-bord bieden we ook <a href=\"/collections/totems\" title=\"Totems\">digitale totems</a>, <a href=\"/collections/futuro\" title=\"Futuro\">beurscounters</a> en interactieve receptieoplossingen – allemaal ontworpen om jouw boodschap op een professionele en impactvolle manier over te brengen.</p>",
+            "source_code": ""
+          }
+        },
+        "button_qBna9J": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Neem contact op",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_th84fC",
+        "text_f6wxJk",
+        "button_qBna9J"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 68
+      }
+    },
+    "featured_product_AAg8bB": {
+      "type": "featured-product",
+      "blocks": {
+        "text_FFdKGh": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_zkNWdb": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_p73tCN": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_iFgAwA": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_Cx9nMa": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_MFJEwg": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share_Qhqxni": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_FFdKGh",
+        "title_zkNWdb",
+        "price_p73tCN",
+        "variant_picker_iFgAwA",
+        "quantity_selector_Cx9nMa",
+        "buy_buttons_MFJEwg",
+        "share_Qhqxni"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "smart-line-digitaal-a-bord",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_T9NGqP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3GVraF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Val  op met onze Smart Line Digitale A-borden",
+            "heading_size": "h2"
+          }
+        },
+        "text_w4NH4D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Deze digitale versie van het klassieke stoepbord combineert een strak design met dynamische contentweergave. Ideaal voor promoties, acties of belangrijke informatie die niet onopgemerkt mag blijven. Perfect inzetbaar voor retail, horeca en evenementen, en eenvoudig te gebruiken dankzij de Plug & Play-functionaliteit.<br/></p><h3>Belangrijkste kenmerken:</h3><ul><li><strong>Mobiel en flexibel: </strong>Lichtgewicht ontwerp, gemakkelijk te verplaatsen en veelzijdig inzetbaar.</li><li><strong>Stijlvol en opvallend:</strong> Gemaakt om de aandacht te trekken, zelfs in drukke omgevingen.</li><li><strong>Dynamische presentatie: </strong>Haarscherpe beeldkwaliteit en bewegende visuals zorgen voor meer impact dan traditionele stoepborden.</li></ul>",
+            "source_code": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_3GVraF",
+        "text_w4NH4D"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_HDNpWG": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "> div {background: rgba(var(--color-button), 0.05);}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"webwinkelkeur page-width\">\n<a href=\"https://www.webwinkelkeur.nl/webshop/GLUU-Displays_1222655\" class=\"webwinkelkeurPopup\" title=\"Webshop Trustmark and customer reviews\" target=\"_blank\"><img src=\"https://dashboard.webwinkelkeur.nl/banners/122/1222655/1746524589000.svg\" width=\"161\" height=\"161\" alt=\"Webshop Trustmark and customer reviews\"></a>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "image_with_text_aLWQJn": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bNmFdx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Makkelijk te vervoeren",
+            "heading_size": "h1"
+          }
+        },
+        "text_nwYC36": {
+          "type": "text",
+          "settings": {
+            "text": "<p>De geïntegreerde wielen zorgen ervoor dat het <a href=\"/products/smart-line-digitaal-a-bord\" title=\"Smart Line Digitaal A-Bord\">Digitale A-bord</a> gemakkelijk te verplaatsen is.</p><p></p><h3>Flexibiliteit en gebruiksgemak</h3><p>Of je nu een presentatie houdt, een tijdelijke reclamecampagne wilt voeren of simpelweg de ruimte wilt herinrichten, de wielen bieden <strong>flexibiliteit</strong> en <strong>gebruiksgemak</strong>. Dankzij het robuuste ontwerp zijn de wielen bovendien stabiel, waardoor het bord veilig blijft staan, zelfs bij het verplaatsen over verschillende oppervlakken.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bNmFdx",
+        "text_nwYC36"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DIAT43ESF_7-1000x1000__1693903245.jpg",
+        "height": "adapt",
+        "variant": "default",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_k47x3i": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GKtfaD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Eenvoudige Plug & Play",
+            "heading_size": "h1"
+          }
+        },
+        "text_PTkgBt": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Zet jouw boodschap in enkele minuten live met Plug & Play.</h2><p>Via USB, afstandsbediening of WiFi wijzig je eenvoudig de content. Perfect voor winkelcentra, hotels en beurzen. De robuuste behuizing beschermt het professionele Samsung scherm en zorgt voor een <strong>hoogwaardige uitstraling</strong>.</p>",
+            "source_code": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_GKtfaD",
+        "text_PTkgBt"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image_with_text_qPwPDN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_njbN6f": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_gbG466": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_bBHXV8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_njbN6f",
+        "text_gbG466",
+        "button_bBHXV8"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DIAT43ESF_10-1000x1000__1698771560.gif",
+        "height": "small",
+        "variant": "default",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_dyNzny": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RXh6HE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elegante frameloze uitstraling",
+            "heading_size": "h1"
+          }
+        },
+        "text_c3mCTn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>De geïntegreerde wielen zorgen ervoor dat het Digitale A-bord gemakkelijk te verplaatsen is. De stevige, <strong>gepoedercoate stalen</strong> constructie maakt de behuizing extreem duurzaam, ideaal om jouw boodschap 24/7 onder de aandacht te houden.<br/><br/>Het Smart Line Digitale A-bord is standaard verkrijgbaar in <strong>zwart</strong> en <strong>wit</strong>. Andere RAL-kleuren en voorzijde-branding zijn op aanvraag mogelijk.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RXh6HE",
+        "text_c3mCTn"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DIAT43ESF_4_1-1000x1000__1693903244.jpg",
+        "height": "medium",
+        "variant": "default",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    },
+    "custom_liquid_YWBYfp": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width center\">\n\n<form method=\"post\" action=\"/cart/add\">\n  <input type=\"hidden\" name=\"id\" value=\"47705091440988\">\n  <button type=\"submit\" class=\"button button--primary\">Bestel Smart Line Digitaal A-Bord </button>\n</form>\n\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_wMb8wF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cPAPnq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Vragen?",
+            "heading_size": "h1"
+          }
+        },
+        "text_zkXXcU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Heb je een vraag? Bekijk de veelgestelde vragen over het digitale A-bord <strong>onderaan deze pagina</strong>. <br/>Of stel je vraag via onze <strong>chat</strong>!</p>",
+            "source_code": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_cPAPnq",
+        "text_zkXXcU"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "collage_pm4bdP": {
+      "type": "collage",
+      "blocks": {
+        "image_xzjwEh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DIAT43C9003ESF_1-1000x1000__1573551826_1.jpg"
+          }
+        },
+        "image_Mpa6im": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DIAT43C9003ESF_12-1000x1000__1694257994_1.gif"
+          }
+        },
+        "image_jV6ykL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DIAT43C9003ESF_9-1000x1000__1693927219.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_xzjwEh",
+        "image_Mpa6im",
+        "image_jV6ykL"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_NCGEe6": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width center\">\n\n<form method=\"post\" action=\"/cart/add\">\n  <input type=\"hidden\" name=\"id\" value=\"47705091473756\">\n  <button type=\"submit\" class=\"button button--primary\">Bestel - Smart Line Digitaal A-Bord (Wit)</button>\n</form>\n\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "collage_g4Ubga": {
+      "type": "collage",
+      "blocks": {
+        "image_BnVw6n": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DIAT43ESF_1-1000x1000__1573551825_1.jpg"
+          }
+        },
+        "image_TxxQ7F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DIAT43ESF_2-1000x1000__1694595178_1.gif"
+          }
+        },
+        "image_RAPaqN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DIAT43ESF_7-1000x1000__1693903245.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_BnVw6n",
+        "image_TxxQ7F",
+        "image_RAPaqN"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_nMLc4Y": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width center\">\n\n<form method=\"post\" action=\"/cart/add\">\n  <input type=\"hidden\" name=\"id\" value=\"47705091440988\">\n  <button type=\"submit\" class=\"button button--primary\">Bestel - Smart Line Digitaal A-Bord (Zwart)</button>\n</form>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 100
+      }
+    },
+    "collapsible_content_aDW6Xh": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_BVBHke": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe is het Smart Line Digitaal A-Bord verpakt?",
+            "icon": "none",
+            "row_content": "<p>We besteden veel zorg aan het verpakken van het Smart Line Digitaal A-Bord, zodat het veilig bij jou of jouw klant geleverd wordt. Het Smart Line Digitaal A-Bord wordt verpakt in een stevige kartonnen doos en rondom verpakken we het met schuimmateriaal. Het scherm wordt daarnaast zeer goed beschermd door een polystyreen plaat. Al deze bescherming zorgt ervoor dat het Smart Line Digitaal A-Bord in goede staat bij jou of jouw klant geleverd wordt! </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MPRBqr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik het Smart Line Digitaal A-Bord gemakkelijk vervoeren?",
+            "icon": "none",
+            "row_content": "<p>Absoluut! Het Smart Line Digitaal A-Bord is ontworpen met mobiliteit en draagbaarheid in gedachten. Dankzij de wieltjes kun je het Smart Line Digitaal A-Bord gemakkelijk verplaatsen. De compacte constructie maakt het ook mogelijk dat je het eenvoudig kunt vervoeren; het past zelfs in een auto van gemiddeld formaat. Er wordt geen transporttas bij dit product geleverd; vergeet dus niet om het te beschermen tijdens het vervoeren.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JLYN8B": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wat is het gewicht van het Smart Line Digitaal A-Bord?",
+            "icon": "none",
+            "row_content": "<p>Het Smart Line Digitaal A-Bord heeft een nettogewicht van 32 kg. Dit is het gewicht van het product zelf, zonder verpakking. Het brutogewicht is daarentegen 36 kg. Dit is inclusief verpakking.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4H4xXD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wat is de lengte van de elektriciteitskabel voor aansluiting aan het stopcontact?",
+            "icon": "none",
+            "row_content": "<p>De lengte van de elektriciteitskabel om het Smart Line Digitaal A-Bord op een stopcontact aan te sluiten is 1 meter.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xaHaEB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik touch functionaliteit toevoegen aan het Smart Line Digitaal A-Bord?",
+            "icon": "none",
+            "row_content": "<p>Wij begrijpen de behoefte naar interactiviteit, maar helaas is touch functionaliteit niet van toepassing voor het Smart Line Digitaal A-Bord. Vanwege de lage positie van het scherm, zou touch functionaliteit niet erg praktisch zijn. Dit is dan ook de reden waarom wij geen touch functionaliteit aanbieden voor het Smart Line Digitaal A-Bord.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KVLLcx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Ik heb al een scherm, kan ik alleen de behuizing bestellen?",
+            "icon": "none",
+            "row_content": "<p>Op dit moment bieden wij niet de mogelijkheid om alleen de behuizing voor het Smart Line Digitaal A-Bord te bestellen. Het Digitaal A-Bord is zorgvuldig ontworpen als een compleet product, met zowel het scherm als de behuizing. Op deze manier bieden wij jou een optimaal product met een mooie aanblik.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PELe7F": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "De behuizing is standaard in zwart en wit, kan ik ook een andere kleur kiezen?",
+            "icon": "none",
+            "row_content": "<p>Wij waarderen jouw wensen en begrijpen het belang van maatwerk. Mocht je een specifieke voorkeur hebben voor een andere kleur dan zwart of wit, neem dan graag contact op met jouw salescontactpersoon. Wij kijken dan graag naar de beschikbaarheid en mogelijkheden voor alternatieve kleuren. Houd er wel rekening mee dat de beschikbaarheid en prijzen kunnen variëren, afhankelijk van de hoeveelheid.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tJxbje": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Het Smart Line Digitaal A-Bord is standaard verkrijgbaar met een 43\" scherm, is het mogelijk om andere maten te bestellen?",
+            "icon": "none",
+            "row_content": "<p>Op dit moment bieden wij het Smart Line Digitaal A-Bord alleen aan met een 43\" scherm als standaardmaat. Wij bekijken echter voortdurend de mogelijkheden om aan de vraag van jouw klant te voldoen. Hoewel andere formaten op dit moment niet beschikbaar zijn, stellen wij jouw feedback erg op prijs en bespreken we graag de mogelijkheden voor eventuele andere schermformaten met jou.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_w9N3Yd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Het Smart Line Digitaal A-Bord wordt verstuurd als 'oversized shipping', wat betekent dit?",
+            "icon": "none",
+            "row_content": "<p>Ons doel is om ervoor te zorgen dat onze producten veilig en wel bij jou of jouw klant worden geleverd. Vanwege de grootte, het gewicht en ook de kwetsbaarheid, wordt het Smart Line Digitaal A-Bord zorgvuldig verpakt en verzonden op een pallet voor een veilig transport.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_BVBHke",
+        "collapsible_row_MPRBqr",
+        "collapsible_row_JLYN8B",
+        "collapsible_row_4H4xXD",
+        "collapsible_row_xaHaEB",
+        "collapsible_row_KVLLcx",
+        "collapsible_row_PELe7F",
+        "collapsible_row_tJxbje",
+        "collapsible_row_w9N3Yd"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Veelgestelde vragen",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "collection_list_EUKwCm": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_6gfnUY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "panel"
+          }
+        },
+        "featured_collection_9RB6Hj": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "totems"
+          }
+        },
+        "featured_collection_VM7x3a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "futuro"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_6gfnUY",
+        "featured_collection_9RB6Hj",
+        "featured_collection_VM7x3a"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Gerelateerde artikelen",
+        "heading_size": "h2",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_C7gkL8",
+    "featured_product_AAg8bB",
+    "rich_text_T9NGqP",
+    "custom_liquid_HDNpWG",
+    "image_with_text_aLWQJn",
+    "rich_text_k47x3i",
+    "image_with_text_qPwPDN",
+    "image_with_text_dyNzny",
+    "custom_liquid_YWBYfp",
+    "rich_text_wMb8wF",
+    "collage_pm4bdP",
+    "custom_liquid_NCGEe6",
+    "collage_g4Ubga",
+    "custom_liquid_nMLc4Y",
+    "collapsible_content_aDW6Xh",
+    "collection_list_EUKwCm"
+  ]
+}

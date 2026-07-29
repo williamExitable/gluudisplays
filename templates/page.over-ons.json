@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_HAw7PD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DYGrG7": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_Mtq44n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welkom bij <strong>GLUU Displays</strong>, uw specialist in digitale displays! <br/>Wij zijn een toegewijd en gepassioneerd team dat zich volledig richt op de online verkoop van hoogwaardige digitale schermen. <br/>Onze missie is om uw visuele communicatie te transformeren met de nieuwste technologie en innovaties op het gebied van digitale displays.<br/><br/></p><h2>Wat we doen</h2><p>Wij bieden een zorgvuldig geselecteerd assortiment aan van digitale displays, waaronder:<br/></p><p><a href=\"/products/digital-counter-futuro-with-55-samsung-screen-horizontal\" title=\"Digital Counter Futuro\"><strong>Digital Counter Futuro</strong></a><strong>:</strong> <br/>Perfect voor toonbanken en recepties, deze displays trekken direct de aandacht van uw klanten.</p><p><a href=\"/products/digital-slim-totem-with-50-samsung-screen\" title=\"Digital Slim Totem\"><strong>Digital Slim Totem</strong></a><strong>:</strong> <br/>Elegante en slanke totems die ideaal zijn voor winkelingangen, showrooms, en beurzen.</p><p><a href=\"/products/smart-line-digitaal-a-bord\" title=\"Smart Line Digitaal A-Bord\"><strong>Smart Line Digitaal A-Bord</strong></a><strong>:</strong> <br/>Flexibele en draagbare oplossingen voor zowel binnen als buiten, perfect voor horeca en retail.</p><p><a href=\"/products/smart-line-digital-panel-black-with-43-samsung-screen\" title=\"Smart Line Digital Panel\"><strong>Smart Line Digital Panel</strong></a><strong>:</strong> <br/>Veelzijdige panelen voor uiteenlopende toepassingen, van informatieverstrekking tot reclame.</p><p><a href=\"/products/digitale-smart-line-totem-met-43-samsung-scherm-zwart\" title=\"Smart Line Digital Totem\"><strong>Smart Line Digital Totem</strong></a><strong>:</strong> <br/>Robuuste en opvallende totems die uw boodschap effectief overbrengen in diverse omgevingen.</p><p><br/></p><h2>Waarom kiezen voor GLUU Displays?</h2><p><strong>Expertise en Passie:</strong> <br/>Wij zijn gepassioneerd over de kracht van digitale schermen en de mogelijkheden die ze bieden. Onze expertise stelt ons in staat om u te voorzien van advies en ondersteuning van hoge kwaliteit.</p><p><strong>Persoonlijke Service:</strong> <br/>Bij ons bent u geen nummer. Wij nemen de tijd om naar uw behoeften te luisteren en u te begeleiden bij het maken van de beste keuze voor uw situatie.</p><p><strong>Betrouwbaarheid en Snelheid:</strong> <br/>Wij begrijpen dat tijd een cruciale factor is. Daarom garanderen we snelle levering en een efficiënte klantenservice die altijd voor u klaarstaat.</p><p><strong>Innovatieve Oplossingen:</strong> <br/>We blijven voortdurend op de hoogte van de nieuwste ontwikkelingen in de digitale displaytechnologie om u de meest geavanceerde oplossingen te kunnen bieden.<br/><br/></p><h2>Onze visie</h2><p>Bij <strong>GLUUDisplays.nl</strong> geloven we in de kracht van visuele communicatie. We zijn ervan overtuigd dat goed doordachte en mooi vormgegeven content een enorm verschil kan maken in de manier waarop uw boodschap wordt overgebracht. Daarom denken we graag met u mee over de beste content voor uw displays en bieden we advies over hoe u deze optimaal kunt inzetten.</p><p><br/></p><h2>Stel een vraag</h2><p>Heeft u vragen of wilt u meer weten over onze producten en diensten? <br/>Ons team staat altijd voor u klaar om u te helpen. <br/>Neem gerust contact met ons op via onze chat. Samen kunnen we de perfecte digitale display-oplossing voor u vinden.<br/></p>",
+            "text_style": "body"
+          }
+        },
+        "button_8arQXk": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DYGrG7",
+        "text_Mtq44n",
+        "button_8arQXk"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 990px) {.image-with-text__grid--reverse .image-with-text__content {padding-left: 0; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/pand_ae4fbd97-2d8a-4fc6-8cd2-bfcdcb32f98b.png",
+        "height": "adapt",
+        "variant": "default",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_HAw7PD"
+  ]
+}

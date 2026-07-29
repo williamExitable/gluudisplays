@@ -1,0 +1,14 @@
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <a href="{{ shop.url }}" title="Home" class="breadcrumbs-link">Home</a>
+
+{% if template == 'product' %}
+  {% assign current_collection = product.collections.first %}
+  {% if current_collection %}
+      <span aria-hidden="true" class="breadcrumbs-sep">/</span>
+      <a href="{{ current_collection.url }}" title="{{ current_collection.title }}" class="breadcrumbs-link">{{ current_collection.title }}</a>
+  {% endif %}
+  <span aria-hidden="true" class="breadcrumbs-sep">/</span>
+  <span aria-current="page" class="breadcrumbs-link">{{ product.title }}</span>
+{% endif %}
+
+</nav>

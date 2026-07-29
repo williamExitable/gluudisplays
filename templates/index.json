@@ -1,0 +1,208 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "text_Qi9GTw": {
+          "type": "text",
+          "settings": {
+            "text": "A MESSAGE THAT STICKS",
+            "text_style": "subtitle"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welkom in de wereld van digital displays",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Bekijk alle displays",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_Qi9GTw",
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".banner--desktop-transparent .banner__box {max-width: 660px;}",
+        ".subtitle {color: #000; font-weight: 700; font-size: 13px;}",
+        ".banner--adapt {max-height: 90vh;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/image_3.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "accent-1",
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_with_text_AdGyrk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_AJQYPE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elegant design",
+            "heading_size": "h1"
+          }
+        },
+        "text_Q4jKNN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Een eyecatcher dat perfect te gebruiken is bij winkelingangen, showrooms, beurzen en in de horeca.</p>",
+            "text_style": "body"
+          }
+        },
+        "multicolumn_dF9qKy": {
+          "type": "multicolumn",
+          "settings": {
+            "column_one": "<h3><strong>Samsung scherm</strong></h3><p>Dankzij het heldere beeld van dit Samsung LED-scherm trekt jouw boodschap onmiddellijk de aandacht.</p>",
+            "column_two": "<h3>Robuust staal</h3><p>Het display wordt omlijst door een stalen frame dat een robuuste en gestroomlijnde look creëert.</p>"
+          }
+        },
+        "button_n8T4M6": {
+          "type": "button",
+          "settings": {
+            "button_label": "Bekijk alle displays",
+            "button_link": "shopify://collections/digitale-displays",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AJQYPE",
+        "text_Q4jKNN",
+        "multicolumn_dF9qKy",
+        "button_n8T4M6"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".h3 {margin-bottom: 0;}",
+        "h3 + p {margin-top: 0.5rem;}",
+        ".global-media-settings {border: none;}",
+        ".image-with-text {padding-top: 3rem;}",
+        "@media screen and (min-width: 750px) {.image-with-text {padding-top: 8rem; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/screen.png",
+        "height": "adapt",
+        "variant": "floatImage",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "background-2",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_DjPHzd": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_jdzBMP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Een echte eyecatcher",
+            "heading_size": "h1"
+          }
+        },
+        "text_GpKjTc": {
+          "type": "text",
+          "settings": {
+            "text": "Laat de mooiste berichten zien op de Digitale displays van GLUU Displays.",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jdzBMP",
+        "text_GpKjTc"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Een-echte-eye-catcher.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "accent-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection__view-all {margin-top: 3rem;}",
+        ".h1 {margin-bottom: 5rem;}",
+        "@media screen and (min-width: 1024px) {.slider-component-full-width {max-width: 90%; margin: 0 auto; }}",
+        "@media screen and (min-width: 2000px) {.slider-component-full-width {max-width: 70%; }}"
+      ],
+      "settings": {
+        "title": "Voor iedere boodschap een display",
+        "heading_size": "h1",
+        "description": "",
+        "description_footer": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-f68ba790-3b4e-4d32-995e-df834acdf78e",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 52,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "image_with_text_AdGyrk",
+    "image_banner_DjPHzd",
+    "featured_collection"
+  ]
+}

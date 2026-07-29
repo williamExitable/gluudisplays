@@ -1,0 +1,190 @@
+{% comment %}
+  {% assign specs_weight = product.metafields.custom.specs_weight.value %}
+  {% assign specs_version = product.metafields.custom.specs_version.value %}
+  {% assign specs_volume = product.metafields.custom.specs_volume.value %}
+  {% assign specs_warranty = product.metafields.custom.specs_warranty.value %}
+  {% assign specs_energies = product.metafields.custom.specs_energy.value %}
+  {% assign specs_wattages = product.metafields.custom.specs_wattage.value %}
+  {% assign specs_light_intensity = product.metafields.custom.specs_light_intensity.value %}
+  {% assign specs_hanging_length = product.metafields.custom.specs_hanging_length.value %}
+  {% assign specs_colors = product.metafields.custom.specs_color.value %}
+{% endcomment %} 
+
+{%- if short_version -%}
+  {%- if specs_weight or specs_volume or specs_wattages or specs_colors -%}
+    <div class="product__technical-specs dynamic-metafields">
+        <h2 class="h2">{{ 'other.specifications' | t }}</h2>
+        <table class="table table-striped">
+         <tbody>
+         
+          {%- if specs_width -%}
+            <tr>
+               <td>{{ 'specs.width' | t }}</td>
+               <td>{{ specs_width }} cm</td>
+            </tr>
+          {%- endif -%}
+
+          {%- if specs_depth -%}
+            <tr>
+               <td>{{ 'specs.depth' | t }}</td>
+               <td>{{ specs_depth }} cm</td>
+            </tr>
+          {%- endif -%}
+           
+          {%- if specs_height -%}
+            <tr>
+               <td>{{ 'specs.height' | t }}</td>
+               <td>{{ specs_height }} cm</td>
+            </tr>
+          {%- endif -%}
+         
+         {%- if specs_volume > 0 -%}
+            <tr>
+               <td>{{ 'specs.volume' | t }}</td>
+               <td>{{ specs_volume }}</td>
+            </tr>
+         {%- endif -%}
+         
+         {%- if specs_wattages -%}
+            <tr>
+               <td>{{ 'specs.wattage' | t }}</td>
+               <td>
+                {%- for wattage in specs_wattages -%}
+                  {{ wattage }} W
+                  {% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+               </td>
+            </tr>
+         {%- endif -%}
+               
+         {%- if specs_colors -%}
+            <tr>
+               <td>{{ 'specs.color' | t }}</td>
+               <td>
+                {%- for color in specs_colors -%}
+                  {{ color }}
+                  {% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+               </td>
+            </tr>
+         {%- endif -%}
+       
+       </tbody>
+      </table>
+      <div class="rte">
+        <a href="#product-specificaties" class="scroll-to">{{ 'other.show_all_specifications' |t }}</a>
+      </div>
+    </div>
+  {%- endif -%}
+{%- else -%}
+    {%- if specs_weight or specs_volume or specs_warranty or specs_energies or specs_wattages or specs_energies or specs_light_intensity or specs_hanging_length or specs_colors -%}
+      <div class="product__technical-specs dynamic-metafields">
+        <h2 id="product-specificaties" class="h2">{{ 'other.technical_specifications' | t }}</h2>
+        <table class="table table-striped">
+          <tbody>
+            
+          {%- if specs_weight -%}
+            <tr>
+               <td>{{ 'specs.weight' | t }}</td>
+               <td>{{ specs_weight }}</td>
+            </tr>
+          {%- endif -%}
+            
+                    {%- if specs_width -%}
+            <tr>
+               <td>{{ 'specs.width' | t }}</td>
+               <td>{{ specs_width }} cm</td>
+            </tr>
+          {%- endif -%}
+
+          {%- if specs_depth -%}
+            <tr>
+               <td>{{ 'specs.depth' | t }}</td>
+               <td>{{ specs_depth }} cm</td>
+            </tr>
+          {%- endif -%}
+            
+          {%- if specs_height -%}
+            <tr>
+               <td>{{ 'specs.height' | t }}</td>
+               <td>{{ specs_height }} cm</td>
+            </tr>
+          {%- endif -%}
+            
+          {%- if specs_version -%}
+            <tr>
+               <td>{{ 'specs.version' | t }}</td>
+               <td>{{ specs_version }}</td>
+            </tr>
+          {%- endif -%}
+          
+          {%- if specs_volume > 0 -%}
+            <tr>
+               <td>{{ 'specs.volume' | t }}</td>
+               <td>{{ specs_volume }}</td>
+            </tr>
+          {%- endif -%}
+          
+          {%- if specs_warranty -%}
+            <tr>
+               <td>{{ 'specs.warranty' | t }}</td>
+               <td>{{ specs_warranty }} {{ 'specs.months' | t }}</td>
+            </tr>
+          {%- endif -%}
+          
+          {%- if specs_energies -%}
+            <tr>
+               <td>{{ 'specs.energy' | t }}</td>
+               <td>
+                {%- for energy in specs_energies -%}
+                  {{ energy }}
+                  {% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+               </td>
+            </tr>
+          {%- endif -%}
+          
+          {%- if specs_wattages -%}
+            <tr>
+               <td>{{ 'specs.wattage' | t }}</td>
+               <td>
+                {%- for wattage in specs_wattages -%}
+                  {{ wattage }} W
+                  {% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+               </td>
+            </tr>
+          {%- endif -%}
+          
+          {%- if specs_light_intensity -%}
+            <tr>
+               <td>{{ 'specs.light_intensity' | t }}</td>
+               <td>{{ specs_light_intensity }}</td>
+            </tr>
+          {%- endif -%}
+          
+          {%- if specs_hanging_length -%}
+            <tr>
+               <td>{{ 'specs.hanging_length' | t }}</td>
+               <td>{{ specs_hanging_length }}</td>
+            </tr>
+          {%- endif -%}
+          
+          
+          {%- if specs_colors -%}
+            <tr>
+               <td>{{ 'specs.color' | t }}</td>
+               <td>
+                {%- for color in specs_colors -%}
+                  {{ color }}
+                  {% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+               </td>
+            </tr>
+          {%- endif -%}
+          </tbody>
+          
+        </table>
+      </div>
+    {%- endif -%}
+{%- endif -%}

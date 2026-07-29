@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.landingspagina-producten.json",
+  "context": {
+    "market": "duitsland"
+  },
+  "sections": {
+    "rich_text_C7gkL8": {
+      "settings": {},
+      "blocks": {
+        "heading_th84fC": {
+          "settings": {
+            "heading": "Entdecken Sie unsere Digitalanzeigen"
+          }
+        },
+        "text_f6wxJk": {
+          "settings": {
+            "text": "<p>Bei GLUU Displays bieten wir eine umfassende Palette digitaler Anzeigelösungen, perfekt für jedes Unternehmen oder Event. Von innovativen digitalen Stelen und vielseitigen Messecountern bis hin zu Digital Signage und interaktiven Empfangslösungen – unsere Produkte vereinen modernes Design mit fortschrittlicher Technologie.</p>"
+          }
+        }
+      }
+    },
+    "featured_collection_6af99Y": {
+      "settings": {
+        "description": "<p>Werben oder informieren Sie Besucher und Kunden mit unseren Smart Line Digital Panels. Mit einem minimalistischen und modernen Look, perfekt, um Ihre Botschaft zu präsentieren.</p>",
+        "description_footer": "<p>Die Panels eignen sich perfekt zur Wandmontage oder zum Abhängen von der Decke, beispielsweise in einem Schaufenster. Sie sind ideal für Einzelhändler, Hotels, Restaurants, Schulen und Museen.</p>"
+      },
+      "blocks": {}
+    },
+    "rich_text_MmCKkp": {
+      "settings": {},
+      "blocks": {
+        "heading_hmBWjQ": {
+          "settings": {
+            "heading": "<strong>Digitale Panels: stilvoll und funktional</strong>"
+          }
+        },
+        "text_cffwTe": {
+          "settings": {
+            "text": "<p>Unsere Smart Line Digital Panels bieten stilvolle und funktionale Lösungen für moderne visuelle Kommunikation. Mit seinem schlanken Design und einem 43-Zoll-Bildschirm fällt dieses Display sofort auf. Perfekt, um Ihre Botschaft professionell und kraftvoll zu vermitteln.<br/><br/><strong>Wichtige Funktionen:</strong></p><ul><li>Kristallklares Display: Scharfe und lebendige Bilder für jede Umgebung. </li><li>Einfache Verwaltung: Dank Plug & Play-Funktionalität schnell und flexibel einsetzbar. </li><li>Vielseitige Anwendung: Ideal für Werbung, Informationen oder Branding.</li></ul>"
+          }
+        },
+        "button_yQVyGx": {
+          "settings": {
+            "button_label": "Zum Bestseller 'Smart Line Panels'"
+          }
+        }
+      }
+    },
+    "featured_collection_LGJtUp": {
+      "settings": {
+        "description": "<p>Stehende Displays, auch Totems genannt, sind der Blickfang für Ihre Botschaft. Dank ihres stabilen Standfußes und des auffälligen Designs eignen sie sich perfekt, um sofort die richtige Aufmerksamkeit zu erregen.</p>"
+      },
+      "blocks": {}
+    },
+    "rich_text_UFqzDy": {
+      "settings": {},
+      "blocks": {
+        "heading_KjH9fC": {
+          "settings": {
+            "heading": "Digitale Totems: Starke visuelle Wirkung"
+          }
+        },
+        "text_M6XK87": {
+          "settings": {
+            "text": "<p>Unsere Digital Slim Totems vereinen ein modernes, schlankes Design mit starker visueller Wirkung. Ausgestattet mit einem 50-Zoll-Samsung-Bildschirm ziehen diese Totems mühelos die Aufmerksamkeit auf sich und verleihen Ihrer Botschaft ein erstklassiges Aussehen. Perfekt für Werbekampagnen, Promotions oder informative Inhalte in Geschäften, auf Messen oder in Empfangsbereichen.</p><p><strong>Hauptmerkmale:</strong></p><ul><li>Modernes Design: schlank und elegant, ideal für professionelle Umgebungen.50-Zoll-Samsung-</li><li>Bildschirm: kristallklare Bildqualität für auffällige Inhalte.</li><li>Plug & Spielend: Inhalte schnell und einfach verwalten und anpassen.</li></ul>"
+          }
+        },
+        "button_8mWPij": {
+          "settings": {
+            "button_label": "Zum Bestseller 'Totems'"
+          }
+        }
+      }
+    },
+    "featured_collection_JWHpQ3": {
+      "settings": {
+        "description": "<p>Traditionelle Bürgersteigschilder und Hängeschilder sieht man überall, aber unsere digitalen A-Tafeln bieten das gewisse Extra. Durch ihr auffälliges Design und ihre dynamische Präsentation ziehen sie sofort die Aufmerksamkeit auf sich und sorgen für ein einzigartiges Kundenerlebnis. Ein echter Hingucker, der Ihre Botschaft zum Leben erweckt!</p>"
+      },
+      "blocks": {}
+    },
+    "rich_text_T9NGqP": {
+      "settings": {},
+      "blocks": {
+        "heading_3GVraF": {
+          "settings": {
+            "heading": "<strong>Digitale Kundenstopper: dynamische Hingucker</strong>"
+          }
+        },
+        "text_w4NH4D": {
+          "settings": {
+            "text": "<p>Mit unseren digitalen Smart Line-Kundenstoppern ziehen Sie sofort die Aufmerksamkeit auf sich. Diese moderne Interpretation des klassischen Bürgersteigschildes kombiniert stilvolles Design mit dynamischer Inhaltsanzeige. Perfekt für Werbeaktionen, Angebote oder Informationen, die auffallen müssen. Ideal für Einzelhandel, Gastronomie und Veranstaltungen und dank Plug & Play-Funktionalität einfach zu bedienen.<br/><br/><strong>Hauptmerkmale:</strong></p><ul><li>Mobilität: Leicht und einfach zu bewegen, flexibel im Einsatz. </li><li>Auffällig und elegant: Entwickelt, um in belebten Umgebungen sofort Aufmerksamkeit zu erregen. </li><li>Dynamischer Inhalt: scharfe Bildqualität und bewegte Bilder mit mehr Wirkung als herkömmliche Bürgersteigschilder.</li></ul>"
+          }
+        },
+        "button_6JUE6E": {
+          "settings": {
+            "button_label": "Zum Bestseller 'Smart Line Bords'"
+          }
+        }
+      }
+    },
+    "featured_collection_JJBeiM": {
+      "settings": {
+        "description": "<p>Machen Sie Eindruck mit unseren Futuro-Messetheken, die Ihre Markenidentität kraftvoll und professionell präsentieren. Kompakt, transportabel und in Sekundenschnelle aufgebaut sind sie die ideale Wahl für Events, Messen oder Empfänge. Stil und Funktionalität vereinen sich für maximale Wirkung!</p>"
+      },
+      "blocks": {}
+    },
+    "rich_text_cBAyVn": {
+      "settings": {},
+      "blocks": {
+        "heading_gQHbWV": {
+          "settings": {
+            "heading": "<strong>Digitaler Zähler: stilvoll und vielseitig</strong>"
+          }
+        },
+        "text_Jt834C": {
+          "settings": {
+            "text": "<p>Begrüßen Sie Besucher mit Stil mit den digitalen Zählern von Futuro. Mit einem hochwertigen Samsung-Bildschirm und einem schlanken Design eignen sie sich ideal für Messen, Events oder Empfänge. Zeigen Sie dynamische Inhalte, bewerben Sie Ihre Marke und hinterlassen Sie einen bleibenden Eindruck – alles mit einer benutzerfreundlichen Lösung.<br/></p><p><strong>Hauptmerkmale:</strong></p><ul><li>Stauraum: Das integrierte Regal sorgt für Ordnung und Übersicht an Ihrem Stand.</li><li>Vielseitig einsetzbar: Ideal für Promotion, Information und Branding an unterschiedlichen Standorten.</li><li>Professioneller Auftritt: Dynamische Inhalte in modernem Design stärken Ihr Markenerlebnis.</li></ul>"
+          }
+        },
+        "button_HKznWp": {
+          "settings": {
+            "button_label": "Zum Bestseller 'Futuro'"
+          }
+        }
+      }
+    }
+  }
+}

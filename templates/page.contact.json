@@ -1,0 +1,154 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "multirow_idP9ki": {
+      "type": "multirow",
+      "blocks": {
+        "row_HQUtqF": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/pand_ae4fbd97-2d8a-4fc6-8cd2-bfcdcb32f98b.png",
+            "caption": "",
+            "heading": "{{ page.title }}",
+            "text": "<p>GLUU Displays <br/>Schoutlaan 30a<br/>6002EA Weert</p><p><a href=\"mailto:info@gluudisplays.nl\" title=\"mailto:info@gluudisplays.nl\">info@gluudisplays.nl</a><br/><a href=\"tel:+31611726945\" title=\"tel:+31611726945\">+31 6 11726945</a><br/></p><p><br/>KvK 74597280<br/>BTW NL818808640B01</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_HQUtqF"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-right",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_iP6qnr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QahPdt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Handige links",
+            "heading_size": "h2"
+          }
+        },
+        "text_CHfxx7": {
+          "type": "text",
+          "settings": {
+            "text": "<h3></h3><ul><li><a href=\"https://gluudisplays.nl/pages/veelgestelde-vragen\" title=\"Veelgestelde vragen\">Veelgestelde vragen</a></li><li><a href=\"https://gluudisplays.nl/policies/privacy-policy\">Privacybeleid</a></li><li><a href=\"https://gluudisplays.nl/policies/refund-policy\">Terugbetalingsbeleid</a></li><li><a href=\"https://gluudisplays.nl/policies/terms-of-service\">Algemene voorwaarden</a></li></ul>"
+          }
+        },
+        "button_3qGPg4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QahPdt",
+        "text_CHfxx7",
+        "button_3qGPg4"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}",
+        ".rich-text__blocks ul {padding: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_BGBxwk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_riNjNL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Veelgestelde vragen",
+            "heading_size": "h2"
+          }
+        },
+        "text_fnxxHM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Heb je een vraag? Heb je onze veelgestelde vragen al bekeken?</p>"
+          }
+        },
+        "button_gpKjfL": {
+          "type": "button",
+          "settings": {
+            "button_label": "Naar de veelgestelde vragen",
+            "button_link": "shopify://pages/veelgestelde-vragen",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_riNjNL",
+        "text_fnxxHM",
+        "button_gpKjfL"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multirow_idP9ki",
+    "rich_text_iP6qnr",
+    "rich_text_BGBxwk"
+  ]
+}

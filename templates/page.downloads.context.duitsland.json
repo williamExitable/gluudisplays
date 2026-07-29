@@ -1,0 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.downloads.json",
+  "context": {
+    "market": "duitsland"
+  },
+  "sections": {
+    "rich_text_M9PTn8": {
+      "settings": {},
+      "blocks": {
+        "text_FbhHkC": {
+          "settings": {
+            "text": "<p>Willkommen auf unserer Download-Seite! Hier finden Sie alle verfügbaren Downloads zu unseren Produkten, wie beispielsweise Handbücher und Zusatzmaterialien. Finden Sie das Produkt und laden Sie einfach herunter, was Sie benötigen.</p>"
+          }
+        }
+      }
+    }
+  }
+}

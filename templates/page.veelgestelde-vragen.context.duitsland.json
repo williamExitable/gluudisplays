@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.veelgestelde-vragen.json",
+  "context": {
+    "market": "duitsland"
+  },
+  "sections": {
+    "rich_text_T9NGqP": {
+      "settings": {},
+      "blocks": {
+        "heading_3GVraF": {
+          "settings": {
+            "heading": "Ist Ihre Frage nicht dabei?"
+          }
+        },
+        "text_w4NH4D": {
+          "settings": {
+            "text": "<p>Bei Fragen zu unseren Produkten stehen wir Ihnen gerne zur Verfügung.</p>"
+          }
+        },
+        "button_6JUE6E": {
+          "settings": {
+            "button_label": "Kontaktieren Sie uns"
+          }
+        }
+      }
+    }
+  }
+}

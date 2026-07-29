@@ -1,0 +1,8 @@
+{%- if vimeo_url -%}
+  <div class="product__installation-instructions dynamic-metafields">
+    <h2 id="installatie-instructies" class="h2">{{ 'tabs.installation_instructions' | t }}</h2>
+    <div class="ratio-media">
+      <iframe src="{{ vimeo_url }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+{%- endif -%}
