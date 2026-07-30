@@ -301,7 +301,12 @@ fieldset.product-form__input .form__label {
 
 /* Overrides */
 .shopify-payment-button__more-options {
-  color: rgb(var(--color-foreground));
+  display: none;
+}
+
+.product-form__buttons .product__payment-icons.list-payment {
+  margin-top: 2rem;
+  justify-content: space-between;
 }
 
 .shopify-payment-button__button {
@@ -973,9 +978,6 @@ a.product__text {
   text-decoration-thickness: 0.2rem;
 }
 
-.product-popup-modal__content-info {
-  padding-right: 4.4rem;
-}
 
 .product-popup-modal__content-info > * {
   height: auto;

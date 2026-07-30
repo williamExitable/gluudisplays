@@ -11,6 +11,7 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 <div {{ block.shopify_attributes }}>
+  {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
@@ -95,6 +96,28 @@
           </button>
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
+
+            {%- assign ordered_payment_types = 'ideal,visa,master,maestro,american_express,apple_pay,google_pay,klarna' | split: ',' -%}
+            <ul class="list list-payment product__payment-icons" role="list">
+              {%- for ordered in ordered_payment_types -%}
+                {%- for type in shop.enabled_payment_types -%}
+                  {%- assign type_downcase = type | downcase -%}
+                  {%- if type_downcase == ordered -%}
+                    <li class="list-payment__item">
+                      {{ type_downcase | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endfor -%}
+              {%- for type in shop.enabled_payment_types -%}
+                {%- assign type_downcase = type | downcase -%}
+                {%- unless ordered_payment_types contains type_downcase -%}
+                  <li class="list-payment__item">
+                    {{ type_downcase | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
           {%- endif -%}
         </div>
       {%- endform -%}

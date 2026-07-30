@@ -105,7 +105,7 @@
       "message": "Reactie",
       "post": "Plaats een reactie",
       "back_to_blog": "Terug naar blog",
-      "share": "Dit artikelen delen",
+      "share": "Delen",
       "success": "Je reactie is geplaatst! Bedankt!",
       "success_moderated": "Je reactie is geplaatst. Wij publiceren het zo; onze blog wordt gemodereerd."
     }
@@ -139,7 +139,7 @@
         "sale_price": "Aanbiedingsprijs",
         "unit_price": "Eenheidsprijs"
       },
-      "share": "Dit product delen",
+      "share": "Delen",
       "sold_out": "Uitverkocht",
       "unavailable": "Niet beschikbaar",
       "vendor": "Verkoper",
