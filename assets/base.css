@@ -3704,6 +3704,10 @@ body.page-challenge .newsletter {
   display: inline-block;
 }
 
+.usp-bar ul li.is-active {
+  display: inline-flex;
+}
+
 
 @media screen and (min-width: 1340px) {
   .usp-bar ul {
