@@ -4,6 +4,13 @@
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
   --font-body-family: Outfit, Roboto, "Helvetica Neue", Arial, serif;
+  --color-gray-100: #f4f4f4;
+  --color-brand: #4169e1;
+  --why-choose-gluu-heading-size: calc(var(--font-heading-scale) * 3.5rem);
+  --why-choose-gluu-title-size: calc(var(--font-heading-scale) * 2rem);
+  --why-choose-gluu-icon-size: calc(var(--font-heading-scale) * 3rem);
+  --why-choose-gluu-card-padding: 4rem;
+  --why-choose-gluu-card-radius: .5em;
 }
 
 .product-card-wrapper .card,
@@ -3635,7 +3642,7 @@ body.page-challenge .newsletter {
 }
 
 .usp-bar {
-  background: rgba(var(--color-foreground), .08);
+  background: var(--color-gray-100);
   min-height: 34px;
   padding: 6px 0;
   font-size: 1.4rem;
