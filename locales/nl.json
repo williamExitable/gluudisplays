@@ -534,10 +534,10 @@
     "downloads": "Downloads"
   },
   "usps": {
-    "eyecatcher": "Dé revolutionaire eyecatcher voor een unieke klantbeleving",
-    "profi": "Professionele kwaliteit voor de beste prijs",
+    "lowest_prices": "Laagste prijzen in Nederland",
+    "visit_showroom_html": "Bezoek onze <a href=\"{{ url }}#showroom\">showroom</a>",
     "warranty": "2 jaar garantie",
-    "free_shipment_cost": "Gratis verzending"
+    "free_shipping": "Gratis verzending vanaf €75,-"
   },
   "specs": {
     "width": "Breedte",

@@ -1,10 +1,10 @@
 <div class="usp-bar">
   <div class="page-width">
       <ul>
-        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'currency-eur' -%} Laagste prijzen in Nederland</span></li>
-        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'building' -%} <span>Bezoek onze <a href="{{ pages['contact'].url }}#showroom">showroom</a></span></span></li>
-        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'shield-check' -%} {{ 'usps.warranty' | t }}</span></li>
-        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'van' -%} Gratis verzending vanaf €75,-</span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'currency-eur' -%} {{ 'usps.lowest_prices' | t }}</span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'building' -%} <span>{{ 'usps.visit_showroom_html' | t: url: pages['contact'].url }}</span></span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'shield-check' -%} {{ 'usps.warranty' | t }}</span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'van' -%} {{ 'usps.free_shipping' | t }}</span></li>
         <li class="usp-review">
           <valued-widget layout="menu" size="small" theme="dark"></valued-widget>
         </li>
@@ -19,7 +19,6 @@
       const dayTimestamp = new Date().setHours(0, 0, 0, 0);
       const index = Math.floor(dayTimestamp / 86400000) % items.length;
       const active = items[index];
-      active.classList.remove('hide-on-mobile');
       active.classList.add('is-active');
     })();
   </script>
