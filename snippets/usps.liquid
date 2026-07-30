@@ -1,10 +1,10 @@
 <div class="usp-bar">
   <div class="page-width">
       <ul>
-        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'hand-waving' -%} {{ 'usps.eyecatcher' | t }}</span></li>
+        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'currency-eur' -%} Laagste prijzen in Nederland</span></li>
         <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'building' -%} <span>Bezoek onze <a href="{{ pages['contact'].url }}#showroom">showroom</a></span></span></li>
         <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'shield-check' -%} {{ 'usps.warranty' | t }}</span></li>
-        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'van' -%} {{ 'usps.free_shipment_cost' | t }}</span></li>
+        <li data-usp-item class="hide-on-mobile"><span class="usp">{%- render 'icon-check', icon: 'van' -%} Gratis verzending vanaf €75,-</span></li>
         <li class="usp-review">
           <valued-widget layout="menu" size="small" theme="dark"></valued-widget>
         </li>
@@ -16,29 +16,11 @@
       if (!bar || !window.matchMedia('(max-width: 1339px)').matches) return;
       const items = bar.querySelectorAll('li[data-usp-item]');
       if (!items.length) return;
-      const show = function (el) {
-        el.classList.remove('hide-on-mobile');
-        el.classList.add('is-active');
-      };
-      const hide = function (el) {
-        el.classList.add('hide-on-mobile');
-        el.classList.remove('is-active');
-      };
-      const pick = function (exclude) {
-        let next;
-        do {
-          next = items[Math.floor(Math.random() * items.length)];
-        } while (next === exclude && items.length > 1);
-        return next;
-      };
-      let current = pick();
-      show(current);
-      setInterval(function () {
-        const next = pick(current);
-        hide(current);
-        show(next);
-        current = next;
-      }, 4000);
+      const dayTimestamp = new Date().setHours(0, 0, 0, 0);
+      const index = Math.floor(dayTimestamp / 86400000) % items.length;
+      const active = items[index];
+      active.classList.remove('hide-on-mobile');
+      active.classList.add('is-active');
     })();
   </script>
 </div>
