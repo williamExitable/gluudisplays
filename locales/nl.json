@@ -536,7 +536,7 @@
   },
   "usps": {
     "lowest_prices": "Laagste prijzen in Nederland",
-    "visit_showroom_html": "Bezoek onze <a href=\"{{ url }}#showroom\">showroom</a>",
+    "visit_showroom_html": "Bezoek onze <a href=\"{{ url }}\">showroom</a>",
     "warranty": "2 jaar garantie",
     "free_shipping": "Gratis verzending vanaf €75,-"
   },
