@@ -312,7 +312,8 @@
       "new_estimated_total": "Nieuw geschat totaal"
     },
     "footer": {
-      "payment": "Betaalmethoden"
+      "payment": "Betaalmethoden",
+      "payment_methods": "Betaalmogelijkheden"
     },
     "featured_blog": {
       "view_all": "Alles bekijken",

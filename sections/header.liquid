@@ -170,29 +170,82 @@
     .header.header--two-row .header__menu-row .list-menu--inline {
       flex-wrap: nowrap;
       white-space: nowrap;
+      gap: 2rem;
     }
   }
 
   .header__vat-toggle {
     display: flex;
     align-items: center;
-    padding: 0 0.5rem;
+    margin-right: .5rem;
   }
+
+@media screen and (min-width: 990px) {
+  .header__vat-toggle {
+    margin-right: 2rem;
+  }
+}
 
   .header__vat-toggle-button {
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 0.4rem 0.8rem;
-    border: 0.1rem solid rgba(var(--color-foreground), 0.2);
-    border-radius: 0.4rem;
-    background: transparent;
-    color: rgb(var(--color-foreground));
-    cursor: pointer;
+    --toggle-button-height: 2.8rem;
+    --toggle-button-min-width: 8.6rem;
+    --toggle-button-border-radius: 1.4rem;
+    --toggle-button-padding-inactive: 0 0.8rem 0 2.6rem;
+    --toggle-button-padding-active: 0 2.6rem 0 0.8rem;
+    --toggle-button-font-size: 1.1rem;
+    --toggle-button-background: rgba(var(--color-foreground), 0.55);
+    --toggle-button-active-background: #4169e1;
+    --toggle-button-color: rgb(var(--color-background));
+    --toggle-button-active-color: rgb(var(--color-background));
+    --toggle-button-knob-size: 2rem;
+    --toggle-button-knob-top: 0.4rem;
+    --toggle-button-knob-offset: 0.3rem;
+    --toggle-button-knob-color: rgb(var(--color-background));
+    --toggle-button-knob-active-color: rgb(var(--color-background));
+    --toggle-button-transition: 0.2s ease;
+
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: var(--toggle-button-height);
+    min-width: var(--toggle-button-min-width);
+    padding: var(--toggle-button-padding-inactive);
+    border: 0;
+    border-radius: var(--toggle-button-border-radius);
+    background: var(--toggle-button-background);
+    color: var(--toggle-button-color);
+    font-size: var(--toggle-button-font-size);
+    font-weight: 500;
     white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background var(--toggle-button-transition), padding var(--toggle-button-transition);
   }
 
-  .header__vat-toggle-button[aria-pressed="true"] {
-    background: rgba(var(--color-foreground), 0.1);
+  .header__vat-toggle-button::after {
+    content: '';
+    position: absolute;
+    top: var(--toggle-button-knob-top);
+    left: var(--toggle-button-knob-offset);
+    width: var(--toggle-button-knob-size);
+    height: var(--toggle-button-knob-size);
+    border-radius: 50%;
+    background: var(--toggle-button-knob-color);
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+    transition: left var(--toggle-button-transition), background var(--toggle-button-transition);
+  }
+
+  .header__vat-toggle-button[aria-checked="true"] {
+    background: var(--toggle-button-active-background);
+    color: var(--toggle-button-active-color);
+    padding: var(--toggle-button-padding-active);
+    justify-content: flex-start;
+  }
+
+  .header__vat-toggle-button[aria-checked="true"]::after {
+    left: calc(100% - var(--toggle-button-knob-size) - var(--toggle-button-knob-offset));
+    background: var(--toggle-button-knob-active-color);
   }
 
   .price-amount,
@@ -465,6 +518,10 @@
       {%- endif -%}
 
       <div class="header__utility-icons">
+        <div class="header__vat-toggle">
+          <button type="button" id="vat-toggle" class="header__vat-toggle-button" role="switch" aria-checked="false" aria-label="Schakel tussen prijzen incl./excl. BTW">excl. BTW</button>
+        </div>
+
         <div class="desktop-localization-wrapper">
           {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
             <noscript class="small-hide medium-hide">
@@ -544,12 +601,6 @@
               {% render block %}
           {%- endcase -%}
         {%- endfor -%}
-
-        <div class="header__vat-toggle">
-          <button type="button" id="vat-toggle" class="header__vat-toggle-button" aria-pressed="false" aria-label="Schakel tussen prijzen incl./excl. BTW">
-            excl. BTW
-          </button>
-        </div>
 
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {%- liquid

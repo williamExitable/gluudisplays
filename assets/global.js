@@ -1292,7 +1292,7 @@ customElements.define('product-recommendations', ProductRecommendations);
 
     if (toggle) {
       toggle.textContent = isIncl ? 'incl. BTW' : 'excl. BTW';
-      toggle.setAttribute('aria-pressed', isIncl ? 'true' : 'false');
+      toggle.setAttribute('aria-checked', isIncl ? 'true' : 'false');
     }
   }
 
