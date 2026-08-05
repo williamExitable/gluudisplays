@@ -1,13 +1,25 @@
 <div class="usp-bar">
   <div class="page-width">
       <ul>
-        <li><span class="usp">{%- render 'icon-check' -%} {{ 'usps.eyecatcher' | t }}</span></li>
-        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check' -%} {{ 'usps.profi' | t }}</span></li>
-        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check' -%} {{ 'usps.warranty' | t }}</span></li>
-        <li class="hide-on-mobile"><span class="usp">{%- render 'icon-check' -%} {{ 'usps.free_shipment_cost' | t }}</span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'currency-eur' -%} {{ 'usps.lowest_prices' | t }}</span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'building' -%} <span>{{ 'usps.visit_showroom_html' | t: url: pages['contact'].url }}</span></span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'shield-check' -%} {{ 'usps.warranty' | t }}</span></li>
+        <li data-usp-item><span class="usp">{%- render 'icon-check', icon: 'truck' -%} {{ 'usps.free_shipping' | t }}</span></li>
         <li class="usp-review">
           <valued-widget layout="menu" size="small" theme="dark"></valued-widget>
         </li>
       </ul>
   </div>
+  <script>
+    (function () {
+      const bar = document.currentScript && document.currentScript.parentElement;
+      if (!bar || !window.matchMedia('(max-width: 1339px)').matches) return;
+      const items = bar.querySelectorAll('li[data-usp-item]');
+      if (!items.length) return;
+      const dayTimestamp = new Date().setHours(0, 0, 0, 0);
+      const index = Math.floor(dayTimestamp / 86400000) % items.length;
+      const active = items[index];
+      active.classList.add('is-active');
+    })();
+  </script>
 </div>

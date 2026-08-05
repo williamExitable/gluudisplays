@@ -1,5 +1,5 @@
 {% comment %}
-  Renders share button.
+  Renders share button and question button.
   Accepts:
   - block: {Object} passes in the block information.
   - share_link: {String} url to be added to the input the user will get/copy.
@@ -10,40 +10,216 @@
     share_link: share_url
   %}
 {% endcomment %}
+{{ 'share-modal.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
 
-<share-button id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
-  <button class="share-button__button hidden">
-    {% render 'icon-share' %}
-    {{ block.settings.share_label | escape }}
-  </button>
-  <details id="Details-{{ block.id }}-{{ section.id }}">
-    <summary class="share-button__button">
-      {% render 'icon-share' %}
-      {{ block.settings.share_label | escape }}
-    </summary>
-    <div class="share-button__fallback motion-reduce">
-      <div class="field">
-        <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status"> </span>
-        <input
-          type="text"
-          class="field__input"
-          id="ShareUrl-{{ section.id }}"
-          value="{{ share_link }}"
-          placeholder="{{ 'general.share.share_url' | t }}"
-          onclick="this.select();"
-          readonly
-        >
-        <label class="field__label" for="ShareUrl-{{ section.id }}">{{ 'general.share.share_url' | t }}</label>
-      </div>
-      <button class="share-button__close hidden no-js-hidden">
+{%- liquid
+  assign share_label = block.settings.share_label | default: 'Delen'
+  assign share_title = product.title | default: article.title | default: page_title
+  assign share_image = product.featured_image | image_url: width: 1024
+  if share_image == blank
+    assign share_image = article.image | image_url: width: 1024
+  endif
+-%}
+
+<div id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
+  <div class="share-button__actions">
+    <modal-opener class="share-button__opener no-js-hidden" data-modal="#ShareModal-{{ section.id }}">
+      <button class="share-button__button" type="button" aria-haspopup="dialog">
+        <i class="ph-fill ph-share-fat" aria-hidden="true"></i>
+        <span class="share-button__label">{{ share_label | escape }}</span>
+      </button>
+    </modal-opener>
+
+    <modal-opener class="share-button__opener no-js-hidden" data-modal="#QuestionModal-{{ section.id }}">
+      <button class="share-button__button" type="button" aria-haspopup="dialog">
+        <i class="ph-fill ph-chat-dots" aria-hidden="true"></i>
+        <span class="share-button__label">Stel een vraag</span>
+      </button>
+    </modal-opener>
+  </div>
+
+  {% render 'cta-buttons', section: section %}
+
+  <a href="{{ share_link }}" class="share-button__button no-js" target="_blank" rel="noopener" aria-label="{{ share_label | escape }}">
+    <i class="ph-fill ph-share-fat" aria-hidden="true"></i>
+    <span class="share-button__label">{{ share_label | escape }}</span>
+  </a>
+
+  <modal-dialog id="ShareModal-{{ section.id }}" class="product-popup-modal share-modal">
+    <div
+      role="dialog"
+      aria-label="{{ 'products.product.share' | t }}"
+      aria-modal="true"
+      class="product-popup-modal__content share-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-Share-{{ section.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
         {% render 'icon-close' %}
-        <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
       </button>
-      <button class="share-button__copy no-js-hidden">
-        {% render 'icon-clipboard' %}
-        <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
-      </button>
+
+      <div class="product-popup-modal__content-info share-modal__body">
+        <h2 class="h2 share-modal__title">{{ 'products.product.share' | t }}</h2>
+
+        <share-modal class="share-modal__wrapper">
+          <div class="share-modal__input-wrap field">
+            <input
+              type="text"
+              class="share-modal__url field__input"
+              id="ShareUrl-{{ section.id }}"
+              value="{{ share_link }}"
+              readonly
+            >
+            <button
+              type="button"
+              class="share-button__copy button"
+              data-copied-text="{{ 'general.share.success_message' | t }}"
+              aria-controls="ShareUrl-{{ section.id }}"
+            >
+              Kopiëren
+            </button>
+          </div>
+
+          <div class="share-modal__links">
+            <a
+              class="share-modal__link"
+              href="https://www.facebook.com/sharer.php?u={{ share_link | url_encode }}"
+              target="_blank"
+              rel="noopener"
+              aria-label="{{ 'general.social.alt_text.share_on_facebook' | t }}"
+            >
+              {% render 'icon-facebook' %}
+            </a>
+            <a
+              class="share-modal__link"
+              href="https://twitter.com/intent/tweet?text={{ share_title | url_encode }}&url={{ share_link | url_encode }}"
+              target="_blank"
+              rel="noopener"
+              aria-label="{{ 'general.social.alt_text.share_on_twitter' | t }}"
+            >
+              {% render 'icon-twitter' %}
+            </a>
+            <a
+              class="share-modal__link"
+              href="https://pinterest.com/pin/create/button/?url={{ share_link | url_encode }}{% if share_image != blank %}&media={{ share_image | url_encode }}{% endif %}&description={{ share_title | url_encode }}"
+              target="_blank"
+              rel="noopener"
+              aria-label="{{ 'general.social.alt_text.share_on_pinterest' | t }}"
+            >
+              {% render 'icon-pinterest' %}
+            </a>
+          </div>
+        </share-modal>
+      </div>
     </div>
-  </details>
-</share-button>
+  </modal-dialog>
+
+  <modal-dialog id="QuestionModal-{{ section.id }}" class="product-popup-modal question-modal">
+    <div
+      role="dialog"
+      aria-label="Stel een vraag"
+      aria-modal="true"
+      class="product-popup-modal__content question-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-Question-{{ section.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div class="product-popup-modal__content-info question-modal__body">
+        <h2 class="h2 question-modal__title">Stel een vraag</h2>
+        <div data-forms-id="forms-root-1092580" class="question-form__embed">
+          <p class="question-form__placeholder">Formulier wordt geladen…</p>
+        </div>
+      </div>
+    </div>
+  </modal-dialog>
+
+  <modal-dialog id="OfferteModal-{{ section.id }}" class="product-popup-modal question-modal">
+    <div
+      role="dialog"
+      aria-label="Offerte aanvragen"
+      aria-modal="true"
+      class="product-popup-modal__content question-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-Offerte-{{ section.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div class="product-popup-modal__content-info question-modal__body">
+        <h2 class="h2 question-modal__title">Offerte aanvragen</h2>
+        <div data-forms-id="forms-root-1092220" class="question-form__embed">
+          <p class="question-form__placeholder">Formulier wordt geladen…</p>
+        </div>
+      </div>
+    </div>
+  </modal-dialog>
+
+  <modal-dialog id="CheaperModal-{{ section.id }}" class="product-popup-modal question-modal">
+    <div
+      role="dialog"
+      aria-label="Ergens anders goedkoper?"
+      aria-modal="true"
+      class="product-popup-modal__content question-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-Cheaper-{{ section.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div class="product-popup-modal__content-info question-modal__body">
+        <h2 class="h2 question-modal__title">Ergens anders goedkoper?</h2>
+        <div data-forms-id="forms-root-1092639" class="question-form__embed">
+          <p class="question-form__placeholder">Formulier wordt geladen…</p>
+        </div>
+      </div>
+    </div>
+  </modal-dialog>
+
+  <modal-dialog id="ShowroomModal-{{ section.id }}" class="product-popup-modal question-modal">
+    <div
+      role="dialog"
+      aria-label="Bezoek onze showroom"
+      aria-modal="true"
+      class="product-popup-modal__content question-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-Showroom-{{ section.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div class="product-popup-modal__content-info question-modal__body">
+        <h2 class="h2 question-modal__title">Bezoek onze showroom</h2>
+        <div data-forms-id="forms-root-1092660" class="question-form__embed">
+          <p class="question-form__placeholder">Formulier wordt geladen…</p>
+        </div>
+      </div>
+    </div>
+  </modal-dialog>
+</div>

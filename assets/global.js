@@ -1278,3 +1278,31 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+// VAT (BTW) price toggle
+(function () {
+  const STORAGE_KEY = 'gluu-vat-mode';
+  const toggle = document.getElementById('vat-toggle');
+
+  function setVatMode(mode) {
+    const isIncl = mode === 'incl';
+    document.body.classList.toggle('vat-mode--incl', isIncl);
+    document.body.classList.toggle('vat-mode--excl', !isIncl);
+    window.localStorage.setItem(STORAGE_KEY, mode);
+
+    if (toggle) {
+      toggle.textContent = isIncl ? 'incl. BTW' : 'excl. BTW';
+      toggle.setAttribute('aria-checked', isIncl ? 'true' : 'false');
+    }
+  }
+
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  setVatMode(stored === 'incl' ? 'incl' : 'excl');
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current = window.localStorage.getItem(STORAGE_KEY) || 'excl';
+      setVatMode(current === 'excl' ? 'incl' : 'excl');
+    });
+  }
+})();

@@ -104,11 +104,25 @@
 
                   {{ loop.index }}
                      {% if forloop.last %}
+                      {%- assign ordered_payment_types = 'ideal,visa,master,maestro,american_express,apple_pay,google_pay,klarna' | split: ',' -%}
                       <ul class="list list-payment" role="list">
+                        {%- for ordered in ordered_payment_types -%}
+                          {%- for type in shop.enabled_payment_types -%}
+                            {%- assign type_downcase = type | downcase -%}
+                            {%- if type_downcase == ordered -%}
+                              <li class="list-payment__item">
+                                {{ type_downcase | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                              </li>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        {%- endfor -%}
                         {%- for type in shop.enabled_payment_types -%}
-                          <li class="list-payment__item">
-                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                          </li>
+                          {%- assign type_downcase = type | downcase -%}
+                          {%- unless ordered_payment_types contains type_downcase -%}
+                            <li class="list-payment__item">
+                              {{ type_downcase | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                            </li>
+                          {%- endunless -%}
                         {%- endfor -%}
                       </ul>
                      {%- endif -%}
@@ -280,21 +294,19 @@
       -->
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
+      <div class="footer__copyright">
         <ul class="policies list-unstyled">
           <li>
-            &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+            &copy; {{ 'now' | date: '%Y' }} &nbsp; {{ shop.name | link_to: routes.root_url -}}
           </li>
           <li>
-            <small class="copyright__content"><a href="javascript: Cookiebot.renew()">{{ 'cookiebot.change_cookies' | t }}</a></small>
+           <a href="javascript: Cookiebot.renew()">{{ 'cookiebot.change_cookies' | t }}</a>
           </li>
         {%- if section.settings.show_policy -%}
             {%- for policy in shop.policies -%}
               {%- if policy != blank -%}
                 <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title }}</a></small
-                  >
+                 <a href="{{ policy.url }}">{{ policy.title }}</a>
                 </li>
               {%- endif -%}
             {%- endfor -%}

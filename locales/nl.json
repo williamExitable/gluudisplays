@@ -105,7 +105,7 @@
       "message": "Reactie",
       "post": "Plaats een reactie",
       "back_to_blog": "Terug naar blog",
-      "share": "Dit artikelen delen",
+      "share": "Delen",
       "success": "Je reactie is geplaatst! Bedankt!",
       "success_moderated": "Je reactie is geplaatst. Wij publiceren het zo; onze blog wordt gemodereerd."
     }
@@ -139,7 +139,7 @@
         "sale_price": "Aanbiedingsprijs",
         "unit_price": "Eenheidsprijs"
       },
-      "share": "Dit product delen",
+      "share": "Delen",
       "sold_out": "Uitverkocht",
       "unavailable": "Niet beschikbaar",
       "vendor": "Verkoper",
@@ -312,7 +312,8 @@
       "new_estimated_total": "Nieuw geschat totaal"
     },
     "footer": {
-      "payment": "Betaalmethoden"
+      "payment": "Betaalmethoden",
+      "payment_methods": "Betaalmogelijkheden"
     },
     "featured_blog": {
       "view_all": "Alles bekijken",
@@ -534,10 +535,10 @@
     "downloads": "Downloads"
   },
   "usps": {
-    "eyecatcher": "Dé revolutionaire eyecatcher voor een unieke klantbeleving",
-    "profi": "Professionele kwaliteit voor de beste prijs",
+    "lowest_prices": "Laagste prijzen in Nederland",
+    "visit_showroom_html": "Bezoek onze <a href=\"{{ url }}#showroom\">showroom</a>",
     "warranty": "2 jaar garantie",
-    "free_shipment_cost": "Gratis verzending"
+    "free_shipping": "Gratis verzending vanaf €75,-"
   },
   "specs": {
     "width": "Breedte",

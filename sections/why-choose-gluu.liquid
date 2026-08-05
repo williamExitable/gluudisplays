@@ -1,0 +1,108 @@
+{{ 'section-why-choose-gluu.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 2 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 2 }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="why-choose-gluu color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="why-choose-gluu__heading h2">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="why-choose-gluu__grid">
+      <div class="why-choose-gluu__item">
+        <div class="card">
+          <div class="why-choose-gluu__icon icon">
+            <i class="ph-fill ph-truck"></i>
+          </div>
+          <h3 class="h4 why-choose-gluu__title title">Gratis verzending</h3>
+          <p>Alle bestellingen boven de €75 worden zonder extra kosten bij je thuis bezorgd.</p>
+          <div class="why-choose-gluu__link">
+            <a href="{{ pages['verzending'].url }}">Meer over verzenden</a>
+          </div>
+        </div>
+      </div>
+      <div class="why-choose-gluu__item">
+        <div class="card">
+          <div class="why-choose-gluu__icon icon">
+            <i class="ph-fill ph-arrow-u-up-left"></i>
+          </div>
+          <h3 class="h4 why-choose-gluu__title title">Eenvoudig retourneren</h3>
+          <p>Zorgeloos winkelen dankzij ons makkelijke retourbeleid.</p>
+          <div class="why-choose-gluu__link">
+            <a href="{{ shop.refund_policy.url }}">Meer over retour & ruilen</a>
+          </div>
+        </div>
+      </div>
+      <div class="why-choose-gluu__item">
+        <div class="card">
+          <div class="why-choose-gluu__icon icon">
+            <i class="ph-fill ph-headset"></i>
+          </div>
+          <h3 class="h4 why-choose-gluu__title title">Deskundig advies</h3>
+          <p>Wij testen alle producten zelf voor 100% eerlijk en onafhankelijk advies.</p>
+          <div class="why-choose-gluu__link">
+              <a href="{{ pages['contact'].url }}">Neem contact op</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Why choose GLUU",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Waarom kies je voor GLUU Displays?",
+      "label": "Heading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why choose GLUU"
+    }
+  ]
+}
+{% endschema %}

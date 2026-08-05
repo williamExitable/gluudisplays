@@ -4,6 +4,13 @@
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
   --font-body-family: Outfit, Roboto, "Helvetica Neue", Arial, serif;
+  --color-gray-100: #f4f4f4;
+  --color-brand: #4169e1;
+  --why-choose-gluu-heading-size: calc(var(--font-heading-scale) * 3.5rem);
+  --why-choose-gluu-title-size: calc(var(--font-heading-scale) * 2rem);
+  --why-choose-gluu-icon-size: calc(var(--font-heading-scale) * 3rem);
+  --why-choose-gluu-card-padding: 4rem;
+  --why-choose-gluu-card-radius: .5em;
 }
 
 .product-card-wrapper .card,
@@ -1353,6 +1360,30 @@ button.shopify-payment-button__button--unbranded {
   --buttons-radius: 5px;
   --buttons-radius-outset: 6px;
     min-height: calc(4.5rem + var(--buttons-border-width) * 2) !important;
+}
+
+.button--primary,
+.button--tertiary {
+  transition: box-shadow var(--duration-short) ease, background-color var(--duration-short) ease;
+}
+
+.button--primary:not([disabled]):hover,
+.button--tertiary:not([disabled]):hover {
+  background-color: rgba(var(--color-button), 0.85);
+}
+
+.button--primary:not([disabled]):hover::after,
+.button--tertiary:not([disabled]):hover::after {
+  box-shadow: none;
+}
+
+.button--primary {
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button--primary:not([disabled]):hover {
+  background-color: rgb(var(--color-button));
+  box-shadow: inset 0 0 0 100rem rgba(0, 0, 0, 0.2);
 }
 
 .button--facet {
@@ -2848,8 +2879,13 @@ li.list-menu-item-contact .header__menu-item {
   }
 
   .header--middle-left .header__inline-menu {
-    margin-left: 0;
+      margin-left: -1.5rem;
   }
+
+  .header--middle-left .header__secondary-menu {
+    margin-right: -1.5rem;
+  }
+
 }
 
 .header__menu {
@@ -3157,7 +3193,7 @@ details-disclosure > details {
 }
 
 
-body, h1, h2, h3, h4, h5, h6, p, a, li, *:not(.fa):not([class*="pe-"]):not(.lni):not(i[class*="iccl-"]):not(i[class*="la"]):not(i[class*="fa"]):not(.jdgm-star):not(.wwk-stars__star) {
+body, h1, h2, h3, h4, h5, h6, p, a, li, *:not(.fa):not([class*="pe-"]):not(.lni):not(i[class*="iccl-"]):not(i[class*="la"]):not(i[class*="fa"]):not(.jdgm-star):not(.wwk-stars__star):not([class*="ph-"]) {
     font-family: var(--font-body-family) !important;
 }
 
@@ -3630,7 +3666,7 @@ body.page-challenge .newsletter {
 }
 
 .usp-bar {
-  background: rgba(var(--color-foreground), .08);
+  background: var(--color-gray-100);
   min-height: 34px;
   padding: 6px 0;
   font-size: 1.4rem;
@@ -3657,27 +3693,22 @@ body.page-challenge .newsletter {
   margin: 0;
 }
 
-.usp-bar ul li.hide-on-mobile {
- display: none; 
+.usp-bar ul li[data-usp-item] {
+ display: none;
 }
 
   
 .usp-bar .ui-icon {
   margin-right: 10px;
-  display: inline-block;
+  font-size: 2rem;
 }
 
 .usp-bar .usp {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
-  .ui-icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 14px;
-    height: 14px;
-  }
+  align-items: center;
+  line-height: 1;
 }
 
 .usp-bar .usp .ui-icon {
@@ -3690,25 +3721,31 @@ body.page-challenge .newsletter {
   flex-shrink: 0;
 }
 
-@media screen and (min-width: 440px) {
-
-  .usp-bar .usp {
-    padding-left: 25px;
-  }
-    
-  .usp-bar .usp .ui-icon {
-    display: inline-block;
-  }
+.usp-bar .usp a {
+  text-decoration: underline;
+  color: currentColor;
+  font-weight: 600;
 }
 
+.usp-bar .usp a:hover {
+  text-decoration: none;
+}
+
+.usp-bar .usp .ui-icon {
+  display: inline-block;
+}
+
+.usp-bar ul li.is-active {
+  display: inline-flex;
+}
 
 
 @media screen and (min-width: 1340px) {
   .usp-bar ul {
     justify-content: space-between;
   }
-  .usp-bar ul li.hide-on-mobile {
-   display: inline-block; 
+  .usp-bar ul li[data-usp-item] {
+   display: inline-block;
   }
 }
 
@@ -3792,5 +3829,33 @@ body.page-challenge .newsletter {
   .webwinkelkeur img {
     max-width: 75%;
   }
-  
+
+}
+
+.menu-drawer__secondary-menu.list-menu {
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+
+.predictive-search__loading-state {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  display: none;
+}
+
+predictive-search[loading] .predictive-search__loading-state {
+  display: flex !important
+}
+
+.page__content ul + h2,
+.page__content ul + h3 {
+  margin-top: 5rem;
 }

@@ -292,6 +292,7 @@
 
 .footer__copyright {
   text-align: center;
+  font-size: 1.3rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -462,7 +463,7 @@
 }
 
 .copyright__content {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .copyright__content a {
@@ -472,13 +473,21 @@
 
 .policies {
   display: inline;
+  line-height: 1;
+}
+
+@media screen and (min-width: 750px) {
+  .policies {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .policies li {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0.6rem 0 0 0;
+  padding: 0;
 }
 
 .policies li:last-child {
@@ -486,8 +495,13 @@
 }
 
 .policies li:not(:first-child)::before {
-  content: '\00B7';
-  padding: 0 0.8rem;
+  content: '';
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: 0 0.8rem;
+  border-radius: 50%;
+  background-color: currentColor;
 }
 
 .policies li a {

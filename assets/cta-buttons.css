@@ -1,0 +1,38 @@
+/* CTA buttons styles */
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.cta-actions__opener {
+  display: inline-block;
+}
+
+.cta-button {
+  font-size: 1.6rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.cta-button i {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.cta-button .cta-button__label {
+  text-decoration: none;
+  text-underline-offset: 0.3rem;
+}
+
+.cta-button:hover .cta-button__label {
+    text-decoration: underline;
+}
+

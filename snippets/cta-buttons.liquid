@@ -1,0 +1,29 @@
+{% comment %}
+  Renders product CTA buttons for quote and price match.
+  Accepts:
+  - section: {Object} section object
+{% endcomment %}
+{{ 'cta-buttons.css' | asset_url | stylesheet_tag }}
+
+<div class="cta-actions">
+  <modal-opener class="cta-actions__opener no-js-hidden" data-modal="#OfferteModal-{{ section.id }}">
+    <button class="cta-button" type="button" aria-haspopup="dialog">
+      <i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>
+      <span class="cta-button__label">Offerte aanvragen</span>
+    </button>
+  </modal-opener>
+
+  <modal-opener class="cta-actions__opener no-js-hidden" data-modal="#CheaperModal-{{ section.id }}">
+    <button class="cta-button" type="button" aria-haspopup="dialog">
+      <i class="ph-fill ph-currency-eur" aria-hidden="true"></i>
+      <span class="cta-button__label">Ergens anders goedkoper?</span>
+    </button>
+  </modal-opener>
+
+  <modal-opener class="cta-actions__opener no-js-hidden" data-modal="#ShowroomModal-{{ section.id }}">
+    <button class="cta-button" type="button" aria-haspopup="dialog">
+      <i class="ph-fill ph-building" aria-hidden="true"></i>
+      <span class="cta-button__label">Bezoek onze showroom</span>
+    </button>
+  </modal-opener>
+</div>
