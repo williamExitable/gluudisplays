@@ -12,6 +12,7 @@
 {% endcomment %}
 {{ 'share-modal.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'question-form.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   assign share_label = block.settings.share_label | default: 'Delen'
@@ -20,6 +21,23 @@
   if share_image == blank
     assign share_image = article.image | image_url: width: 1024
   endif
+
+  comment
+    Each entry is "modal key|modal title|Shopify Forms form id|heading". The form id is
+    the data-forms-id value rendered by the Shopify Forms app block, so the app block can
+    be placed anywhere in the section and gets moved into the matching modal. The title is
+    always used as the dialog label; only entries marked "show" also render a heading,
+    because most of these forms already render their own.
+  endcomment
+  assign question_modals = 'Question|Stel een vraag|forms-root-1092580,Offerte|Offerte aanvragen|forms-root-1092220,Cheaper|Ergens anders goedkoper?|forms-root-1092639|show,Showroom|Bezoek onze showroom|forms-root-1092660' | split: ','
+  assign contact_url = pages.contact.url | default: '/pages/contact'
+
+  comment
+    Label of the Shopify Forms text field that gets prefilled with the article number,
+    product title and product URL. The field is hidden from the customer.
+  endcomment
+  assign question_form_field = 'Product'
+  assign question_form_variant = product.selected_or_first_available_variant
 -%}
 
 <div id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
@@ -119,107 +137,56 @@
     </div>
   </modal-dialog>
 
-  <modal-dialog id="QuestionModal-{{ section.id }}" class="product-popup-modal question-modal">
-    <div
-      role="dialog"
-      aria-label="Stel een vraag"
-      aria-modal="true"
-      class="product-popup-modal__content question-modal__content"
-      tabindex="-1"
-    >
-      <button
-        id="ModalClose-Question-{{ section.id }}"
-        type="button"
-        class="product-popup-modal__toggle"
-        aria-label="{{ 'accessibility.close' | t }}"
+  {%- for question_modal in question_modals -%}
+    {%- liquid
+      assign parts = question_modal | split: '|'
+      assign modal_key = parts[0]
+      assign modal_title = parts[1]
+      assign modal_form_id = parts[2]
+      assign modal_heading = parts[3]
+    -%}
+    <modal-dialog id="{{ modal_key }}Modal-{{ section.id }}" class="product-popup-modal question-modal">
+      <div
+        role="dialog"
+        aria-label="{{ modal_title | escape }}"
+        aria-modal="true"
+        class="product-popup-modal__content question-modal__content"
+        tabindex="-1"
       >
-        {% render 'icon-close' %}
-      </button>
+        <button
+          id="ModalClose-{{ modal_key }}-{{ section.id }}"
+          type="button"
+          class="product-popup-modal__toggle"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {% render 'icon-close' %}
+        </button>
 
-      <div class="product-popup-modal__content-info question-modal__body">
-        <h2 class="h2 question-modal__title">Stel een vraag</h2>
-        <div data-forms-id="forms-root-1092580" class="question-form__embed">
-          <p class="question-form__placeholder">Formulier wordt geladen…</p>
+        <div class="product-popup-modal__content-info question-modal__body">
+          {%- if modal_heading == 'show' -%}
+            <h2 class="h2 question-modal__title">{{ modal_title }}</h2>
+          {%- endif -%}
+          <question-form-embed
+            class="question-form__embed"
+            data-form-id="{{ modal_form_id }}"
+            {%- if product %}
+              data-fill-label="{{ question_form_field | escape }}"
+              data-fill-hidden
+              data-section-id="{{ section.id }}"
+              data-sku="{{ question_form_variant.sku | escape }}"
+              data-variant-id="{{ question_form_variant.id }}"
+              data-product-title="{{ product.title | escape }}"
+              data-product-url="{{ product.url | prepend: request.origin }}"
+            {%- endif %}
+          >
+            <p class="question-form__placeholder">Formulier wordt geladen…</p>
+            <p class="question-form__fallback">
+              Het formulier kan niet worden geladen.
+              <a href="{{ contact_url }}">Neem contact met ons op</a>.
+            </p>
+          </question-form-embed>
         </div>
       </div>
-    </div>
-  </modal-dialog>
-
-  <modal-dialog id="OfferteModal-{{ section.id }}" class="product-popup-modal question-modal">
-    <div
-      role="dialog"
-      aria-label="Offerte aanvragen"
-      aria-modal="true"
-      class="product-popup-modal__content question-modal__content"
-      tabindex="-1"
-    >
-      <button
-        id="ModalClose-Offerte-{{ section.id }}"
-        type="button"
-        class="product-popup-modal__toggle"
-        aria-label="{{ 'accessibility.close' | t }}"
-      >
-        {% render 'icon-close' %}
-      </button>
-
-      <div class="product-popup-modal__content-info question-modal__body">
-        <h2 class="h2 question-modal__title">Offerte aanvragen</h2>
-        <div data-forms-id="forms-root-1092220" class="question-form__embed">
-          <p class="question-form__placeholder">Formulier wordt geladen…</p>
-        </div>
-      </div>
-    </div>
-  </modal-dialog>
-
-  <modal-dialog id="CheaperModal-{{ section.id }}" class="product-popup-modal question-modal">
-    <div
-      role="dialog"
-      aria-label="Ergens anders goedkoper?"
-      aria-modal="true"
-      class="product-popup-modal__content question-modal__content"
-      tabindex="-1"
-    >
-      <button
-        id="ModalClose-Cheaper-{{ section.id }}"
-        type="button"
-        class="product-popup-modal__toggle"
-        aria-label="{{ 'accessibility.close' | t }}"
-      >
-        {% render 'icon-close' %}
-      </button>
-
-      <div class="product-popup-modal__content-info question-modal__body">
-        <h2 class="h2 question-modal__title">Ergens anders goedkoper?</h2>
-        <div data-forms-id="forms-root-1092639" class="question-form__embed">
-          <p class="question-form__placeholder">Formulier wordt geladen…</p>
-        </div>
-      </div>
-    </div>
-  </modal-dialog>
-
-  <modal-dialog id="ShowroomModal-{{ section.id }}" class="product-popup-modal question-modal">
-    <div
-      role="dialog"
-      aria-label="Bezoek onze showroom"
-      aria-modal="true"
-      class="product-popup-modal__content question-modal__content"
-      tabindex="-1"
-    >
-      <button
-        id="ModalClose-Showroom-{{ section.id }}"
-        type="button"
-        class="product-popup-modal__toggle"
-        aria-label="{{ 'accessibility.close' | t }}"
-      >
-        {% render 'icon-close' %}
-      </button>
-
-      <div class="product-popup-modal__content-info question-modal__body">
-        <h2 class="h2 question-modal__title">Bezoek onze showroom</h2>
-        <div data-forms-id="forms-root-1092660" class="question-form__embed">
-          <p class="question-form__placeholder">Formulier wordt geladen…</p>
-        </div>
-      </div>
-    </div>
-  </modal-dialog>
+    </modal-dialog>
+  {%- endfor -%}
 </div>
