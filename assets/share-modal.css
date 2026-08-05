@@ -133,9 +133,23 @@
   text-align: center;
 }
 
-.question-form__placeholder {
+.question-form__embed {
+  display: block;
+}
+
+.question-form__placeholder,
+.question-form__fallback {
   text-align: center;
   color: rgba(var(--color-foreground), 0.75);
+}
+
+.question-form__fallback,
+question-form-embed[loaded] .question-form__placeholder {
+  display: none;
+}
+
+question-form-embed[failed] .question-form__fallback {
+  display: block;
 }
 
 /* Center modals on screen */
