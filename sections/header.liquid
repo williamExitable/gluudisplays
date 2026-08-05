@@ -172,6 +172,53 @@
       white-space: nowrap;
     }
   }
+
+  .header__vat-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  .header__vat-toggle-button {
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.4rem 0.8rem;
+    border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+    border-radius: 0.4rem;
+    background: transparent;
+    color: rgb(var(--color-foreground));
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .header__vat-toggle-button[aria-pressed="true"] {
+    background: rgba(var(--color-foreground), 0.1);
+  }
+
+  .price-amount,
+  .price-vat-view {
+    display: inline;
+  }
+
+  body.vat-mode--excl .price-amount__view--excl,
+  body.vat-mode--incl .price-amount__view--incl {
+    display: inline !important;
+  }
+
+  body.vat-mode--excl .price-amount__view--incl,
+  body.vat-mode--incl .price-amount__view--excl {
+    display: none !important;
+  }
+
+  body.vat-mode--excl .product__tax .price-vat-view--incl,
+  body.vat-mode--incl .product__tax .price-vat-view--excl {
+    display: inline !important;
+  }
+
+  body.vat-mode--excl .product__tax .price-vat-view--excl,
+  body.vat-mode--incl .product__tax .price-vat-view--incl {
+    display: none !important;
+  }
 </style>
 
 {%- style -%}
@@ -497,6 +544,12 @@
               {% render block %}
           {%- endcase -%}
         {%- endfor -%}
+
+        <div class="header__vat-toggle">
+          <button type="button" id="vat-toggle" class="header__vat-toggle-button" aria-pressed="false" aria-label="Schakel tussen prijzen incl./excl. BTW">
+            excl. BTW
+          </button>
+        </div>
 
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {%- liquid
