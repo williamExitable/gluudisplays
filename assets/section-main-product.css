@@ -1003,7 +1003,7 @@ a.product__text {
   cursor: pointer;
   position: sticky;
   padding: 1.2rem;
-  z-index: 2;
+  z-index: 10;
   top: 1.5rem;
   width: 4rem;
   margin: 0 0 0 auto;
