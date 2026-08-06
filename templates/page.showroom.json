@@ -40,6 +40,9 @@
       "block_order": [
         "forms_inline_mBPzC7"
       ],
+      "custom_css": [
+        "#custom#product {display: none;}"
+      ],
       "settings": {
         "include_margins": true
       }
