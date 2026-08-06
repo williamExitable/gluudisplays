@@ -185,6 +185,15 @@
     margin-right: .5rem;
   }
 
+/* Mobiel: .header__utility-icons is display:contents, dus de vat-toggle is een
+   flex-item van .header__icons. Met order zetten we hem vóór het zoek-icoon
+   zonder de DOM-volgorde (en daarmee de desktop-grid) aan te passen. */
+@media screen and (max-width: 989px) {
+  .header__icons .header__vat-toggle {
+    order: -1;
+  }
+}
+
 @media screen and (min-width: 990px) {
   .header__vat-toggle {
     margin-right: 2rem;
