@@ -3892,9 +3892,11 @@ shopify-forms-embed {
 
   --button-background-color: rgba(var(--color-button), var(--alpha-button-background)) !important;
   --button-text-color: rgb(var(--color-button-text)) !important;
+  --color-button-hover: color-mix(in srgb, rgb(var(--color-button)) 95%, rgb(0, 0, 0)) !important;
   --button-border-radius: var(--buttons-radius-outset) !important;
   --button-border: var(--buttons-border-width) solid rgba(var(--color-button-text), calc(1 - var(--buttons-border-opacity))) !important;
   --button-padding: 1.95rem 3rem !important;
+  /* Terugval als JS niet laadt; met JS wordt filter: none gezet en background-color gebruikt. */
   --button-background-color-hovered-modifier: brightness(0.95) !important;
 }
 
