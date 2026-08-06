@@ -1,0 +1,60 @@
+/*
+  Shopify Forms rendert elk formulier in een shadow DOM (<shopify-forms-embed>).
+  De app-stijlen lezen custom properties van :host, en custom properties erven door de
+  shadow-grens heen; declaraties uit het document winnen van :host. Hiermee krijgen de
+  heading, tekst, velden en knop dus de waarden van het thema, zonder JavaScript.
+
+  Let op: de app injecteert zijn eigen kleuren (zoals #202020 voor de knop) vaak als
+  inline-stijl op het host-element. Daarom gebruiken we !important op de variabelen die
+  de app werkelijk toepast.
+*/
+
+shopify-forms-embed {
+  /*
+    De heading gebruikt --font-body-family en niet --font-heading-family: base.css forceert
+    met een globale !important-regel de body-family op alle koppen (h1-h6), dus dat is wat
+    de rest van het thema ook laat zien.
+  */
+  --forms-heading-font: var(--font-heading-style) var(--font-heading-weight)
+    calc(var(--font-heading-scale) * 2rem) var(--font-body-family) !important;
+  --forms-heading-font-size: calc(var(--font-heading-scale) * 2rem) !important;
+  --heading-font-size: calc(var(--font-heading-scale) * 2rem) !important;
+  --forms-body-font: var(--font-body-style) var(--font-body-weight) 1.5rem var(--font-body-family) !important;
+  --forms-base-font-size: 1.5rem !important;
+
+  --heading-text-color: rgb(var(--color-foreground)) !important;
+  --body-text-color: rgba(var(--color-foreground), 0.75) !important;
+  --forms-accent-color: rgb(var(--color-link)) !important;
+
+  /* Velden: zelfde ring, radius en kleuren als .field in het thema */
+  --form-text-color: rgb(var(--color-foreground)) !important;
+  --form-placeholder-color: rgba(var(--color-foreground), 0.55) !important;
+  --form-background-color: rgb(var(--color-background)) !important;
+  --form-field-border-radius: var(--inputs-radius-outset) !important;
+  --form-field-border: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity)) !important;
+  --form-field-border-focused: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgb(var(--color-foreground)) !important;
+
+  /* Knop: de kleuren van het thema, niet van de app-instellingen */
+  --button-background-color: rgba(var(--color-button), var(--alpha-button-background)) !important;
+  --button-text-color: rgb(var(--color-button-text)) !important;
+  --button-border-radius: var(--buttons-radius-outset) !important;
+  --button-border: var(--buttons-border-width) solid rgba(var(--color-button-text), calc(1 - var(--buttons-border-opacity))) !important;
+  --button-padding: 1.95rem 3rem !important;
+  /*
+    Hover: de app biedt hier alleen een filter, geen kleur. brightness(0.95) geeft in sRGB
+    exact dezelfde donkere kleur als --color-button-hover bij .button--primary in base.css,
+    dus 5% donkerder in plaats van de lichtere opacity(80%) van de app.
+  */
+  --button-background-color-hovered-modifier: brightness(0.95) !important;
+}
+
+@media screen and (min-width: 750px) {
+  shopify-forms-embed {
+    --forms-heading-font: var(--font-heading-style) var(--font-heading-weight)
+      calc(var(--font-heading-scale) * 2.4rem) var(--font-body-family) !important;
+    --forms-heading-font-size: calc(var(--font-heading-scale) * 2.4rem) !important;
+    --heading-font-size: calc(var(--font-heading-scale) * 2.4rem) !important;
+    --forms-body-font: var(--font-body-style) var(--font-body-weight) 1.6rem var(--font-body-family) !important;
+    --forms-base-font-size: 1.6rem !important;
+  }
+}

@@ -47,6 +47,7 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'shopify-forms.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'feather.js' | asset_url }}"></script>
 
     {%- if settings.animations_reveal_on_scroll -%}
@@ -70,6 +71,25 @@
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
     
+    {%- comment -%}
+      The showroom page embeds the same Shopify Forms form as the showroom product modal,
+      where the Product field is prefilled with the article number. There is no product
+      here, so hide that field. The form can render either in the light DOM or in the
+      shadow root of <form-embed>: the style tag covers the first case, window.formStyles
+      is the hook the Forms loader uses to adopt stylesheets into the shadow root.
+    {%- endcomment -%}
+    {%- if page.handle == 'showroom' -%}
+      {%- capture forms_hidden_field_css -%}
+        [data-testid="field-custom#product"], label[for="custom#product"] { display: none !important; }
+        div:has(> [data-testid="field-custom#product"]) { display: none !important; }
+      {%- endcapture -%}
+      <style>{{ forms_hidden_field_css }}</style>
+      <script>
+        window.formStyles = window.formStyles || new Map();
+        window.formStyles.set('gluu-hide-product-field', {{ forms_hidden_field_css | json }});
+      </script>
+    {%- endif -%}
+
     {{ content_for_header }}
     {% render 'cookie-consent' %}
 
