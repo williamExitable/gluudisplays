@@ -6,7 +6,7 @@
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-{%- if section.settings.menu_type_desktop == 'mega' -%}
+{%- if section.settings.menu_type_desktop == 'mega' or section.settings.secondary_menu != blank -%}
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
@@ -98,6 +98,11 @@
   .header__secondary-menu .header__menu-item:hover {
     color: rgb(var(--color-foreground));
     font-weight: 600;
+  }
+
+  .header__secondary-menu .header__active-menu-item,
+  .header__secondary-menu .header__active-menu-item + svg {
+    color: rgb(var(--color-link));
   }
 
   @media screen and (min-width: 990px) {
@@ -399,23 +404,12 @@
       {%- if section.settings.secondary_menu != blank -%}
         {%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
         {%- if secondary_menu != blank -%}
-          <nav class="header__secondary-menu" aria-label="Secundair menu">
-            <ul class="list-menu list-menu--inline" role="list">
-              {%- for link in secondary_menu.links -%}
-                <li>
-                  <a
-                    href="{{ link.url }}"
-                    class="header__menu-item list-menu__item link link--text focus-inset"
-                    {%- if link.current -%} aria-current="page" {%- endif -%}
-                  >
-                    <span {%- if link.current %} class="header__active-menu-item"{% endif %}>
-                      {{- link.title | escape -}}
-                    </span>
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ul>
-          </nav>
+          {%- render 'header-mega-menu',
+            menu: secondary_menu,
+            nav_class: 'header__secondary-menu',
+            nav_label: 'Secundair menu',
+            id_prefix: 'SecondaryHeaderMenu'
+          -%}
         {%- endif -%}
       {%- endif -%}
     </div>
