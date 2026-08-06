@@ -1,16 +1,16 @@
 // Title tag indicator
-let title = document.title;
-let tabMessage = "Klasse displays voor de beste prijs! GLUU Displays";
-if (tabMessage.length > 1) {
-    document.addEventListener("visibilitychange", function (e) {
-        let pageActive = !document.hidden;
-        if (!pageActive) {
-            document.title = tabMessage;
-        } else {
-            document.title = title;
-        }
-    });
-}
+// let title = document.title;
+// let tabMessage = "Klasse displays voor de beste prijs! GLUU Displays";
+// if (tabMessage.length > 1) {
+//     document.addEventListener("visibilitychange", function (e) {
+//         let pageActive = !document.hidden;
+//         if (!pageActive) {
+//             document.title = tabMessage;
+//         } else {
+//             document.title = title;
+//         }
+//     });
+// }
 
 function getFocusableElements(container) {
   return Array.from(
