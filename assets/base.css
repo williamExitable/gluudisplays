@@ -1377,13 +1377,14 @@ button.shopify-payment-button__button--unbranded {
   box-shadow: none;
 }
 
+/* 5% donkerder dan de knopkleur, hier gedeclareerd zodat --color-button van het actieve
+   kleurenschema wordt gebruikt. Dezelfde waarde als brightness(0.95) in shopify-forms.css. */
 .button--primary {
-  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+  --color-button-hover: color-mix(in srgb, rgb(var(--color-button)) 95%, rgb(0, 0, 0));
 }
 
 .button--primary:not([disabled]):hover {
-  background-color: rgb(var(--color-button));
-  box-shadow: inset 0 0 0 100rem rgba(0, 0, 0, 0.2);
+  background-color: var(--color-button-hover);
 }
 
 .button--facet {
@@ -3858,4 +3859,52 @@ predictive-search[loading] .predictive-search__loading-state {
 .page__content ul + h2,
 .page__content ul + h3 {
   margin-top: 5rem;
+}
+
+/*
+  Shopify Forms - gedeclareerd in base.css omdat het aparte bestand via theme.liquid
+  niet gesynced wordt door shopify theme dev. Zodra dat wel lukt, kan dit naar
+  assets/shopify-forms.css verhuisd worden.
+
+  De app rendert in een shadow DOM (<shopify-forms-embed>) en leest custom properties
+  van :host. Custom properties erven door de shadow-grens; document-regels winnen van
+  :host. De app injecteert zelf kleuren via inline-stijl, vandaar !important.
+*/
+
+shopify-forms-embed {
+  --forms-heading-font: var(--font-heading-style) var(--font-heading-weight)
+    calc(var(--font-heading-scale) * 2rem) var(--font-body-family) !important;
+  --forms-heading-font-size: calc(var(--font-heading-scale) * 2rem) !important;
+  --heading-font-size: calc(var(--font-heading-scale) * 2rem) !important;
+  --forms-body-font: var(--font-body-style) var(--font-body-weight) 1.5rem var(--font-body-family) !important;
+  --forms-base-font-size: 1.5rem !important;
+
+  --heading-text-color: rgb(var(--color-foreground)) !important;
+  --body-text-color: rgba(var(--color-foreground), 0.75) !important;
+  --forms-accent-color: rgb(var(--color-link)) !important;
+
+  --form-text-color: rgb(var(--color-foreground)) !important;
+  --form-placeholder-color: rgba(var(--color-foreground), 0.55) !important;
+  --form-background-color: rgb(var(--color-background)) !important;
+  --form-field-border-radius: var(--inputs-radius-outset) !important;
+  --form-field-border: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity)) !important;
+  --form-field-border-focused: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgb(var(--color-foreground)) !important;
+
+  --button-background-color: rgba(var(--color-button), var(--alpha-button-background)) !important;
+  --button-text-color: rgb(var(--color-button-text)) !important;
+  --button-border-radius: var(--buttons-radius-outset) !important;
+  --button-border: var(--buttons-border-width) solid rgba(var(--color-button-text), calc(1 - var(--buttons-border-opacity))) !important;
+  --button-padding: 1.95rem 3rem !important;
+  --button-background-color-hovered-modifier: brightness(0.95) !important;
+}
+
+@media screen and (min-width: 750px) {
+  shopify-forms-embed {
+    --forms-heading-font: var(--font-heading-style) var(--font-heading-weight)
+      calc(var(--font-heading-scale) * 2.4rem) var(--font-body-family) !important;
+    --forms-heading-font-size: calc(var(--font-heading-scale) * 2.4rem) !important;
+    --heading-font-size: calc(var(--font-heading-scale) * 2.4rem) !important;
+    --forms-body-font: var(--font-body-style) var(--font-body-weight) 1.6rem var(--font-body-family) !important;
+    --forms-base-font-size: 1.6rem !important;
+  }
 }
