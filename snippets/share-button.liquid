@@ -57,7 +57,9 @@
     </modal-opener>
   </div>
 
-  {% render 'cta-buttons', section: section %}
+  {%- if request.page_type == 'product' -%}
+    {% render 'cta-buttons', section: section %}
+  {%- endif -%}
 
   <a href="{{ share_link }}" class="share-button__button no-js" target="_blank" rel="noopener" aria-label="{{ share_label | escape }}">
     <i class="ph-fill ph-share-fat" aria-hidden="true"></i>
