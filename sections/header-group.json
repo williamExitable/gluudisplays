@@ -16,6 +16,7 @@
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
+        "secondary_menu": "secundair-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
@@ -28,9 +29,16 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "1786362139aa1f6935": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "header"
+    "header",
+    "1786362139aa1f6935"
   ]
 }
