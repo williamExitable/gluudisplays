@@ -555,6 +555,7 @@
     "hanging": "Ophanglengte (mm)",
     "version": "Versie",
     "months": "maanden",
+    "sku": "SKU",
   },
   "other": {
     "product_sheet": "Product datablad",

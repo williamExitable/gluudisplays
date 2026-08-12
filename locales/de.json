@@ -550,7 +550,8 @@
     "height": "Höhe",
     "depth": "Breite",
     "product_sheet": "Produktdatenblatt",
-    "months": "Monate"
+    "months": "Monate",
+    "sku": "SKU"
   },
   "other": {
     "specifications": "Spezifikationen",

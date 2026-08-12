@@ -11,7 +11,7 @@
 {% endcomment %} 
 
 {%- if short_version -%}
-  {%- if specs_weight or specs_volume or specs_wattages or specs_colors or sku != blank -%}
+  {%- if specs_weight or specs_volume or specs_wattages or specs_colors -%}
     <div class="product__technical-specs dynamic-metafields">
         <h2 class="h2">{{ 'other.specifications' | t }}</h2>
         <table class="table table-striped">
@@ -69,13 +69,6 @@
             </tr>
          {%- endif -%}
 
-
-          {%- if sku != blank -%}
-            <tr>
-               <td>{{ 'specs.sku' | t }}</td>
-               <td>{{ sku }}</td>
-            </tr>
-          {%- endif -%}
        
        </tbody>
       </table>
