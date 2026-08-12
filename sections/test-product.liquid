@@ -577,6 +577,7 @@ Template test-product.liquid
   {% assign specs_light_intensity =  product.selected_variant.metafields.custom.specs_light_intensity.value | default: product.metafields.custom.specs_light_intensity.value %}
   {% assign specs_hanging_length =  product.selected_variant.metafields.custom.specs_hanging_length.value | default: product.metafields.custom.specs_hanging_length.value %}
   {% assign specs_colors = product.selected_variant.metafields.custom.specs_color.value | default: product.metafields.custom.specs_color.value %}
+  {% assign sku = product.selected_or_first_available_variant.sku | default: product.variants.first.sku %}
 
        {% render 'product-technical-specs',
             specs_weight: specs_weight,
@@ -591,6 +592,7 @@ Template test-product.liquid
             specs_light_intensity: specs_light_intensity,
             specs_hanging_length: specs_hanging_length,
             specs_colors: specs_colors,
+            sku: sku,
             short_version: false,
           %}       
                           

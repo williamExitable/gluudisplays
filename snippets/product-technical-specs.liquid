@@ -11,12 +11,12 @@
 {% endcomment %} 
 
 {%- if short_version -%}
-  {%- if specs_weight or specs_volume or specs_wattages or specs_colors -%}
+  {%- if specs_weight or specs_volume or specs_wattages or specs_colors or sku != blank -%}
     <div class="product__technical-specs dynamic-metafields">
         <h2 class="h2">{{ 'other.specifications' | t }}</h2>
         <table class="table table-striped">
          <tbody>
-         
+
           {%- if specs_width -%}
             <tr>
                <td>{{ 'specs.width' | t }}</td>
@@ -68,6 +68,14 @@
                </td>
             </tr>
          {%- endif -%}
+
+
+          {%- if sku != blank -%}
+            <tr>
+               <td>{{ 'specs.sku' | t }}</td>
+               <td>{{ sku }}</td>
+            </tr>
+          {%- endif -%}
        
        </tbody>
       </table>
@@ -77,12 +85,13 @@
     </div>
   {%- endif -%}
 {%- else -%}
-    {%- if specs_weight or specs_volume or specs_warranty or specs_energies or specs_wattages or specs_energies or specs_light_intensity or specs_hanging_length or specs_colors -%}
+    {%- if specs_weight or specs_volume or specs_warranty or specs_energies or specs_wattages or specs_energies or specs_light_intensity or specs_hanging_length or specs_colors or sku != blank -%}
       <div class="product__technical-specs dynamic-metafields">
         <h2 id="product-specificaties" class="h2">{{ 'other.technical_specifications' | t }}</h2>
         <table class="table table-striped">
           <tbody>
-            
+
+
           {%- if specs_weight -%}
             <tr>
                <td>{{ 'specs.weight' | t }}</td>
@@ -182,6 +191,14 @@
                </td>
             </tr>
           {%- endif -%}
+
+          {%- if sku != blank -%}
+            <tr>
+               <td>{{ 'specs.sku' | t }}</td>
+               <td>{{ sku }}</td>
+            </tr>
+          {%- endif -%}
+
           </tbody>
           
         </table>
