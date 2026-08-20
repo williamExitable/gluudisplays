@@ -135,9 +135,10 @@
       "type": "featured-collection",
       "custom_css": [
         ".collection__view-all {margin-top: 3rem;}",
-        ".h1 {margin-bottom: 5rem;}",
+        ".h1 {font-size: calc(var(--font-heading-scale) * 3.5rem); margin-bottom: 5rem;}",
         "@media screen and (min-width: 1024px) {.slider-component-full-width {max-width: 90%; margin: 0 auto; }}",
-        "@media screen and (min-width: 2000px) {.slider-component-full-width {max-width: 70%; }}"
+        "@media screen and (min-width: 2000px) {.slider-component-full-width {max-width: 70%; }}",
+        "@media screen and (max-width: 990px) {.h1 {font-size: calc(var(--font-heading-scale) * 2.5rem); }}"
       ],
       "settings": {
         "title": "Voor iedere boodschap een display",
@@ -162,7 +163,7 @@
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 52,
+        "padding_top": 64,
         "padding_bottom": 36
       }
     }
