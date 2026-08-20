@@ -47,7 +47,7 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'shopify-forms.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'shopify-forms.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
     <script src="{{ 'feather.js' | asset_url }}"></script>
 
     {%- if settings.animations_reveal_on_scroll -%}
@@ -89,6 +89,58 @@
         window.formStyles.set('gluu-hide-product-field', {{ forms_hidden_field_css | json }});
       </script>
     {%- endif -%}
+
+    <script data-cookieconsent="ignore">
+      (function () {
+        const formScriptPattern = /(forms\.shopifyapps\.com|shopify-forms|hcaptcha|form-embed|data-form)/i;
+
+        function isFormRoot(node) {
+          if (!node.matches) return false;
+          return node.matches(
+            '.shopify-block, .shopify-app-block, [data-form-id], [data-forms-id], shopify-forms-embed, form-embed, question-form-embed'
+          );
+        }
+
+        function isFormScriptOrIframe(node) {
+          if (node.tagName !== 'SCRIPT' && node.tagName !== 'IFRAME') return false;
+          const src = (node.src || '').toLowerCase();
+          if (formScriptPattern.test(src)) return true;
+          if (node.hasAttribute('data-form-id') || node.hasAttribute('data-forms-id')) return true;
+          return false;
+        }
+
+        function mark(node) {
+          if (node.nodeType !== Node.ELEMENT_NODE) return;
+
+          if (isFormRoot(node) || isFormScriptOrIframe(node)) {
+            node.setAttribute('data-cookieconsent', 'ignore');
+          }
+
+          if (node.querySelectorAll) {
+            node
+              .querySelectorAll('.shopify-block, .shopify-app-block, [data-form-id], [data-forms-id], shopify-forms-embed, form-embed, question-form-embed')
+              .forEach(function (child) {
+                child.setAttribute('data-cookieconsent', 'ignore');
+              });
+
+            node.querySelectorAll('script, iframe').forEach(function (child) {
+              if (child.tagName === 'SCRIPT' && ((child.src || '').indexOf('cookiebot') !== -1 || (child.id || '').indexOf('Cookiebot') !== -1)) return;
+              if (isFormScriptOrIframe(child)) {
+                child.setAttribute('data-cookieconsent', 'ignore');
+              }
+            });
+          }
+        }
+
+        const observer = new MutationObserver(function (mutations) {
+          mutations.forEach(function (mutation) {
+            mutation.addedNodes.forEach(mark);
+          });
+        });
+
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>
 
     {{ content_for_header }}
     {% render 'cookie-consent' %}

@@ -12,7 +12,7 @@
 {% endcomment %}
 {{ 'share-modal.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'question-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'question-form.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 
 {%- liquid
   assign share_label = block.settings.share_label | default: 'Delen'
@@ -147,7 +147,11 @@
       assign modal_form_id = parts[2]
       assign modal_heading = parts[3]
     -%}
-    <modal-dialog id="{{ modal_key }}Modal-{{ section.id }}" class="product-popup-modal question-modal">
+    <modal-dialog
+      id="{{ modal_key }}Modal-{{ section.id }}"
+      class="product-popup-modal question-modal"
+      data-cookieconsent="ignore"
+    >
       <div
         role="dialog"
         aria-label="{{ modal_title | escape }}"
@@ -170,6 +174,7 @@
           {%- endif -%}
           <question-form-embed
             class="question-form__embed"
+            data-cookieconsent="ignore"
             data-form-id="{{ modal_form_id }}"
             {%- if product %}
               data-fill-label="{{ question_form_field | escape }}"

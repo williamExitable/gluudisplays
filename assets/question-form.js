@@ -40,7 +40,12 @@ if (!customElements.get('question-form-embed')) {
       watch() {
         if (this.observer) return;
         this.observer = new MutationObserver(() => this.claim());
-        this.observer.observe(document.documentElement, { childList: true, subtree: true });
+        this.observer.observe(document.documentElement, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['data-form-id', 'data-forms-id'],
+        });
         this.timer = setTimeout(this.fail.bind(this), QUESTION_FORM_TIMEOUT);
       }
 
@@ -52,8 +57,19 @@ if (!customElements.get('question-form-embed')) {
       }
 
       findSource() {
-        const nodes = document.querySelectorAll(`[data-forms-id="${this.formId}"]`);
-        return Array.from(nodes).find((node) => !this.contains(node));
+        const formId = this.formId;
+        const shortId = formId.replace(/^forms-root-/, '');
+        const nodes = document.querySelectorAll('[data-forms-id], [data-form-id], [id*="forms-root-"]');
+        return Array.from(nodes).find((node) => {
+          if (node.tagName === 'QUESTION-FORM-EMBED') return false;
+          const nodeId = (
+            node.getAttribute('data-forms-id') ||
+            node.getAttribute('data-form-id') ||
+            node.id ||
+            ''
+          ).trim();
+          return (nodeId.includes(formId) || nodeId.includes(shortId)) && !this.contains(node);
+        });
       }
 
       claim() {
