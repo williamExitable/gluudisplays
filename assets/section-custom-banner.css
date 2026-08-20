@@ -1,0 +1,69 @@
+.custom-banner {
+  position: relative;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+.custom-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.custom-banner__media img,
+.custom-banner__media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.custom-banner__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.custom-banner__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.custom-banner__overlay {
+  position: relative;
+}
+
+.custom-banner__overlay-content {
+  background: red;
+  width: 25%;
+}
+
+.custom-banner__heading {
+  margin: 0 0 1.6rem;
+}
+
+.custom-banner__text {
+  margin: 0 0 2.4rem;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-banner {
+    min-height: 60vh;
+  }
+
+  .custom-banner__overlay {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  .custom-banner__content {
+    padding: 2rem;
+  }
+}

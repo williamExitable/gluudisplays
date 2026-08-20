@@ -1,0 +1,49 @@
+{{ 'section-custom-banner.css' | asset_url | stylesheet_tag }}
+
+
+<div id="Banner-{{ section.id }}" class="custom-banner">
+  <div class="custom-banner__bg">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="{{ 'horeca-01.jpg' | asset_url }}"
+      preload="metadata"
+      class="custom-banner__video"
+    >
+      <source src="{{ 'horeca-01.webm' | asset_url }}" type="video/webm">
+      <source src="{{ 'horeca-01.mp4' | asset_url }}" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="custom-banner__overlay">
+
+    <div class="page-width">
+      <div class="custom-banner__overlay-content">
+        <h2 class="custom-banner__heading h1">Onze eyecatcher, jouw verhaal.</h2>
+        <div class="custom-banner__text rte">
+          <p>Met de digitale displays van GLUU zet je jouw verhaal moeiteloos in de spotlights.</p>
+        </div>
+    </div>
+    </div>
+
+    
+    
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Custom banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom banner"
+    }
+  ]
+}
+{% endschema %}

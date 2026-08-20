@@ -128,40 +128,8 @@
       }
     },
     "image_banner_DjPHzd": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_jdzBMP": {
-          "type": "heading",
-          "settings": {
-            "heading": "Een echte eyecatcher",
-            "heading_size": "h1"
-          }
-        },
-        "text_GpKjTc": {
-          "type": "text",
-          "settings": {
-            "text": "Laat de mooiste berichten zien op de Digitale displays van GLUU Displays.",
-            "text_style": "subtitle"
-          }
-        }
-      },
-      "block_order": [
-        "heading_jdzBMP",
-        "text_GpKjTc"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Een-echte-eye-catcher.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "top-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "accent-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
+      "type": "custom-banner",
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
