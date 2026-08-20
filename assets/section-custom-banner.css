@@ -32,7 +32,7 @@
 }
 
 .custom-banner__overlay-content {
-  width: 24%;
+  width: 27%;
   margin-bottom: -15.5rem;
   margin-left: -2%;
   margin-top: 4rem;
@@ -41,7 +41,7 @@
 .custom-banner__screen {
   aspect-ratio: 435/1165;
   position: relative;
-  max-height: 70vh;
+  max-height: 78vh;
 }
 
 .custom-banner__screen img {
@@ -57,14 +57,25 @@
   right: 10%;
   height: 47%;
   color: white;
-  padding: 2rem;
+  padding: 2rem 3rem;
   pointer-events: auto;
   overflow: hidden;
+  container-type: inline-size;
+  container-name: banner-content;
 }
 
-.custom-banner__heading {
+.custom-banner__content .custom-banner__heading {
   margin: 0 0 1.6rem;
   color: currentColor;
+  font-size: clamp(1.3rem, 18cqw, 4.8rem);
+  line-height: 1.15;
+  word-break: unset;
+}
+
+.custom-banner__content .custom-banner__text,
+.custom-banner__content .custom-banner__text p {
+  font-size: clamp(1.2rem, 8cqw, 2.4rem);
+  line-height: 1.4;
 }
 
 @media screen and (max-width: 1200px) {
@@ -74,23 +85,61 @@
 }
 
 @media screen and (max-width: 990px) {
-  .custom-banner__overlay-content {
-    width: 50%;
+  .custom-banner__content {
+    padding: 2rem
   }
 }
 
-@media screen and (max-width: 749px) {
-  .custom-banner__overlay-content {
-    width: 100%;
-    margin-bottom: -1rem;
+@media screen and (max-width: 990px) and (orientation: landscape) {
+
+  .custom-banner__content {
+    padding: 10%;
   }
 
+  /* .custom-banner__content .custom-banner__heading {
+    font-size: clamp(1.3rem, 12cqw, 4.8rem);
+    background:red;
+  } */
+
+
+  .custom-banner__overlay-content {
+    margin-bottom: -5%;
+
+  }
+  .custom-banner__content .custom-banner__text {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 990px) and (orientation: portrait) {
+
+  .custom-banner__overlay-content {
+    width: 100%;
+    margin-bottom: -10%;
+  }
   .custom-banner__screen {
     margin: 0 auto;
   }
+}
 
+@media screen and (max-width: 650px) and (orientation: portrait) {
+  .custom-banner__overlay-content {
+    margin-bottom: -18%;
+  }
 }
 
 #shopify-section-template--30963598655836__featured_collection .h1 {
-  font-size: calc(var(--font-heading-scale) * 3.5rem)
+  font-size: calc(var(--font-heading-scale) * 3.5rem);
+}
+
+@media screen and (max-width: 990px) {
+  #shopify-section-template--30963598655836__featured_collection .h1 {
+    font-size: calc(var(--font-heading-scale) * 2.5rem);
+  }
+}
+
+
+.section-template--30963598655836__featured_collection-padding {
+    padding-top: 6rem !important;
 }
