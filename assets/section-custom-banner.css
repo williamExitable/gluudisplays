@@ -132,14 +132,3 @@
 #shopify-section-template--30963598655836__featured_collection .h1 {
   font-size: calc(var(--font-heading-scale) * 3.5rem);
 }
-
-@media screen and (max-width: 990px) {
-  #shopify-section-template--30963598655836__featured_collection .h1 {
-    font-size: calc(var(--font-heading-scale) * 2.5rem);
-  }
-}
-
-
-.section-template--30963598655836__featured_collection-padding {
-    padding-top: 6rem !important;
-}
