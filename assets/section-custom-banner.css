@@ -2,7 +2,8 @@
   position: relative;
   min-height: 70vh;
   display: grid;
-  align-items: flex-end
+  align-items: flex-end;
+  pointer-events: none;
 }
 
 .custom-banner__bg {
@@ -31,13 +32,45 @@
 }
 
 .custom-banner__overlay-content {
-  background: red;
-  width: 25%;
-  margin-bottom: -4rem;
+  width: 24%;
+  margin-bottom: -15.5rem;
+  margin-left: -2%;
+  margin-top: 4rem;
+}
+
+.custom-banner__screen {
+  aspect-ratio: 435/1165;
+  position: relative;
+  max-height: 70vh;
+}
+
+.custom-banner__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-banner__content {
+  position: absolute;
+  top: .5%;
+  left: 10%;
+  right: 10%;
+  height: 47%;
+  color: white;
+  padding: 2rem;
+  pointer-events: auto;
+  overflow: hidden;
 }
 
 .custom-banner__heading {
   margin: 0 0 1.6rem;
+  color: currentColor;
+}
+
+@media screen and (max-width: 1200px) {
+  .custom-banner__overlay-content {
+    margin-bottom: -9%;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -51,4 +84,13 @@
     width: 100%;
     margin-bottom: -1rem;
   }
+
+  .custom-banner__screen {
+    margin: 0 auto;
+  }
+
+}
+
+#shopify-section-template--30963598655836__featured_collection .h1 {
+  font-size: calc(var(--font-heading-scale) * 3.5rem)
 }
