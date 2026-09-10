@@ -116,6 +116,15 @@
     "collapsible_content_XtdyLa": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_LH6aii": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe kan ik de producten als aanmeldzuil gebruiken?",
+            "icon": "check_mark",
+            "row_content": "<p>Onze displayproducten kunnen als aanmeldsysteem gebruikt worden op touchscreen-apparaten. De producten zelf hebben geen ingebouwde aanmeldsoftware, maar je kunt externe aanmeldsoftware eenvoudig integreren via een URL of externe aanroep. Dit maakt het mogelijk om uw displays in te zetten als interactieve aanmeldpunten.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_afHazE": {
           "type": "collapsible_row",
           "settings": {
@@ -181,6 +190,7 @@
         }
       },
       "block_order": [
+        "collapsible_row_LH6aii",
         "collapsible_row_afHazE",
         "collapsible_row_MyMXXP",
         "collapsible_row_GfcHqA",
