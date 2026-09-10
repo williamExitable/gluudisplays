@@ -745,13 +745,40 @@ a.product__text {
   height: 100vh;
 }
 
-.product-media-modal__content {
-  max-height: 100vh;
+.product-media-modal__slider-component {
+  display: block;
   width: 100%;
-  overflow: auto;
 }
 
-.product-media-modal__content > *:not(.active),
+.product-media-modal__content {
+  display: flex;
+  align-items: center;
+  max-height: 100vh;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* The horizontal padding lives on the slides, not on the scroll container: padding on the
+   container would offset every slide and break scrolling to a slide by its offsetLeft. */
+.product-media-modal__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+/* Leaves room for the slider buttons underneath the slider. */
+.product-media-modal__slide img {
+  height: auto;
+  max-height: calc(100vh - 16rem);
+  max-width: 100%;
+  width: auto;
+}
+
+.product-media-modal__slider-buttons {
+  padding: 0 1.5rem 1.5rem;
+}
+
 .product__media-list .deferred-media {
   display: none;
 }
@@ -759,10 +786,6 @@ a.product__text {
 @media screen and (min-width: 750px) {
   .product-media-modal__content {
     padding-bottom: 2rem;
-  }
-
-  .product-media-modal__content > *:not(.active) {
-    display: block;
   }
 
   .product__modal-opener:not(.product__modal-opener--image) {
@@ -787,7 +810,7 @@ a.product__text {
   }
 }
 
-.product-media-modal__content > * {
+.product-media-modal__slide > * {
   display: block;
   height: auto;
   margin: auto;
@@ -824,15 +847,11 @@ a.product__text {
 
 @media screen and (min-width: 750px) {
   .product-media-modal__content {
-    padding: 2rem 11rem;
+    padding: 2rem 0;
   }
 
-  .product-media-modal__content > * {
-    width: 100%;
-  }
-
-  .product-media-modal__content > * + * {
-    margin-top: 2rem;
+  .product-media-modal__slide {
+    padding: 0 11rem;
   }
 
   .product-media-modal__toggle {
@@ -843,15 +862,7 @@ a.product__text {
 
 @media screen and (min-width: 990px) {
   .product-media-modal__content {
-    padding: 2rem 11rem;
-  }
-
-  .product-media-modal__content > * + * {
-    margin-top: 1.5rem;
-  }
-
-  .product-media-modal__content {
-    padding-bottom: 1.5rem;
+    padding: 2rem 0 1.5rem;
   }
 
   .product-media-modal__toggle {

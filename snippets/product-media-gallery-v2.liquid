@@ -44,8 +44,8 @@
 -%}
 
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-media-gallery-v2.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'product-media-gallery-v2.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
     
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"

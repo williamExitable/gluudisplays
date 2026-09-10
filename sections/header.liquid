@@ -312,13 +312,13 @@
   }
 {%- endstyle -%}
 
-<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'search-form.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'main-search.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 {%- if settings.cart_type == "drawer" -%}
-  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 {%- endif -%}
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">

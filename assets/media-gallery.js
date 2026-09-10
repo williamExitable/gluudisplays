@@ -14,9 +14,10 @@ if (!customElements.get('media-gallery')) {
 
         this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
         this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
-          mediaToSwitch
-            .querySelector('button')
-            .addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
+          mediaToSwitch.querySelector('button').addEventListener('click', () => {
+            this.setActiveMedia(mediaToSwitch.dataset.target, false);
+            this.openMediaModal(mediaToSwitch.dataset.target);
+          });
         });
         if (this.dataset.desktopLayout.includes('thumbnail') && this.mql.matches) this.removeListSemantic();
       }
@@ -63,6 +64,14 @@ if (!customElements.get('media-gallery')) {
           this.setActiveThumbnail(activeThumbnail);
           this.announceLiveRegion(activeMedia, activeThumbnail.dataset.mediaPosition);
         }
+      }
+
+      openMediaModal(mediaId) {
+        const activeMedia = this.elements.viewer.querySelector(`[data-media-id="${mediaId}"]`);
+        const toggle = activeMedia && activeMedia.querySelector('.product__media-toggle');
+        // The toggle carries the section's image_zoom setting; 'none' means the lightbox is disabled.
+        if (!toggle || toggle.classList.contains('product__media-zoom-none')) return;
+        toggle.click();
       }
 
       setActiveThumbnail(thumbnail) {

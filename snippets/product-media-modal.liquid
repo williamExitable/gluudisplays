@@ -1,6 +1,9 @@
 {% comment %}
   Renders a product media modal. Also see 'product-media-gallery'
 
+  The media are rendered as a horizontal slider (see 'slider-component' in global.js) so the
+  lightbox can be swiped. 'product-modal.js' scrolls the slider to the media that was clicked.
+
   Accepts:
   - product: {Object} Product liquid object
   - variant_images: {Array} Product images associated with a variant
@@ -26,32 +29,64 @@
       {% render 'icon-close' %}
     </button>
 
-    <div
-      class="product-media-modal__content color-{{ section.settings.color_scheme }} gradient"
-      role="document"
-      aria-label="{{ 'products.modal.label' | t }}"
-      tabindex="0"
+    <slider-component
+      id="GalleryModal-{{ section.id }}"
+      class="product-media-modal__slider-component"
     >
-      {%- liquid
-        if product.selected_or_first_available_variant.featured_media != null
-          assign media = product.selected_or_first_available_variant.featured_media
-          render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
-        endif
-      -%}
-
-      {%- for media in product.media -%}
+      <ul
+        id="Slider-ProductModal-{{ section.id }}"
+        class="product-media-modal__content list-unstyled slider slider--everywhere"
+        aria-label="{{ 'products.modal.label' | t }}"
+        tabindex="0"
+      >
         {%- liquid
-          if section.settings.hide_variants and variant_images contains media.src or variant_images contains media.id
-            assign variant_image = true
-          else
-            assign variant_image = false
+          if product.selected_or_first_available_variant.featured_media != null
+            assign media = product.selected_or_first_available_variant.featured_media
+            render 'product-media-modal-slide', media: media, variant_image: section.settings.hide_variants
           endif
-
-          unless media.id == product.selected_or_first_available_variant.featured_media.id
-            render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
-          endunless
         -%}
-      {%- endfor -%}
-    </div>
+
+        {%- for media in product.media -%}
+          {%- liquid
+            if section.settings.hide_variants and variant_images contains media.src or variant_images contains media.id
+              assign variant_image = true
+            else
+              assign variant_image = false
+            endif
+
+            unless media.id == product.selected_or_first_available_variant.featured_media.id
+              render 'product-media-modal-slide', media: media, variant_image: variant_image
+            endunless
+          -%}
+        {%- endfor -%}
+      </ul>
+
+      <div class="product-media-modal__slider-buttons slider-buttons no-js-hidden">
+        <button
+          type="button"
+          class="slider-button slider-button--prev"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+          aria-controls="Slider-ProductModal-{{ section.id }}"
+        >
+          {% render 'icon-caret' %}
+        </button>
+        <div class="slider-counter caption">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+          <span class="slider-counter--total">{{ product.media.size }}</span>
+        </div>
+        <button
+          type="button"
+          class="slider-button slider-button--next"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+          aria-controls="Slider-ProductModal-{{ section.id }}"
+        >
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+    </slider-component>
   </div>
 </product-modal>

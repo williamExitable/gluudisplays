@@ -4,6 +4,8 @@ if (!customElements.get('product-modal')) {
     class ProductModal extends ModalDialog {
       constructor() {
         super();
+        this.sliderComponent = this.querySelector('slider-component');
+        this.slider = this.querySelector('[id^="Slider-ProductModal"]');
       }
 
       hide() {
@@ -16,26 +18,27 @@ if (!customElements.get('product-modal')) {
       }
 
       showActiveMedia() {
-        this.querySelectorAll(
-          `[data-media-id]:not([data-media-id="${this.openedBy.getAttribute('data-media-id')}"])`
-        ).forEach((element) => {
-          element.classList.remove('active');
+        const mediaId = this.openedBy.getAttribute('data-media-id');
+        const slides = this.querySelectorAll('.product-media-modal__slide');
+        slides.forEach((slide) => slide.classList.toggle('active', slide.dataset.mediaId === mediaId));
+
+        const activeSlide = this.querySelector(`.product-media-modal__slide[data-media-id="${mediaId}"]`);
+        if (!activeSlide || !this.slider) return;
+
+        // The modal is only made visible in super.show(), so wait a frame for the slider to be laid
+        // out before jumping to the slide. 'instant' skips the smooth scrolling used while swiping.
+        requestAnimationFrame(() => {
+          this.slider.scrollTo({ left: activeSlide.offsetLeft, behavior: 'instant' });
+          if (this.sliderComponent) this.sliderComponent.resetPages();
         });
-        const activeMedia = this.querySelector(`[data-media-id="${this.openedBy.getAttribute('data-media-id')}"]`);
-        const activeMediaTemplate = activeMedia.querySelector('template');
+
+        const activeMediaTemplate = activeSlide.querySelector('template');
         const activeMediaContent = activeMediaTemplate ? activeMediaTemplate.content : null;
-        activeMedia.classList.add('active');
-        activeMedia.scrollIntoView();
+        const deferredMedia = activeSlide.querySelector('deferred-media, product-model');
 
-        const container = this.querySelector('[role="document"]');
-        container.scrollLeft = (activeMedia.width - container.clientWidth) / 2;
-
-        if (
-          activeMedia.nodeName == 'DEFERRED-MEDIA' &&
-          activeMediaContent &&
-          activeMediaContent.querySelector('.js-youtube')
-        )
-          activeMedia.loadContent();
+        if (deferredMedia && activeMediaContent && activeMediaContent.querySelector('.js-youtube')) {
+          deferredMedia.loadContent();
+        }
       }
     }
   );
