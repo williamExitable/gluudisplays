@@ -44,18 +44,18 @@
 
     {% render 'meta-tags' %}
 
-    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
     <script src="{{ 'shopify-forms.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
-    <script src="{{ 'feather.js' | asset_url }}"></script>
+    <script src="{{ 'feather.js' | asset_url }}" data-cookieconsent="ignore"></script>
 
     {%- if settings.animations_reveal_on_scroll -%}
-      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'animations.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
     {%- endif -%}
 
-    <script src="{{ 'scroll-to.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'trigger-chat.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'scroll-to.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+    <script src="{{ 'trigger-chat.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +84,7 @@
         div:has(> [data-testid="field-custom#product"]) { display: none !important; }
       {%- endcapture -%}
       <style>{{ forms_hidden_field_css }}</style>
-      <script>
+      <script data-cookieconsent="ignore">
         window.formStyles = window.formStyles || new Map();
         window.formStyles.set('gluu-hide-product-field', {{ forms_hidden_field_css | json }});
       </script>
@@ -372,7 +372,7 @@
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
       {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
-      <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'localization-form.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
@@ -384,7 +384,7 @@
       >
     {%- endif -%}
 
-    <script>
+    <script data-cookieconsent="ignore">
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
@@ -427,7 +427,7 @@
       </div>
       
     </div>
-    <script>
+    <script data-cookieconsent="ignore">
       
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
@@ -471,7 +471,7 @@
     </script>
 
     {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
     {%- endif -%}
 
   </body>

@@ -312,13 +312,13 @@
   }
 {%- endstyle -%}
 
-<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'search-form.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'main-search.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 {%- if settings.cart_type == "drawer" -%}
-  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 {%- endif -%}
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
@@ -732,12 +732,22 @@
 
     closeMenuDisclosure() {
       this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
-      this.disclosures.forEach(disclosure => disclosure.close());
+      this.disclosures.forEach(disclosure => {
+        if (typeof disclosure.close === 'function') {
+          disclosure.close();
+          return;
+        }
+
+        const details = disclosure.querySelector('details');
+        if (!details) return;
+        details.removeAttribute('open');
+        details.querySelector('summary')?.setAttribute('aria-expanded', 'false');
+      });
     }
 
     closeSearchModal() {
       this.searchModal = this.searchModal || this.header.querySelector('details-modal');
-      this.searchModal.close(false);
+      if (typeof this.searchModal?.close === 'function') this.searchModal.close(false);
     }
   }
 

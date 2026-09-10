@@ -546,8 +546,11 @@ class ModalDialog extends HTMLElement {
       if (event.code.toUpperCase() === 'ESCAPE') this.hide();
     });
     if (this.classList.contains('media-modal')) {
+      // Clicking the backdrop closes the modal, but the media itself and the slider controls
+      // have to stay clickable/draggable.
+      const keepOpenSelector = 'deferred-media, product-model, .slider-buttons, .product-media-modal__slide img';
       this.addEventListener('pointerup', (event) => {
-        if (event.pointerType === 'mouse' && !event.target.closest('deferred-media, product-model')) this.hide();
+        if (event.pointerType === 'mouse' && !event.target.closest(keepOpenSelector)) this.hide();
       });
     } else {
       this.addEventListener('click', (event) => {

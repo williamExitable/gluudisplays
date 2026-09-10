@@ -125,7 +125,7 @@
         </div>
       </slideshow-component>
       {%- if request.design_mode -%}
-        <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
         <style>
           /* theme editor power preview fix */
           .announcement-bar-slider .slider__slide[aria-hidden='true'] {

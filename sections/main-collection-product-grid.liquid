@@ -8,8 +8,8 @@
 
 {%- if section.settings.enable_quick_add -%}
   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 {%- endif -%}
 
 {%- style -%}
@@ -92,7 +92,7 @@
 
     <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <aside
           aria-labelledby="verticalTitle"

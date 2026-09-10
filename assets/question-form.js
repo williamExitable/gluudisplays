@@ -34,12 +34,19 @@ if (!customElements.get('question-form-embed')) {
         if (this.claimed) return;
         this.formId = this.dataset.formId;
         if (!this.formId) return;
-        if (!this.claim()) this.watch();
+        this.watch();
+        this.scheduleClaim();
+      }
+
+      disconnectedCallback() {
+        this.stopWatching();
+        if (this.fillTimer) clearInterval(this.fillTimer);
+        this.fillTimer = null;
       }
 
       watch() {
         if (this.observer) return;
-        this.observer = new MutationObserver(() => this.claim());
+        this.observer = new MutationObserver(this.scheduleClaim.bind(this));
         this.observer.observe(document.documentElement, {
           childList: true,
           subtree: true,
@@ -47,6 +54,19 @@ if (!customElements.get('question-form-embed')) {
           attributeFilter: ['data-form-id', 'data-forms-id'],
         });
         this.timer = setTimeout(this.fail.bind(this), QUESTION_FORM_TIMEOUT);
+      }
+
+      // Observer callbacks run as microtasks, so they can land halfway through a
+      // Preact commit inside the Shopify Forms app. Moving its root there leaves the
+      // app without a current component ("Cannot read properties of null (reading
+      // 'context')"), so the move is always deferred to a macrotask.
+      scheduleClaim() {
+        if (this.claimed || this.claimScheduled) return;
+        this.claimScheduled = true;
+        setTimeout(() => {
+          this.claimScheduled = false;
+          this.claim();
+        }, 0);
       }
 
       stopWatching() {
@@ -72,13 +92,26 @@ if (!customElements.get('question-form-embed')) {
         });
       }
 
-      claim() {
+      // Relocating the block disconnects and remounts it, which is only safe once the
+      // app has finished its initial render. Until a field shows up we keep waiting
+      // instead of interrupting the mount.
+      isRendered(node) {
+        if (node.querySelector('form, input, textarea, [data-testid]')) return true;
+        return Array.from(node.querySelectorAll('*')).some(
+          (child) => child.shadowRoot && child.shadowRoot.childElementCount
+        );
+      }
+
+      claim(force) {
         const source = this.findSource();
         if (!source) return false;
 
+        const block = source.closest('[id^="shopify-block-"]') || source;
+        if (!force && !this.isRendered(block)) return false;
+
         this.claimed = true;
         this.stopWatching();
-        this.appendChild(source.closest('[id^="shopify-block-"]') || source);
+        this.appendChild(block);
         this.setAttribute('loaded', '');
 
         this.watchVariant();
@@ -89,6 +122,9 @@ if (!customElements.get('question-form-embed')) {
 
       fail() {
         this.stopWatching();
+        // By now any render has settled, so move whatever is there rather than
+        // falling back to the error message.
+        if (this.claim(true)) return;
         this.setAttribute('failed', '');
       }
 
