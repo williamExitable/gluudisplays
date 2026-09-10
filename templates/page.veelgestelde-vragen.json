@@ -121,7 +121,7 @@
           "settings": {
             "heading": "Hoe kan ik de producten als aanmeldzuil gebruiken?",
             "icon": "check_mark",
-            "row_content": "<p>Onze displayproducten kunnen als aanmeldsysteem gebruikt worden op touchscreen-apparaten. De producten zelf hebben geen ingebouwde aanmeldsoftware, maar je kunt externe aanmeldsoftware eenvoudig integreren via een URL of externe aanroep. Dit maakt het mogelijk om uw displays in te zetten als interactieve aanmeldpunten.</p>",
+            "row_content": "<p>In combinatie met een touchscreen zijn onze displays uitstekend in te zetten als aanmeldsysteem. Hoewel de producten standaard geen aanmeldsoftware bevatten, koppel je een extern systeem eenvoudig via een URL of externe aanroep. Zo creëert u moeiteloos een interactief aanmeldpunt.</p>",
             "page": ""
           }
         },
