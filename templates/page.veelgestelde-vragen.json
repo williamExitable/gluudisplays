@@ -19,100 +19,6 @@
         "padding_bottom": 68
       }
     },
-    "collapsible_content_hzWfQC": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_EMzx4p": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Welke betaalmethoden zijn er beschikbaar?",
-            "icon": "check_mark",
-            "row_content": "<p>iDeal, Maestro, Mastercard, Visa.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_wQFfWp": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Hoe zit het met retouren?",
-            "icon": "check_mark",
-            "row_content": "<p>Je hebt 14 dagen de tijd om een artikel te retourneren. <br/><br/>Voor meer informatie omtrent retouren verwijzen we je naar onze <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Retourvoorwaarden.</a></p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_MNY4kn": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Hoe retourneer ik een bestelling?",
-            "icon": "check_mark",
-            "row_content": "<p>Je kunt je artikel retourneren door ons RMA formulier in te vullen en te retourneren naar info@gluudisplays.nl <br/><br/>Vervolgens kunnen we je voorzien van een vervangend product of het aankoopbedrag terugstorten. Meer informatie hierover vind je in onze <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Retourvoorwaarden.</a></p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_FPgGfe": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Kan ik het product ook op factuur bestellen?",
-            "icon": "check_mark",
-            "row_content": "<p>Ja, via de checkout is het mogelijk om het product op factuur te bestellen.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_dt8hdD": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Waar zijn jullie gevestigd?",
-            "icon": "check_mark",
-            "row_content": "<p>Wij zijn gevestigd op de Schoutlaan 30a, 6002EA in Weert.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_W6j6Gx": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Hoe kan ik contact opnemen",
-            "icon": "check_mark",
-            "row_content": "<p>Je kunt ons bereiken via <a>info@gluudisplays.nl</a> of door een bericht achter te laten in de chat. Als we online zijn, reageren we direct; anders nemen we zo snel mogelijk contact met je op.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_LnT8mK": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Hoe wordt mijn bestelling geleverd?",
-            "icon": "check_mark",
-            "row_content": "<p>In de meeste gevallen worden de bestellingen via een palletzending geleverd. Bijvoorbeeld onze totems, deze worden doorgaans op 2 pallets geleverd en zijn solide verpakt om ervoor te zorgen dat ze zonder schade aankomen. </p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_EMzx4p",
-        "collapsible_row_wQFfWp",
-        "collapsible_row_MNY4kn",
-        "collapsible_row_FPgGfe",
-        "collapsible_row_dt8hdD",
-        "collapsible_row_W6j6Gx",
-        "collapsible_row_LnT8mK"
-      ],
-      "custom_css": [
-        ".collapsible-content-wrapper-narrow {padding-left: 0; margin-left: auto;}"
-      ],
-      "settings": {
-        "caption": "",
-        "heading": "Algemeen",
-        "heading_size": "h2",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "collapsible_content_XtdyLa": {
       "type": "collapsible-content",
       "blocks": {
@@ -205,6 +111,100 @@
       "settings": {
         "caption": "",
         "heading": "Producten",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_hzWfQC": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_EMzx4p": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Welke betaalmethoden zijn er beschikbaar?",
+            "icon": "check_mark",
+            "row_content": "<p>iDeal, Maestro, Mastercard, Visa.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wQFfWp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe zit het met retouren?",
+            "icon": "check_mark",
+            "row_content": "<p>Je hebt 14 dagen de tijd om een artikel te retourneren. <br/><br/>Voor meer informatie omtrent retouren verwijzen we je naar onze <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Retourvoorwaarden.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MNY4kn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe retourneer ik een bestelling?",
+            "icon": "check_mark",
+            "row_content": "<p>Je kunt je artikel retourneren door ons RMA formulier in te vullen en te retourneren naar info@gluudisplays.nl <br/><br/>Vervolgens kunnen we je voorzien van een vervangend product of het aankoopbedrag terugstorten. Meer informatie hierover vind je in onze <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Retourvoorwaarden.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FPgGfe": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik het product ook op factuur bestellen?",
+            "icon": "check_mark",
+            "row_content": "<p>Ja, via de checkout is het mogelijk om het product op factuur te bestellen.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dt8hdD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Waar zijn jullie gevestigd?",
+            "icon": "check_mark",
+            "row_content": "<p>Wij zijn gevestigd op de Schoutlaan 30a, 6002EA in Weert.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_W6j6Gx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe kan ik contact opnemen",
+            "icon": "check_mark",
+            "row_content": "<p>Je kunt ons bereiken via <a>info@gluudisplays.nl</a> of door een bericht achter te laten in de chat. Als we online zijn, reageren we direct; anders nemen we zo snel mogelijk contact met je op.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LnT8mK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe wordt mijn bestelling geleverd?",
+            "icon": "check_mark",
+            "row_content": "<p>In de meeste gevallen worden de bestellingen via een palletzending geleverd. Bijvoorbeeld onze totems, deze worden doorgaans op 2 pallets geleverd en zijn solide verpakt om ervoor te zorgen dat ze zonder schade aankomen. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_EMzx4p",
+        "collapsible_row_wQFfWp",
+        "collapsible_row_MNY4kn",
+        "collapsible_row_FPgGfe",
+        "collapsible_row_dt8hdD",
+        "collapsible_row_W6j6Gx",
+        "collapsible_row_LnT8mK"
+      ],
+      "custom_css": [
+        ".collapsible-content-wrapper-narrow {padding-left: 0; margin-left: auto;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Algemeen",
         "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "none",
@@ -314,8 +314,8 @@
   },
   "order": [
     "main",
-    "collapsible_content_hzWfQC",
     "collapsible_content_XtdyLa",
+    "collapsible_content_hzWfQC",
     "rich_text_hwJqFp",
     "rich_text_T9NGqP"
   ]
