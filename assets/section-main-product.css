@@ -779,6 +779,17 @@ a.product__text {
   padding: 0 1.5rem 1.5rem;
 }
 
+@media (pointer: fine) {
+  .product-media-modal__content {
+    cursor: grab;
+  }
+
+  .product-media-modal__content.is-dragging,
+  .product-media-modal__content.is-dragging * {
+    cursor: grabbing;
+  }
+}
+
 .product__media-list .deferred-media {
   display: none;
 }
