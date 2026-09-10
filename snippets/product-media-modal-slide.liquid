@@ -1,0 +1,19 @@
+{% comment %}
+  Renders a single slide of the product media lightbox slider. Only used by 'product-media-modal'.
+
+  The slide carries the same data-media-id as the media inside it, so that both
+  'product-modal.js' (scrolling to the clicked media) and the variant switcher in global.js
+  (which prepends the featured media) resolve to the slide instead of the bare media element.
+
+  Accepts:
+  - media: {Object} Product Media object
+  - variant_image: {Boolean} Whether or not media is associated with a variant
+{% endcomment %}
+
+<li
+  id="Slide-ProductModal-{{ section.id }}-{{ media.id }}"
+  class="product-media-modal__slide slider__slide{% if variant_image %} product__media-item--variant{% endif %}"
+  data-media-id="{{ media.id }}"
+>
+  {%- render 'product-media', media: media, loop: section.settings.enable_video_looping -%}
+</li>
