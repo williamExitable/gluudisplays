@@ -3830,14 +3830,9 @@ body.page-challenge .newsletter {
 }
 
 @media screen and (max-width: 1024px) {
-  div#CybotCookiebotDialog {
-    scale: 65%;
-  }
-
   .webwinkelkeur img {
     max-width: 75%;
   }
-
 }
 
 .menu-drawer__secondary-menu.list-menu {
