@@ -19,6 +19,110 @@
         "padding_bottom": 68
       }
     },
+    "collapsible_content_XtdyLa": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_LH6aii": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe kan ik de producten als aanmeldzuil gebruiken?",
+            "icon": "check_mark",
+            "row_content": "<p>In combinatie met een touchscreen zijn onze displays uitstekend in te zetten als aanmeldsysteem. Hoewel de producten standaard geen aanmeldsoftware bevatten, koppel je een extern systeem eenvoudig via een URL of externe aanroep. Zo creëert u moeiteloos een interactief aanmeldpunt.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_afHazE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik de behuizing los bestellen?",
+            "icon": "check_mark",
+            "row_content": "<p>Je kunt de behuizing los bestellen, maar houd er rekening mee dat deze officieel alleen compatibel is met een Samsung QMC-scherm. Dit type scherm biedt hoogwaardige beeldkwaliteit en geïntegreerde contentbeheeropties, wat ideaal is voor professionele toepassingen. <br/><br/>Hoewel andere schermen mogelijk ook passen, kunnen we hier helaas geen garantie op geven. Onze producten zijn speciaal ontworpen om perfect samen te werken met de QMC-serie, waardoor deze een optimale pasvorm en functionaliteit biedt.<br/><br/>Het los bestellen van de behuizing  is alleen mogelijk door contact met ons op te nemen.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MyMXXP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Met welke programma maak je de reclame op?",
+            "icon": "check_mark",
+            "row_content": "<p>Als je al werkt met een fotobewerkings- of videoprogramma, is dat al een uitstekende basis. Maar de mogelijkheden reiken verder dan dat. Zo kun je bijvoorbeeld in de cloud werken.</p><p>Een van de bekendste tools hiervoor is <a href=\"https://www.canva.com/\" target=\"_blank\" title=\"Canva\">Canva</a>. Met de gratis versie kun je eenvoudig professionele advertenties ontwerpen. Wil je echter een stap verder gaan? Dan is <a href=\"https://vxt.samsung.com/\" title=\"VXT Samsung\">Samsung VXT</a> een uitstekende keuze. Deze cloudoplossing stelt je in staat om op afstand reclames te creëren en deze rechtstreeks naar de GLUU Displays te publiceren. Bovendien kun je het product <strong>gratis 30 dagen</strong> uitproberen.</p><p>Voor <strong>meer informatie</strong> en <strong>tips</strong> lees je onze <a href=\"/blogs/nieuws/ontwerp-eenvoudig-je-eigen-reclame-voor-op-digitale-borden\" title=\"Ontwerp eenvoudig je eigen reclame voor op digitale borden!\">blog</a>!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GfcHqA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Op welke manier krijg ik mijn foto’s zichtbaar op het scherm?",
+            "icon": "check_mark",
+            "row_content": "<p>De foto's kunnen via het internet (bekabeld of wifi) USB, Bluetooth of door een losse computer (zoals een laptop, mini-pc of Raspberry Pi) worden aangeboden.</p><p>Afhankelijk van het medium kun je deze foto's regelmatig laten rouleren of veranderen.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rFhpfy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik ook een diavoorstelling afspelen op jullie panels?",
+            "icon": "check_mark",
+            "row_content": "<p>Je kunt meerdere afbeeldingen- als video's achter elkaar afspelen als  diavoorstelling.</p><p>De afbeeldingen of video's kunnen via het internet (bekabeld of wifi) USB, Bluetooth of door een losse computer (zoals een laptop, mini-pc of Raspberry Pi) worden aangestuurd.</p><p>Wist je ook dat we software hebben om de displays te kunnen?<strong> </strong></p><p><strong>Lees onze blog</strong>:<br/><a href=\"/blogs/nieuws/ontwerp-eenvoudig-je-eigen-reclame-voor-op-digitale-borden\" title=\"Ontwerp eenvoudig je eigen reclame voor op digitale borden!\">Ontwerp eenvoudig je eigen reclame voor op digitale borden!</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bxnTbY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik iets anders dan foto's of video's afspelen op het scherm?",
+            "icon": "check_mark",
+            "row_content": "<p>Ja, dit is uiteraard mogelijk. <br/>In principe kun je elk medium aan onze schermen koppelen. </p><p>Maar onze schermen hebben  geïntegreerde software om bijvoorbeeld websites te kunnen openen. <br/><br/><strong>Websites</strong><br/>Heb je een internet verbinding dan kun je elke website op het scherm weergeven. Heb je een scherm met een touch-bediening dan heb je geen toetsenbord of muis nodig. </p><p>Wanneer er x aantal seconde geen activiteit plaatsvindt dan gaat de website terug naar de homepagina. Het aantal secondes kun je zelf instellen.<br/><br/>Daarnaast kun je aangeven of een gebruiker enkel jou website of meerdere websites mag bezoeken.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iWPLW6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik ook een scherm huren?",
+            "icon": "check_mark",
+            "row_content": "<p>Een scherm huren is helaas niet mogelijk.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pdr6zm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik de displays standalone gebruiken?",
+            "icon": "check_mark",
+            "row_content": "<p>Onze producten zijn standalone te gebruiken en vereisen enkel stroom om te functioneren. </p><p>Als je geen internet (bekabeld of wifi) hebt kun je de zuilen via USB, Bluetooth of door een losse computer (zoals een laptop, mini-pc of Raspberry Pi) bedienen. Zo bieden we maximale flexibiliteit in gebruik, afhankelijk van jouw wensen en beschikbare middelen.</p><p>Daarnaast hebben we ook succesverhalen van klanten die een mini-pc in onze zuilen hebben ingebouwd. Dit biedt een alles-in-één oplossing, waarbij zowel de hardware als de besturing compact en efficiënt geïntegreerd zijn. Door een mini-pc te gebruiken, ontstaat er nog meer vrijheid in het gebruik.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_LH6aii",
+        "collapsible_row_afHazE",
+        "collapsible_row_MyMXXP",
+        "collapsible_row_GfcHqA",
+        "collapsible_row_rFhpfy",
+        "collapsible_row_bxnTbY",
+        "collapsible_row_iWPLW6",
+        "collapsible_row_pdr6zm"
+      ],
+      "custom_css": [
+        ".collapsible-content-wrapper-narrow {padding-left: 0; margin-left: auto;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Producten",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "collapsible_content_hzWfQC": {
       "type": "collapsible-content",
       "blocks": {
@@ -101,100 +205,6 @@
       "settings": {
         "caption": "",
         "heading": "Algemeen",
-        "heading_size": "h2",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collapsible_content_XtdyLa": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_afHazE": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Kan ik de behuizing los bestellen?",
-            "icon": "check_mark",
-            "row_content": "<p>Je kunt de behuizing los bestellen, maar houd er rekening mee dat deze officieel alleen compatibel is met een Samsung QMC-scherm. Dit type scherm biedt hoogwaardige beeldkwaliteit en geïntegreerde contentbeheeropties, wat ideaal is voor professionele toepassingen. <br/><br/>Hoewel andere schermen mogelijk ook passen, kunnen we hier helaas geen garantie op geven. Onze producten zijn speciaal ontworpen om perfect samen te werken met de QMC-serie, waardoor deze een optimale pasvorm en functionaliteit biedt.<br/><br/>Het los bestellen van de behuizing  is alleen mogelijk door contact met ons op te nemen.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_MyMXXP": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Met welke programma maak je de reclame op?",
-            "icon": "check_mark",
-            "row_content": "<p>Als je al werkt met een fotobewerkings- of videoprogramma, is dat al een uitstekende basis. Maar de mogelijkheden reiken verder dan dat. Zo kun je bijvoorbeeld in de cloud werken.</p><p>Een van de bekendste tools hiervoor is <a href=\"https://www.canva.com/\" target=\"_blank\" title=\"Canva\">Canva</a>. Met de gratis versie kun je eenvoudig professionele advertenties ontwerpen. Wil je echter een stap verder gaan? Dan is <a href=\"https://vxt.samsung.com/\" title=\"VXT Samsung\">Samsung VXT</a> een uitstekende keuze. Deze cloudoplossing stelt je in staat om op afstand reclames te creëren en deze rechtstreeks naar de GLUU Displays te publiceren. Bovendien kun je het product <strong>gratis 30 dagen</strong> uitproberen.</p><p>Voor <strong>meer informatie</strong> en <strong>tips</strong> lees je onze <a href=\"/blogs/nieuws/ontwerp-eenvoudig-je-eigen-reclame-voor-op-digitale-borden\" title=\"Ontwerp eenvoudig je eigen reclame voor op digitale borden!\">blog</a>!</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_GfcHqA": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Op welke manier krijg ik mijn foto’s zichtbaar op het scherm?",
-            "icon": "check_mark",
-            "row_content": "<p>De foto's kunnen via het internet (bekabeld of wifi) USB, Bluetooth of door een losse computer (zoals een laptop, mini-pc of Raspberry Pi) worden aangeboden.</p><p>Afhankelijk van het medium kun je deze foto's regelmatig laten rouleren of veranderen.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rFhpfy": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Kan ik ook een diavoorstelling afspelen op jullie panels?",
-            "icon": "check_mark",
-            "row_content": "<p>Je kunt meerdere afbeeldingen- als video's achter elkaar afspelen als  diavoorstelling.</p><p>De afbeeldingen of video's kunnen via het internet (bekabeld of wifi) USB, Bluetooth of door een losse computer (zoals een laptop, mini-pc of Raspberry Pi) worden aangestuurd.</p><p>Wist je ook dat we software hebben om de displays te kunnen?<strong> </strong></p><p><strong>Lees onze blog</strong>:<br/><a href=\"/blogs/nieuws/ontwerp-eenvoudig-je-eigen-reclame-voor-op-digitale-borden\" title=\"Ontwerp eenvoudig je eigen reclame voor op digitale borden!\">Ontwerp eenvoudig je eigen reclame voor op digitale borden!</a></p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_bxnTbY": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Kan ik iets anders dan foto's of video's afspelen op het scherm?",
-            "icon": "check_mark",
-            "row_content": "<p>Ja, dit is uiteraard mogelijk. <br/>In principe kun je elk medium aan onze schermen koppelen. </p><p>Maar onze schermen hebben  geïntegreerde software om bijvoorbeeld websites te kunnen openen. <br/><br/><strong>Websites</strong><br/>Heb je een internet verbinding dan kun je elke website op het scherm weergeven. Heb je een scherm met een touch-bediening dan heb je geen toetsenbord of muis nodig. </p><p>Wanneer er x aantal seconde geen activiteit plaatsvindt dan gaat de website terug naar de homepagina. Het aantal secondes kun je zelf instellen.<br/><br/>Daarnaast kun je aangeven of een gebruiker enkel jou website of meerdere websites mag bezoeken.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_iWPLW6": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Kan ik ook een scherm huren?",
-            "icon": "check_mark",
-            "row_content": "<p>Een scherm huren is helaas niet mogelijk.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_pdr6zm": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Kan ik de displays standalone gebruiken?",
-            "icon": "check_mark",
-            "row_content": "<p>Onze producten zijn standalone te gebruiken en vereisen enkel stroom om te functioneren. </p><p>Als je geen internet (bekabeld of wifi) hebt kun je de zuilen via USB, Bluetooth of door een losse computer (zoals een laptop, mini-pc of Raspberry Pi) bedienen. Zo bieden we maximale flexibiliteit in gebruik, afhankelijk van jouw wensen en beschikbare middelen.</p><p>Daarnaast hebben we ook succesverhalen van klanten die een mini-pc in onze zuilen hebben ingebouwd. Dit biedt een alles-in-één oplossing, waarbij zowel de hardware als de besturing compact en efficiënt geïntegreerd zijn. Door een mini-pc te gebruiken, ontstaat er nog meer vrijheid in het gebruik.</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_afHazE",
-        "collapsible_row_MyMXXP",
-        "collapsible_row_GfcHqA",
-        "collapsible_row_rFhpfy",
-        "collapsible_row_bxnTbY",
-        "collapsible_row_iWPLW6",
-        "collapsible_row_pdr6zm"
-      ],
-      "custom_css": [
-        ".collapsible-content-wrapper-narrow {padding-left: 0; margin-left: auto;}"
-      ],
-      "settings": {
-        "caption": "",
-        "heading": "Producten",
         "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "none",
@@ -304,8 +314,8 @@
   },
   "order": [
     "main",
-    "collapsible_content_hzWfQC",
     "collapsible_content_XtdyLa",
+    "collapsible_content_hzWfQC",
     "rich_text_hwJqFp",
     "rich_text_T9NGqP"
   ]
