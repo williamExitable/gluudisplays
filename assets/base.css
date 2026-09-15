@@ -3912,3 +3912,27 @@ shopify-forms-embed {
     --forms-base-font-size: 1.6rem !important;
   }
 }
+
+/*
+  Contactformulier: grotere kop. De heading van de app krijgt zijn font via de
+  font-shorthand --forms-heading-font, dus daar moet de maat in staan; los
+  --heading-font-size of --forms-heading-font-size zetten doet niets, die worden
+  alleen door de teaser- en preview-varianten gebruikt. De app zet de line-height
+  hardcoded op 26px in de shadow root; shopify-forms.js maakt dat overschrijfbaar
+  via --forms-heading-line-height.
+*/
+
+  shopify-forms-embed[data-form-id="1154049"] {
+    --forms-heading-font: var(--font-heading-style) var(--font-heading-weight)
+      calc(var(--font-heading-scale) * 2.4rem) var(--font-body-family) !important;
+    --forms-heading-line-height: 1.15;
+  }
+
+@media screen and (min-width: 750px) {
+  shopify-forms-embed[data-form-id="1154049"] {
+    --forms-heading-font: var(--font-heading-style) var(--font-heading-weight)
+      calc(var(--font-heading-scale) * 3.5rem) var(--font-body-family) !important;
+  }
+}
+
+
