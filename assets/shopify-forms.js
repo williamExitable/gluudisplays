@@ -1,17 +1,26 @@
 /*
-  Injecteert een stylesheet in de shadow root van <shopify-forms-embed> om details
-  te overschrijven die de app hardcoded zet en die niet via host-custom-properties
-  te sturen zijn: h2-marges, p-line-height, en de knop-hover met een echte
-  background-color in plaats van een filter.
+  Twee aanpassingen op de Shopify Forms app:
+
+  1. Injecteert een stylesheet in de shadow root van <shopify-forms-embed> om details
+     te overschrijven die de app hardcoded zet en die niet via host-custom-properties
+     te sturen zijn: h2-marges, p-line-height, en de knop-hover met een echte
+     background-color in plaats van een filter.
+  2. Zet het form-id als data-form-id op <shopify-forms-embed>, zodat een specifiek
+     formulier te targeten is.
 */
 (function () {
   const EMBED = 'shopify-forms-embed';
   const styled = new WeakSet();
 
   const css = `
-    /* h2: marges gelijk aan thema */
+    /*
+      h2: marges gelijk aan thema. De line-height staat in de app hardcoded op 26px,
+      wat bij een grotere kop niet meeschaalt; de fallback houdt die 26px aan zodat
+      alleen formulieren die --forms-heading-line-height zetten afwijken.
+    */
     h2[class*="textHeading"] {
       margin: 0 0 2rem !important;
+      line-height: var(--forms-heading-line-height, 26px) !important;
     }
 
     /* p/span body: thema-line-height en -letter-spacing */
@@ -58,10 +67,31 @@
     }
   }
 
+  /*
+    De app rendert <shopify-forms-embed> zonder form-id; dat staat alleen op de
+    app-block-div die het thema plaatst (data-forms-id="forms-root-1154049"). Zonder
+    dat id valt één specifiek formulier niet te stylen of te selecteren, dus het
+    numerieke id wordt doorgezet naar het embed-element zelf.
+  */
+  function stampFormId(embed) {
+    if (embed.dataset.formId) return;
+
+    const root = embed.closest('[data-forms-id], [data-form-root]');
+    if (!root) return;
+
+    const match = (root.getAttribute('data-forms-id') || root.id || '').match(/forms-root-(\d+)/);
+    if (match) embed.dataset.formId = match[1];
+  }
+
+  function handle(embed) {
+    stampFormId(embed);
+    apply(embed);
+  }
+
   function scan(node) {
     if (node.nodeType !== Node.ELEMENT_NODE) return;
-    if (node.tagName === 'SHOPIFY-FORMS-EMBED') apply(node);
-    node.querySelectorAll(EMBED).forEach(apply);
+    if (node.tagName === 'SHOPIFY-FORMS-EMBED') handle(node);
+    node.querySelectorAll(EMBED).forEach(handle);
   }
 
   scan(document.documentElement);
