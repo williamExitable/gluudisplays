@@ -52,6 +52,37 @@
         "padding_bottom": 36
       }
     },
+    "17894825188bd9d3e3": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_67JJJX": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "1154049",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "left",
+            "form_alignment": "flex-start",
+            "padding_top": 64,
+            "padding_bottom": 64,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_67JJJX"
+      ],
+      "custom_css": [
+        "{background: var(--color-gray-100);}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "rich_text_iP6qnr": {
       "type": "rich-text",
       "blocks": {
@@ -65,7 +96,8 @@
         "text_CHfxx7": {
           "type": "text",
           "settings": {
-            "text": "<h3></h3><ul><li><a href=\"https://gluudisplays.nl/pages/veelgestelde-vragen\" title=\"Veelgestelde vragen\">Veelgestelde vragen</a></li><li><a href=\"https://gluudisplays.nl/policies/privacy-policy\">Privacybeleid</a></li><li><a href=\"https://gluudisplays.nl/policies/refund-policy\">Terugbetalingsbeleid</a></li><li><a href=\"https://gluudisplays.nl/policies/terms-of-service\">Algemene voorwaarden</a></li></ul>"
+            "text": "<h3></h3><ul><li><a href=\"https://gluudisplays.nl/pages/veelgestelde-vragen\" title=\"Veelgestelde vragen\">Veelgestelde vragen</a></li><li><a href=\"https://gluudisplays.nl/policies/privacy-policy\">Privacybeleid</a></li><li><a href=\"https://gluudisplays.nl/policies/refund-policy\">Terugbetalingsbeleid</a></li><li><a href=\"https://gluudisplays.nl/policies/terms-of-service\">Algemene voorwaarden</a></li></ul>",
+            "source_code": ""
           }
         },
         "button_3qGPg4": {
@@ -95,7 +127,7 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 64,
         "padding_bottom": 40
       }
     },
@@ -112,7 +144,8 @@
         "text_fnxxHM": {
           "type": "text",
           "settings": {
-            "text": "<p>Heb je een vraag? Heb je onze veelgestelde vragen al bekeken?</p>"
+            "text": "<p>Heb je een vraag? Heb je onze veelgestelde vragen al bekeken?</p>",
+            "source_code": ""
           }
         },
         "button_gpKjfL": {
@@ -140,14 +173,15 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "main",
     "multirow_idP9ki",
+    "17894825188bd9d3e3",
     "rich_text_iP6qnr",
     "rich_text_BGBxwk"
   ]
