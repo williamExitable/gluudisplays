@@ -1,0 +1,28 @@
+{%- comment -%}
+  Renders 5 stars for a rating.
+
+  Accepts:
+  - rating: {Number} Rating value
+  - rating_max: {Number} Scale of the rating (e.g. 5 or 10)
+
+  Usage:
+  {% render 'rating-stars', rating: 9.2, rating_max: 10 %}
+{%- endcomment -%}
+
+{%- liquid
+  assign scale = rating_max | default: 5
+  assign stars = rating | times: 5.0 | divided_by: scale
+-%}
+
+<div class="rating-stars" role="img" aria-label="{{ rating }}/{{ scale }}">
+  {%- for star in (1..5) -%}
+    {%- assign half = star | minus: 0.5 -%}
+    {%- if stars >= star -%}
+      <i class="ph-fill ph-star"></i>
+    {%- elsif stars >= half -%}
+      <i class="ph-fill ph-star-half"></i>
+    {%- else -%}
+      <i class="ph ph-star"></i>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

@@ -3629,6 +3629,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, *:not(.fa):not([class*="pe-"]):not(.lni)
   }
 }
 
+.template-index #FooterContent {
+  padding-top: 0;
+}
+
 .color-scheme-547bb3c7-4f7a-4e29-8579-5b7f293d9ad8 {
       color: rgba(var(--color-foreground), 1);
       --input-color: #5C5C5C;

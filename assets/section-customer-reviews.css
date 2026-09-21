@@ -1,0 +1,130 @@
+.customer-reviews {
+  border-top: 0.1rem solid var(--color-gray-100);
+  border-bottom: 0.1rem solid var(--color-gray-100);
+  overflow: hidden;
+}
+
+.customer-reviews__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.customer-reviews__heading {
+  margin: 0 0 1.5rem;
+}
+
+.customer-reviews__score {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.customer-reviews__count {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.rating-stars {
+  display: inline-flex;
+  gap: 0.2rem;
+  color: var(--color-brand, #f5a623);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.customer-reviews__slider {
+  position: relative;
+  display: block;
+  min-width: 0;
+  padding: 0 1rem;
+}
+
+.customer-reviews__card {
+  background: #fff;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 1rem;
+  padding: 2.4rem;
+  flex: 1;
+}
+
+.customer-reviews__author {
+  margin: 0 0 0.8rem;
+}
+
+.customer-reviews__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.customer-reviews__date {
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.customer-reviews__text {
+  margin: 0;
+}
+
+/* swiper-bundle.min.css zet height: 100% op .swiper-wrapper en .swiper-slide,
+   waardoor de kaarten de hoogte van de grid-rij overnemen in plaats van hun
+   eigen inhoud. */
+.customer-reviews__slider .swiper,
+.customer-reviews__slider .swiper-wrapper {
+  height: auto;
+}
+
+.customer-reviews__slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.customer-reviews__slider .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.customer-reviews__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.15);
+  border-radius: 50%;
+  background: #fff;
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+}
+
+.customer-reviews__nav:hover {
+  border-color: rgba(var(--color-foreground), 0.4);
+}
+
+.customer-reviews__nav.swiper-button-disabled {
+  cursor: default;
+  display: none;
+}
+
+.customer-reviews__nav--prev {
+  left: -0.6rem;
+}
+
+.customer-reviews__nav--next {
+  right: -0.6rem;
+}
+
+@media screen and (min-width: 990px) {
+  .customer-reviews__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: 5rem;
+  }
+}
