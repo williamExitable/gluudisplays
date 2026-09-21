@@ -4,7 +4,7 @@ class CustomBannerSlider extends HTMLElement {
     this.slides = Array.from(this.querySelectorAll('.custom-banner__slide'));
     this.index = 0;
     this.speed = parseInt(this.dataset.autoplaySpeed, 10) || 6000;
-    this.transitionDuration = 900;
+    this.animationDuration = 700;
   }
 
   connectedCallback() {
@@ -38,10 +38,13 @@ class CustomBannerSlider extends HTMLElement {
 
     current.classList.replace('custom-banner__slide--active', 'custom-banner__slide--leaving');
     current.setAttribute('aria-hidden', 'true');
-    upcoming.classList.add('custom-banner__slide--active');
-    upcoming.removeAttribute('aria-hidden');
 
-    setTimeout(() => current.classList.remove('custom-banner__slide--leaving'), this.transitionDuration);
+    clearTimeout(this.enterTimer);
+    this.enterTimer = setTimeout(() => {
+      current.classList.remove('custom-banner__slide--leaving');
+      upcoming.classList.add('custom-banner__slide--active');
+      upcoming.removeAttribute('aria-hidden');
+    }, this.animationDuration);
   }
 }
 

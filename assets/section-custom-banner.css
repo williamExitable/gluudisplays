@@ -85,8 +85,10 @@
   animation-name: custom-banner-slide-in;
 }
 
-.custom-banner__slide--leaving > * {
+.custom-banner__slide--leaving > *,
+.custom-banner__slide--leaving > * + * {
   animation-name: custom-banner-slide-out;
+  animation-delay: 0s;
 }
 
 @keyframes custom-banner-slide-in {
