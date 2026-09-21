@@ -129,7 +129,45 @@
     },
     "image_banner_DjPHzd": {
       "type": "custom-banner",
-      "settings": {}
+      "blocks": {
+        "slide_wehegt": {
+          "type": "slide",
+          "settings": {
+            "heading": "Onze eyecatcher, jouw verhaal.",
+            "text": "<p>Met de digitale displays van GLUU zet je jouw verhaal moeiteloos in de spotlights.</p>"
+          }
+        },
+        "slide_KUwQFe": {
+          "type": "slide",
+          "settings": {
+            "heading": "Een unieke beleving.",
+            "text": "<p>Transformeer elke ruimte tot een interactieve omgeving waar bezoekers worden geïnspireerd en jouw merkidentiteit visueel krachtig tot leven komt.</p>"
+          }
+        },
+        "slide_X7My9J": {
+          "type": "slide",
+          "settings": {
+            "heading": "Plug en Play.",
+            "text": "<p>Geen ingewikkelde installaties; sluit simpelweg de stroom aan, verbind met het netwerk en jouw content is direct zichtbaar.</p>"
+          }
+        },
+        "slide_BtEDU6": {
+          "type": "slide",
+          "settings": {
+            "heading": "De slimme aanmeld zuil.",
+            "text": "<p>Optimaliseer de bezoekersregistratie met een intuïtieve interface die wachttijden verkort en direct een professionele, gastvrije eerste indruk achterlaat.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wehegt",
+        "slide_KUwQFe",
+        "slide_X7My9J",
+        "slide_BtEDU6"
+      ],
+      "settings": {
+        "autoplay_speed": 6
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
