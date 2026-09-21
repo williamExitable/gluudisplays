@@ -204,12 +204,78 @@
         "padding_top": 52,
         "padding_bottom": 36
       }
+    },
+    "customer_reviews": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review_tom": {
+          "type": "review",
+          "settings": {
+            "author": "Tom",
+            "rating": 5,
+            "date": "18-9-2026",
+            "text": "Prettig en persoonlijk contact! Het product (display) is heel zorgvuldig verzonden en ziet er perfect uit. We zijn er erg blij mee."
+          }
+        },
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "author": "Sanne",
+            "rating": 5,
+            "date": "12-9-2026",
+            "text": "Display werkt perfect en was in vijf minuten ingesteld."
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "author": "Mark",
+            "rating": 5,
+            "date": "4-9-2026",
+            "text": "Snel geleverd en netjes verpakt. Top service."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "author": "Ilse",
+            "rating": 5,
+            "date": "27-8-2026",
+            "text": "Fijn advies vooraf en een scherp beeld in onze zaak."
+          }
+        }
+      },
+      "block_order": [
+        "review_tom",
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "heading": "Onze klant reacties",
+        "rating": 10,
+        "reviews_count": 0,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "why-choose-gluu": {
+      "type": "why-choose-gluu",
+      "settings": {
+        "heading": "Waarom kies je voor GLUU Displays?",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
     "image_with_text_AdGyrk",
     "image_banner_DjPHzd",
-    "featured_collection"
+    "featured_collection",
+    "customer_reviews",
+    "why-choose-gluu"
   ]
 }
