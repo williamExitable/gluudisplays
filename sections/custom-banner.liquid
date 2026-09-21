@@ -1,5 +1,5 @@
 {{ 'section-custom-banner.css' | asset_url | stylesheet_tag }}
-
+<script src="{{ 'custom-banner.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
 
 <div id="Banner-{{ section.id }}" class="custom-banner">
   <div class="custom-banner__bg">
@@ -24,12 +24,25 @@
         <div class="custom-banner__screen">
           <img src="{{ 'homepage-screen-overlay.png' | asset_url }}" alt="GLUU" width="1165" height="435">
       
-          <div class="custom-banner__content">
-            <h2 class="custom-banner__heading h1">Onze eyecatcher, jouw verhaal.</h2>
-            <div class="custom-banner__text rte">
-              <p>Met de digitale displays van GLUU zet je jouw verhaal moeiteloos in de spotlights.</p>
-            </div>
-          </div>
+          <custom-banner-slider
+            class="custom-banner__content"
+            data-autoplay-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
+          >
+            {%- for block in section.blocks -%}
+              <div
+                class="custom-banner__slide{% if forloop.first %} custom-banner__slide--active{% endif %}"
+                {% if forloop.first == false %}aria-hidden="true"{% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {%- if block.settings.heading != blank -%}
+                  <h2 class="custom-banner__heading h1">{{ block.settings.heading }}</h2>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="custom-banner__text rte">{{ block.settings.text }}</div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </custom-banner-slider>
         </div>
       
       </div>
@@ -42,10 +55,47 @@
   "name": "Custom banner",
   "tag": "section",
   "class": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 15,
+      "step": 1,
+      "unit": "s",
+      "label": "Tijd per slide",
+      "default": 6
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titel",
+          "default": "Onze eyecatcher, jouw verhaal."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Tekst",
+          "default": "<p>Met de digitale displays van GLUU zet je jouw verhaal moeiteloos in de spotlights.</p>"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Custom banner"
+      "name": "Custom banner",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
     }
   ]
 }
