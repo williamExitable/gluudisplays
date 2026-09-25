@@ -1,0 +1,310 @@
+/* Display check modal ("Welk display past het beste bij mij?") */
+
+.display-check-modal__content.product-popup-modal__content {
+  width: 94%;
+  max-width: 88rem;
+  height: auto;
+  max-height: 88vh;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 750px) {
+  .display-check-modal__content.product-popup-modal__content {
+    width: 80%;
+    margin-top: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.display-check__inner,
+.display-check__loading {
+  padding: 2rem 0 3rem;
+}
+
+.display-check__header {
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+.display-check__eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.display-check__title {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  font-family: var(--font-heading-family);
+}
+
+.display-check__lead,
+.display-check__hint {
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.display-check__body--intro {
+  text-align: center;
+}
+
+.display-check__cta {
+  margin-top: 1rem;
+}
+
+.display-check__progress {
+  height: 0.4rem;
+  border-radius: 0.4rem;
+  background: rgba(var(--color-foreground), 0.1);
+  overflow: hidden;
+}
+
+/*
+ * Both of these are empty elements, and base.css hides those with `div:empty`. That selector
+ * has a higher specificity than a single class, hence the parent in front of it.
+ */
+.display-check__progress .display-check__progress-bar {
+  display: block;
+  height: 100%;
+  background: rgb(var(--color-button));
+  transition: width var(--duration-default) ease;
+}
+
+.display-check__step-count {
+  margin: 0.8rem 0 2rem;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.display-check__question {
+  margin: 0 0 0.6rem;
+  font-size: 1.8rem;
+  font-family: var(--font-heading-family);
+}
+
+.display-check__hint {
+  margin: 0 0 1.6rem;
+  font-size: 1.4rem;
+}
+
+.display-check__options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin: 0 0 2.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .display-check__options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.display-check__option {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  text-align: left;
+  font-size: 1.5rem;
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  border-radius: var(--inputs-radius);
+  cursor: pointer;
+  transition: border-color var(--duration-short) ease, box-shadow var(--duration-short) ease;
+}
+
+.display-check__option:hover {
+  border-color: rgb(var(--color-button));
+}
+
+.display-check__option--selected {
+  border-color: rgb(var(--color-button));
+  box-shadow: inset 0 0 0 0.1rem rgb(var(--color-button));
+}
+
+.display-check__option i {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: rgb(var(--color-button));
+}
+
+/* Sticky so the buttons stay reachable while scrolling through a long result list */
+.display-check__actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  background: rgb(var(--color-background));
+}
+
+.display-check__results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  margin: 0 0 2.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .display-check__results {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.display-check__result {
+  border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-radius: var(--product-card-corner-radius);
+  overflow: hidden;
+}
+
+.display-check__result-link {
+  display: block;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
+}
+
+.display-check__result-link:hover .display-check__result-title {
+  text-decoration: underline;
+}
+
+.display-check__result-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.display-check__result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.display-check__result-category,
+.display-check__result-touch {
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.display-check__result-title {
+  font-size: 1.5rem;
+  font-weight: var(--font-body-weight-bold);
+}
+
+.display-check__result-price {
+  font-size: 1.4rem;
+}
+
+.display-check__reasons {
+  margin: 0;
+  padding: 0 1.2rem 1.2rem 2.8rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+.display-check .display-check__advice-slot {
+  display: block;
+  margin-bottom: 2.4rem;
+}
+
+.display-check__form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .display-check__form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.display-check__form .field {
+  margin-bottom: 1.2rem;
+}
+
+.display-check__form-success {
+  margin: 0;
+}
+
+/* "Alles bekijken" and the display check button sit next to each other */
+.collection__view-all-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-check-section--bordered {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+}
+
+/* Announcement section with the button that opens the check */
+.display-check-trigger {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem 2.4rem;
+}
+
+.display-check-trigger--center {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Small centred image above the heading */
+.display-check-trigger__image {
+  margin: 0 0 1.2rem;
+  width: var(--display-check-image-width, 9rem);
+}
+
+.display-check-trigger--center .display-check-trigger__image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display-check-trigger__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.display-check-trigger__heading {
+  margin: 0;
+}
+
+.display-check-trigger__text {
+  margin-top: 0.8rem;
+}
+
+.display-check-trigger__text > :first-child {
+  margin-top: 0;
+}
+
+.display-check-trigger__text > :last-child {
+  margin-bottom: 0;
+}
+
+.display-check-trigger .button {
+  flex-shrink: 0;
+}

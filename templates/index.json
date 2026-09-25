@@ -191,6 +191,8 @@
         "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
+        "show_display_check": true,
+        "display_check_label": "Doe de check!",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-f68ba790-3b4e-4d32-995e-df834acdf78e",
         "image_ratio": "portrait",
@@ -203,6 +205,22 @@
         "swipe_on_mobile": true,
         "padding_top": 52,
         "padding_bottom": 36
+      }
+    },
+    "display_check": {
+      "type": "display-check-trigger",
+      "settings": {
+        "show_top_border": true,
+        "show_image": true,
+        "image_width": 150,
+        "heading": "Welk display past het beste bij mij?",
+        "text": "<p>Doe de check en ontdek in drie korte vragen welke displays bij jouw situatie passen.</p>",
+        "button_label": "Doe de check!",
+        "button_style_secondary": false,
+        "alignment": "center",
+        "color_scheme": "background-2",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "customer_reviews": {
@@ -275,6 +293,7 @@
     "image_with_text_AdGyrk",
     "image_banner_DjPHzd",
     "featured_collection",
+    "display_check",
     "customer_reviews",
     "why-choose-gluu"
   ]
