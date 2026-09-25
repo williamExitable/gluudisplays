@@ -1,0 +1,234 @@
+{% comment %}
+  Renders the display check ("Welk display past het beste bij mij?") as a modal that can be
+  opened from anywhere on the storefront. Rendered once from theme.liquid, so it is available
+  on every page.
+
+  The tool itself is a Vue app in display-check.js. This snippet only delivers the data it
+  needs: the product catalogue, and the advice form (a native Shopify contact form, so the
+  tool does not depend on an app block being present on the page).
+
+  Each product gets one or more categories, derived from its handle and product type. A
+  product tag "check:<category>" overrides that (multiple tags allowed); the tags
+  "check-touch" and "check-no-touch" override the detected touchscreen support.
+
+  Categories: totems, futuro, bords, countertop, panel
+
+  Usage:
+  {% render 'display-check' %}
+{% endcomment %}
+
+{%- comment -%}
+  modal.css holds the theme's .product-popup-modal styles and is normally only loaded by the
+  product sections, while this modal is available on every page.
+{%- endcomment -%}
+{{ 'modal.css' | asset_url | stylesheet_tag }}
+{{ 'display-check.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'vue.global.prod.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+<script src="{{ 'display-check.js' | asset_url }}" defer="defer" data-cookieconsent="ignore"></script>
+
+<script type="application/json" id="DisplayCheckData">
+  {
+    "products": [
+      {%- for product in collections.all.products limit: 50 -%}
+        {%- liquid
+          assign handle = product.handle | downcase
+          assign type = product.type | downcase
+          assign categories = ''
+          assign touch = 'no'
+
+          for tag in product.tags
+            assign tag_handle = tag | downcase | strip
+            if tag_handle contains 'check:'
+              assign tag_category = tag_handle | remove: 'check:'
+              assign categories = categories | append: ',' | append: tag_category
+            endif
+          endfor
+
+          if categories == blank
+            if handle contains 'futuro'
+              assign categories = 'futuro'
+            elsif handle contains 'countertop' or handle contains 'l-stand' or handle contains 't-stand'
+              assign categories = 'countertop'
+            elsif handle contains 'a-bord' or handle contains 'abord' or handle contains 'ezel'
+              assign categories = 'bords'
+            elsif handle contains 'panel' or handle contains 'wall'
+              assign categories = 'panel'
+            elsif handle contains 'totem' or handle contains 'kiosk' or handle contains 'zuil'
+              assign categories = 'totems'
+            elsif type contains 'bord'
+              assign categories = 'bords'
+            elsif type contains 'counter'
+              assign categories = 'countertop'
+            elsif type contains 'panel'
+              assign categories = 'panel'
+            elsif type contains 'totem' or type contains 'slim'
+              assign categories = 'totems'
+            endif
+          endif
+
+          for option in product.options_with_values
+            assign option_name = option.name | downcase
+            if option_name contains 'touch'
+              assign touch = 'optional'
+            endif
+          endfor
+
+          if touch == 'no'
+            assign searchable = product.title | append: ' ' | append: handle | downcase
+            if searchable contains 'touch'
+              assign touch = 'yes'
+            endif
+          endif
+
+          if product.tags contains 'check-touch'
+            assign touch = 'yes'
+          elsif product.tags contains 'check-no-touch'
+            assign touch = 'no'
+          endif
+
+          assign category_list = categories | remove_first: ',' | split: ','
+        -%}
+        {%- unless forloop.first %},{% endunless %}
+        {
+          "id": {{ product.id }},
+          "title": {{ product.title | json }},
+          "handle": {{ product.handle | json }},
+          "url": {{ product.url | json }},
+          "type": {{ product.type | json }},
+          "price": {{ product.price | json }},
+          "priceFormatted": {{ product.price | money | strip_html | json }},
+          "image": {{ product.featured_image | image_url: width: 600 | json }},
+          "categories": {{ category_list | json }},
+          "touch": {{ touch | json }},
+          "available": {{ product.available | json }}
+        }
+      {%- endfor %}
+    ]
+  }
+</script>
+
+<display-check-modal id="DisplayCheckModal" class="product-popup-modal display-check-modal" data-cookieconsent="ignore">
+  <div
+    role="dialog"
+    aria-label="Welk display past het beste bij mij? Doe de check!"
+    aria-modal="true"
+    class="product-popup-modal__content display-check-modal__content"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-DisplayCheck"
+      type="button"
+      class="product-popup-modal__toggle"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+
+    <div class="display-check" id="DisplayCheckApp">
+      <div class="display-check__loading">
+        <p class="display-check__title">Welk display past het beste bij mij? Doe de check!</p>
+        <p class="display-check__lead">De check wordt geladen…</p>
+      </div>
+    </div>
+  </div>
+</display-check-modal>
+
+{%- comment -%}
+  The advice form lives outside the Vue app: display-check.js moves this node into the advice
+  step and back again, so Vue never renders over the Liquid form markup.
+{%- endcomment -%}
+<div id="DisplayCheckAdviceForm" class="display-check__advice-form" hidden>
+  {%- form 'contact', id: 'DisplayCheckContact', class: 'display-check__form' -%}
+    {%- if form.posted_successfully? -%}
+      <p class="display-check__form-success form-status" tabindex="-1" data-form-status>
+        Bedankt, we hebben je aanvraag ontvangen en nemen zo snel mogelijk contact met je op.
+      </p>
+    {%- else -%}
+      {%- if form.errors -%}
+        <div class="form__message" role="alert">
+          <h3 class="form-status caption-large" tabindex="-1" data-form-status>
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h3>
+        </div>
+        <ul class="form-status-list caption-large">
+          {%- for field in form.errors -%}
+            <li>
+              <span class="form__message">
+                {{ form.errors.messages[field] }}
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div class="display-check__form-grid">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="DisplayCheckContactName"
+            name="contact[{{ 'templates.contact.form.name' | t }}]"
+            placeholder="{{ 'templates.contact.form.name' | t }}"
+          >
+          <label class="field__label" for="DisplayCheckContactName">
+            {{- 'templates.contact.form.name' | t -}}
+          </label>
+        </div>
+
+        <div class="field field--with-error">
+          <input
+            class="field__input"
+            autocomplete="email"
+            type="email"
+            id="DisplayCheckContactEmail"
+            name="contact[email]"
+            spellcheck="false"
+            autocapitalize="off"
+            value="{{ form.email }}"
+            aria-required="true"
+            required
+            placeholder="{{ 'templates.contact.form.email' | t }}"
+          >
+          <label class="field__label" for="DisplayCheckContactEmail">
+            {{- 'templates.contact.form.email' | t }}
+            <span aria-hidden="true">*</span></label
+          >
+        </div>
+
+        <div class="field">
+          <input
+            type="tel"
+            class="field__input"
+            autocomplete="tel"
+            id="DisplayCheckContactPhone"
+            name="contact[{{ 'templates.contact.form.phone' | t }}]"
+            pattern="[0-9\-]*"
+            placeholder="{{ 'templates.contact.form.phone' | t }}"
+          >
+          <label class="field__label" for="DisplayCheckContactPhone">
+            {{- 'templates.contact.form.phone' | t -}}
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <textarea
+          rows="4"
+          id="DisplayCheckContactBody"
+          class="text-area field__input"
+          name="contact[body]"
+          placeholder="{{ 'templates.contact.form.comment' | t }}"
+        ></textarea>
+        <label class="form__label field__label" for="DisplayCheckContactBody">
+          {{- 'templates.contact.form.comment' | t -}}
+        </label>
+      </div>
+
+      <input type="hidden" name="contact[Displaycheck]" value="" data-display-check-summary>
+      <input type="hidden" name="contact[Displaycheck aanbevelingen]" value="" data-display-check-products>
+
+      <button type="submit" class="button">Vraag advies aan</button>
+    {%- endif -%}
+  {%- endform -%}
+</div>

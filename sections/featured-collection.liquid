@@ -229,15 +229,37 @@
       </div>
     {%- endif -%}
         
-    {%- if section.settings.show_view_all and more_in_collection -%}
+    {%- liquid
+      assign render_view_all = false
+      if section.settings.show_view_all and more_in_collection
+        assign render_view_all = true
+      endif
+    -%}
+
+    {%- if render_view_all or section.settings.show_display_check -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <a
-          href="{{ section.settings.collection.url }}"
-          class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
-          aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
-        >
-          {{ 'sections.featured_collection.view_all' | t }}
-        </a>
+        <div class="collection__view-all-buttons">
+          {%- if render_view_all -%}
+            <a
+              href="{{ section.settings.collection.url }}"
+              class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
+              aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
+            >
+              {{ 'sections.featured_collection.view_all' | t }}
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.show_display_check -%}
+            <button
+              type="button"
+              class="button button--secondary"
+              data-display-check-open="featured-collection-{{ section.id }}"
+              aria-haspopup="dialog"
+            >
+              {{ section.settings.display_check_label | escape }}
+            </button>
+          {%- endif -%}
+        </div>
       </div>
     {%- endif -%}
     {% if section.settings.image_shape == 'arch' %}
@@ -371,6 +393,18 @@
         }
       ],
       "default": "solid"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_display_check",
+      "default": false,
+      "label": "Show display check button"
+    },
+    {
+      "type": "text",
+      "id": "display_check_label",
+      "default": "Doe de check!",
+      "label": "Display check button label"
     },
     {
       "type": "checkbox",

@@ -1,6 +1,6 @@
 .customer-reviews {
-  border-top: 0.1rem solid var(--color-gray-100);
-  border-bottom: 0.1rem solid var(--color-gray-100);
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
   overflow: hidden;
 }
 
